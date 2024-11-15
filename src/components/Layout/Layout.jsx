@@ -1,12 +1,15 @@
+import { Heder } from "@/components/Heder/Heder.jsx"
+
+import s from "./Layout.module.scss"
 
 
 export const Layout = () => {
 
     return (
-      <div>
+      <div className={s.container}>
+        <Heder/>
         <main>
           <div>
-            <p>Click on the Vite and React logos to learn more</p>
           </div>
         </main>
       </div>
