@@ -1,4 +1,4 @@
-import { Layout } from "@/components/Layout/layout.jsx";
+import { Layout } from "@/components/Layout/Layout.jsx";
 
 
 function App() {
