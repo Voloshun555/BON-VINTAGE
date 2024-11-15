@@ -1,6 +1,7 @@
 {
-  "name": "vite-project",
+  "name": "bon-vintage",
   "private": true,
+  "homepage": "https://Voloshun555.github.io/bon-vintage/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
