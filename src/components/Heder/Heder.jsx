@@ -1,4 +1,4 @@
-import image from "../../assets/images.jfif"
+// import image from "../../assets/images.jfif"
 import s from "./Heder.module.scss";
 
 export const Heder = () => {
@@ -16,7 +16,7 @@ export const Heder = () => {
         <input className={s.search} type="text" />
       </nav>
 
-      <div className={s.hero}>
+      {/* <div className={s.hero}>
         <p className={s.logo}>(лого еще в разработке)</p>
         <h1 className={s.title}>BON VINTAGE</h1>
         <p className={s.description}>
@@ -28,7 +28,7 @@ export const Heder = () => {
               </p>
               <h2>ANTIQUE & VINTAGE STORE</h2>
       </div>
-      <img className={s.imageHero} src={image} alt="lion" />
+      <img className={s.imageHero} src={image} alt="lion" /> */}
     </heder>
   );
 };

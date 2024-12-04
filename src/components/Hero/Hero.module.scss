@@ -1,0 +1,41 @@
+.heroContainer {
+  display: flex;
+  position: relative;
+}
+.hero {
+  padding: 100px;
+}
+.logo {
+  text-align: end;
+  margin-bottom: 5px;
+}
+.title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.description {
+  width: 400px;
+  margin-bottom: 20px;
+
+    font-size: 9px;
+    font-weight: 400;
+    text-transform: uppercase;
+    
+    .bottomDescription{
+     text-align: center;
+    }
+}
+
+.imageHero {
+  transform: translate(-10%, -26%);
+  width: 660px;
+  height: 650px;
+  border-radius: 15px;
+}
+.logoTitle {
+  position: absolute;
+ transform: translate(-2%, +150%);
+  font-size: 90px;
+  z-index: 100;
+  color: blue;
+}
