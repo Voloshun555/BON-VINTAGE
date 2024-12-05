@@ -17,24 +17,24 @@
   width: 400px;
   margin-bottom: 20px;
 
-    font-size: 9px;
-    font-weight: 400;
-    text-transform: uppercase;
-    
-    .bottomDescription{
-     text-align: center;
-    }
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  .bottomDescription {
+    text-align: center;
+  }
 }
 
 .imageHero {
-  transform: translate(-10%, -26%);
+  transform: translate(-0%, -26%);
   width: 660px;
   height: 650px;
   border-radius: 15px;
 }
 .logoTitle {
   position: absolute;
- transform: translate(-2%, +150%);
+  transform: translate(-6%, +199%);
   font-size: 90px;
   z-index: 100;
   color: blue;
