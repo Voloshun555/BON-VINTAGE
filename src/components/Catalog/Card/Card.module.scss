@@ -1,0 +1,18 @@
+.containerCard {
+  width: 150px;
+  .containerImg {
+    position: relative;
+    .iconHeard {
+      width: 25px;
+      height: 25px;
+      color: rgb(245, 247, 250);
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+    }
+  }
+  .catalogImg {
+    width: 150px;
+    border-radius: 5px;
+  }
+}

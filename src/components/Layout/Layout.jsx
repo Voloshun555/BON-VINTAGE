@@ -1,10 +1,11 @@
 import { Heder } from "@/components/Heder/Heder.jsx";
 import { Hero } from "@/components/Hero/Hero.jsx";
 import { Сategories } from "@/components/Сategories/Сategories.jsx";
-import { Filter } from "@/components/Filter/Filter";
+import { Filter } from "@/components/Filter/Filter.jsx";
+import { Sort } from "@/components/Sort/Sort.jsx";
+import { CardList } from "@/components/Catalog/CardList/CardList.jsx";
 
 import s from "./Layout.module.scss";
-import { Sort } from "../Sort/Sort";
 
 export const Layout = () => {
   return (
@@ -15,6 +16,7 @@ export const Layout = () => {
         <Sort />
         <Сategories />
         <Filter />
+        <CardList/>
       </main>
     </div>
   );
