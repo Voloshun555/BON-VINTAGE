@@ -3,7 +3,7 @@ import s from "./Hero.module.scss";
 
 export const Hero = () => {
   return (
-    <div className={s.heroContainer}>
+    <section className={s.heroContainer}>
       <div className={s.hero}>
         <p className={s.logo}>(лого еще в разработке)</p>
         <h1 className={s.title}>BON VINTAGE</h1>
@@ -19,6 +19,6 @@ export const Hero = () => {
         <h2 className={s.logoTitle}>ANTIQUE & VINTAGE STORE</h2>
       </div>
       <img className={s.imageHero} src={image} alt="lion" />
-    </div>
+    </section>
   );
 };

@@ -1,7 +1,7 @@
 import { CiHeart } from "react-icons/ci";
-import vase from "@/assets/vase.webp"
+import vase from "@/assets/vase.webp";
 
-import s from "./Card.module.scss"
+import s from "./Card.module.scss";
 
 export const Card = () => {
   return (
@@ -12,8 +12,12 @@ export const Card = () => {
       </div>
       <div>
         <ul className={s.item}>
-          <li className={s.itemList}>Коддлер для варіння</li>
-          <li className={s.itemList}>22 000 ГРН</li>
+          <li className={s.itemList}>
+            <div className={s.itemDetails}>
+              <h3>Коддлер для варіння яєць</h3>
+              <p>22 000 ГРН</p>
+            </div>
+          </li>
           <li className={s.itemList}>King size Royal Worcester</li>
           <li className={s.itemList}>Англія</li>
         </ul>

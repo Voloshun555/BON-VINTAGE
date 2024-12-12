@@ -27,7 +27,7 @@
 }
 
 .imageHero {
-  transform: translate(-0%, -26%);
+  transform: translate(100px, -26%);
   width: 660px;
   height: 650px;
   border-radius: 15px;
@@ -35,7 +35,7 @@
 .logoTitle {
   position: absolute;
   transform: translate(-6%, +199%);
-  font-size: 90px;
+  font-size: 92px;
   z-index: 100;
   color: blue;
 }

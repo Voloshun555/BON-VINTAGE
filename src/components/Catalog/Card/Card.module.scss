@@ -1,5 +1,5 @@
 .containerCard {
-  width: 150px;
+  width: 270px;
   .containerImg {
     position: relative;
     .iconHeard {
@@ -12,7 +12,15 @@
     }
   }
   .catalogImg {
-    width: 150px;
+    width: 270px;
     border-radius: 5px;
+  }
+}
+
+.item{
+  margin-top: 15px;  
+  .itemDetails{
+    display: flex;
+    justify-content: space-between;
   }
 }
