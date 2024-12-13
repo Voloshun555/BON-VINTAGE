@@ -1,2 +1,7 @@
 @use 'reset-css';
-@use './base/reset.scss';
+@use 'modern-normalize';
+
+@use 'base/variables';
+@use 'base/fonts';
+@use 'base/reset';
+@use 'base/mixins';

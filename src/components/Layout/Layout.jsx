@@ -1,21 +1,23 @@
-import { Heder } from "@/components/Heder/Heder.jsx";
-import { Hero } from "@/components/Hero/Hero.jsx";
+// import { Heder } from "@/components/Heder/Heder.jsx";
+// import { Hero } from "@/components/Hero/Hero";
 import { Categorizer } from "@/components/Categorizer/Categorizer";
-import { CardList } from "@/components/Catalog/CardList/CardList.jsx";
+import { CardList } from "@/components/Catalog/CardList/CardList";
 
 import s from "./Layout.module.scss";
+import { Header } from "@/components/Header/Header";
 
 export const Layout = () => {
   return (
-    <div className={s.container}>
-      <Heder />
+    <>
+      {/* <Heder /> */}
+      <Header />
       <main>
-        <Hero />
+        {/* <Hero /> */}
         <section className={s.containerCategorizer}>
           <Categorizer />
           <CardList />
         </section>
       </main>
-    </div>
+    </>
   );
 };

@@ -1,0 +1,70 @@
+@import "@/scss/base/variables";
+
+.heder {
+  .logo {
+    font-size: 30px;
+    color: $primary-white;
+  }
+  background-color: #1f2e44;
+  height: 100px;
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 36px;
+    max-width: 1440px;
+  }
+
+  .navigation {
+    display: flex;
+    color: $primary-white;
+  }
+  .listNavigation:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .searchContainer {
+    position: relative;
+    .search {
+      width: 410px;
+      height: 25px;
+      padding-left: 25px;
+      margin-top: 5px;
+
+      border-radius: 5px;
+      border-color: $primary-white;
+      background-color: inherit;
+    }
+
+    .search::placeholder {
+      font-size: 15px;
+      color: $primary-white;
+    }
+
+    .searchIcon {
+      position: absolute;
+      left: 5px;
+      top: 10px;
+
+      color: $primary-white;
+    }
+  }
+  .iconNav {
+    width: 35px;
+    height: 35px;
+    color: $primary-white;
+  }
+
+  .socialLinks {
+    .iconNav:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  .userActions {
+    .iconNav:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
