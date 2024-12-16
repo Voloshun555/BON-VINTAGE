@@ -8,7 +8,7 @@ import App from "@/App";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter
-      basename="/BON-VINTAGE"
+      basename="/BON-VINTAGE/"
       future={{
         v7_startTransition: true,
         v7_relativeSplatPath: true,

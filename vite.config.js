@@ -10,5 +10,5 @@ export default defineConfig({
     },
   },
   plugins: [react()],
-  base: '/BON-VINTAGE',
+  base: '/BON-VINTAGE/',
 })
