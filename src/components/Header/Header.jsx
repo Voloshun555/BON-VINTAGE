@@ -6,6 +6,7 @@ import { FaRegPaperPlane } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 
 import s from "./Header.module.scss";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -14,8 +15,26 @@ export const Header = () => {
         <p className={s.logo}>BON VINTAGE</p>
         <nav>
           <ul className={s.navigation}>
-            <li className={s.listNavigation}>ГОЛОВНА</li>
-            <li className={s.listNavigation}>КАТАЛОГ</li>
+            <li className={s.listNavigation}>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? `${s.active} ${s.navLink}` : s.navLink
+                }
+              >
+                ГОЛОВНА
+              </NavLink>
+            </li>
+            <li className={s.listNavigation}>
+              <NavLink
+                to="/catalog"
+                className={({ isActive }) =>
+                  isActive ? `${s.active} ${s.navLink}` : s.navLink
+                }
+              >
+                КАТАЛОГ
+              </NavLink>
+            </li>
             <li className={s.listNavigation}>ПРО НАС</li>
             <li className={s.listNavigation}>УВІЙ</li>
             <li className={s.listNavigation}>ВПОДАБАНІ</li>

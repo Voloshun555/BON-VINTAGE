@@ -68,3 +68,13 @@
     }
   }
 }
+
+.navLink {
+  text-decoration: none;
+  color: $primary-white;
+}
+
+.active {
+  font-weight: bold;
+  color: red;
+}

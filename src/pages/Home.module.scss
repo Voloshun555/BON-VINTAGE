@@ -1,0 +1,45 @@
+.heroContainer {
+  position: relative;
+
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 36px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.description {
+  width: 400px;
+  margin-bottom: 20px;
+
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  .bottomDescription {
+    text-align: center;
+  }
+}
+
+.imageHero {
+  width: 660px;
+  height: 650px;
+  border-radius: 15px;
+}
+.logoTitle {
+  position: absolute;
+
+  font-size: 100px;
+
+  bottom: 10px;
+  color: blue;
+}
