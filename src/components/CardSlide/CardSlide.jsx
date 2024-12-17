@@ -1,9 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay} from "swiper/modules";
 import { useProducts } from "@/hooks/useProducts";
 
 
-import "swiper/css";
-import "swiper/css/autoplay";
+import "swiper/css"; 
+import "swiper/css/autoplay"; 
+
 
 import s from "./CardSlide.module.scss";
 
@@ -21,16 +23,17 @@ export const CardSlide = () => {
   return (
     <section className={s.containerSlider}>
       <Swiper
+        modules={[Autoplay]}
         spaceBetween={20}
         slidesPerView={8}
+        loop={true}
         autoplay={{
-          delay: 500,
-          disableOnInteraction: false,
+          delay: 5000, 
+          disableOnInteraction: false, 
         }}
-        loop={true} 
       >
         {data?.map((product) => (
-          <SwiperSlide key={product.id} className={s.swiperSlide}>
+          <SwiperSlide key={product.id} >
             <img
               className={s.slideImage}
               loading="lazy"
