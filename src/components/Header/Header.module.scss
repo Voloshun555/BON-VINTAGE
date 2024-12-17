@@ -1,6 +1,7 @@
 @import "@/scss/base/variables";
 
 .heder {
+  flex-shrink: 0;
   .logo {
     font-size: 30px;
     color: $primary-white;

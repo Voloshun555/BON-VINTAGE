@@ -1,6 +1,9 @@
-.containerCategorizer {
+.container {
   display: flex;
-  padding: 20px 34px;
-  max-width: 1440px;
-  margin: auto;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }

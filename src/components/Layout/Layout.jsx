@@ -1,15 +1,15 @@
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 
-// import s from "./Layout.module.scss";
+import s from "./Layout.module.scss";
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div className={s.container}>
       <Header />
-      <main style={{ flex: 1 }}>
+      <main>
         <Suspense fallback="Завантаження...">
           <Outlet />
         </Suspense>
