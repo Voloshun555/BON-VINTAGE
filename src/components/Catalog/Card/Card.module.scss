@@ -6,9 +6,6 @@
       width: 25px;
       height: 25px;
       color: rgb(245, 247, 250);
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
     }
   }
   .catalogImg {
@@ -17,9 +14,17 @@
   }
 }
 
-.item{
-  margin-top: 15px;  
-  .itemDetails{
+.buttonHeard {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: transparent;
+  border: transparent;
+}
+
+.item {
+  margin-top: 15px;
+  .itemDetails {
     display: flex;
     justify-content: space-between;
   }

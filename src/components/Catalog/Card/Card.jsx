@@ -1,13 +1,29 @@
+/* eslint-disable react/prop-types */
 import { CiHeart } from "react-icons/ci";
-
 import s from "./Card.module.scss";
-// eslint-disable-next-line react/prop-types
-export const Card = ({ image, country, price, title, description }) => {
+
+export const Card = ({
+  image,
+  country,
+  price,
+  title,
+  description,
+  id,
+  addFavoriteList,
+  removeFavoriteList,
+  isFavorite,
+}) => {
+  const handleFavoriteClick = () => {
+    isFavorite ? removeFavoriteList(id) : addFavoriteList(id);
+  };
+
   return (
     <li className={s.containerCard}>
       <div className={s.containerImg}>
         <img className={s.catalogImg} src={image} alt="vase" />
-        <CiHeart className={s.iconHeard} />
+        <button className={s.buttonHeard} onClick={handleFavoriteClick}>
+          <CiHeart className={s.iconHeard} />
+        </button>
       </div>
       <div>
         <ul className={s.item}>
