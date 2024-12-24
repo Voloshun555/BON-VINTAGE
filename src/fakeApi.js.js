@@ -34,7 +34,7 @@ export const fetchFakeData = async (count = 12) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(generateFakeData(count));
-    }, 500);
+    });
   });
 };
 

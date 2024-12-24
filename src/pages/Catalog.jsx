@@ -5,7 +5,7 @@ import { useProducts } from "@/hooks/useProducts";
 import s from "@/scss/base/shared.module.scss";
 
 const Catalog = () => {
-  const { data, isLoading, isError } = useProducts(12);
+  const { data, isLoading, isError } = useProducts();
 
   return (
     <div>
