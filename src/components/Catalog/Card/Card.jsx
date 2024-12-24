@@ -22,7 +22,9 @@ export const Card = ({
       <div className={s.containerImg}>
         <img className={s.catalogImg} src={image} alt="vase" />
         <button className={s.buttonHeard} onClick={handleFavoriteClick}>
-          <CiHeart className={s.iconHeard} />
+          <CiHeart
+            className={`${s.iconHeard} ${isFavorite ? s.iconHeardActive : ""}`}
+          />
         </button>
       </div>
       <div>

@@ -37,7 +37,17 @@ export const Header = () => {
             </li>
             <li className={s.listNavigation}>ПРО НАС</li>
             <li className={s.listNavigation}>УВІЙ</li>
-            <li className={s.listNavigation}>ВПОДАБАНІ</li>
+
+            <li className={s.listNavigation}>
+              <NavLink
+                to="/favorite"
+                className={({ isActive }) =>
+                  isActive ? `${s.active} ${s.navLink}` : s.navLink
+                }
+              >
+                ВПОДАБАНІ
+              </NavLink>
+            </li>
           </ul>
           <div className={s.searchContainer}>
             <input className={s.search} type="text" placeholder="пошук" />
