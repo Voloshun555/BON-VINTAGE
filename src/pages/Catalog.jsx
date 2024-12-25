@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const Catalog = () => {
   const { data, isLoading, isError } = useProducts(12);
-  const [sortType, setSortType] = useState();
+  const [sortType, setSortType] = useState('');
 
   return (
     <div>

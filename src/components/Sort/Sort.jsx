@@ -4,7 +4,7 @@ import s from "./Sort.module.scss";
 import shared from "@/scss/base/shared.module.scss"
 
 export const Sort = ({ onSortChange }) => {
-  const [selectedSort, setSelectedSort] = useState("");
+  const [selectedSort, setSelectedSort] = useState();
 
   const hendleSortChange = (sortType) => {
     setSelectedSort(sortType);
