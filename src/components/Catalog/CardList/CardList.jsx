@@ -1,29 +1,43 @@
 /* eslint-disable react/prop-types */
 import { Card } from "@/components/Catalog/Card/Card.jsx";
-
 import { useFavorites } from "@/hooks/useFavorites";
-
 import s from "./CardList.module.scss";
-
+import { useSelector } from "react-redux";
+import { useMemo } from "react";
 
 export const CardList = ({ data, isLoading, isError, sortType }) => {
   const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
+  const searchQuery = useSelector((state) => state.filter.searchQuery);
 
-  const sortTypePrice = () => {
+  const filteredData = useMemo(() => {
     if (!data || !Array.isArray(data)) return [];
-    switch (sortType) {
-      case "newest":
-        return data.sort(
-          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-        );
-      case "highPrice":
-        return data.sort((a, b) => b.price - a.price);
-      case "lowPrice":
-        return data.sort((a, b) => a.price - b.price);
-      default:
-        return data;
-    }
-  };
+    return data.filter((item) => {
+      const query = searchQuery.toLowerCase();
+      return (
+        item.title.toLowerCase().includes(query) ||
+        item.description.toLowerCase().includes(query) ||
+        item.country.toLowerCase().includes(query) ||
+        item.category.toLowerCase().includes(query) ||
+        item.material.toLowerCase().includes(query)
+      );
+    });
+  }, [data, searchQuery]);
+
+  const sortedAndFilteredData = useMemo(() => {
+    if (!filteredData || !Array.isArray(filteredData)) return [];
+    return [...filteredData].sort((a, b) => {
+      switch (sortType) {
+        case "newest":
+          return new Date(b.createdAt) - new Date(a.createdAt);
+        case "highPrice":
+          return b.price - a.price;
+        case "lowPrice":
+          return a.price - b.price;
+        default:
+          return 0;
+      }
+    });
+  }, [filteredData, sortType]);
 
   return (
     <section className={s.container}>
@@ -32,7 +46,7 @@ export const CardList = ({ data, isLoading, isError, sortType }) => {
         {isError && <div>...Error</div>}
         {!isLoading &&
           !isError &&
-          sortTypePrice().map(
+          sortedAndFilteredData.map(
             ({ image, country, id, price, title, description }) => (
               <Card
                 key={id}

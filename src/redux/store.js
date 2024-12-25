@@ -11,6 +11,7 @@ import {
   REGISTER,
   REHYDRATE,
 } from "redux-persist";
+import { filterSlice } from "./searchQuery/searchQuery";
 
 const persistConfig = {
   key: "root",
@@ -20,6 +21,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   favorite: favoriteSlice.reducer,
+  filter: filterSlice.reducer,
 });
 
 const persistUsersReducer = persistReducer(persistConfig, rootReducer);

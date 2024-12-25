@@ -4,8 +4,8 @@ import shared from "@/scss/base/shared.module.scss";
 import { useState } from "react";
 
 export const Сategories = () => {
-  const [getCategories, setCategories] = useState()
-  console.log(getCategories);
+  const [getCategories, setCategories] = useState();
+
   return (
     <div>
       <div className={shared.ContainerForTitle}>

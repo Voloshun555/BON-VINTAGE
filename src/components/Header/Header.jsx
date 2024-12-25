@@ -4,12 +4,19 @@ import { FaInstagram } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import s from "./Header.module.scss";
+import { setSearchQuery } from "@/redux/searchQuery/searchQuery";
 
 export const Header = () => {
+  const dispatch = useDispatch();
   const totalFavorite = useSelector((state) => state.favorite.length);
+  const searchQuery = useSelector((state) => state.filter.searchQuery);
+
+  const handleSearch = (e) => {
+    dispatch(setSearchQuery(e.target.value));
+  }
 
   return (
     <header className={s.header}>
@@ -37,7 +44,13 @@ export const Header = () => {
             <li className={s.listNavigation}>УВІЙ</li>
           </ul>
           <div className={s.searchContainer}>
-            <input className={s.search} type="text" placeholder="Пошук" />
+            <input
+              className={s.search}
+              type="text"
+              placeholder="Пошук"
+              value={searchQuery}
+              onChange={handleSearch}
+            />
             <CiSearch className={s.searchIcon} />
           </div>
         </nav>
