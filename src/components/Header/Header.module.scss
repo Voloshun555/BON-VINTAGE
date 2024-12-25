@@ -1,13 +1,10 @@
 @import "@/scss/base/variables";
 
-.heder {
+.header {
   flex-shrink: 0;
-  .logo {
-    font-size: 30px;
-    color: $primary-white;
-  }
   background-color: #1f2e44;
   height: 100px;
+
   .container {
     height: 100%;
     display: flex;
@@ -18,64 +15,99 @@
     max-width: 1440px;
   }
 
-  .navigation {
-    display: flex;
+  .logo {
+    font-size: 30px;
     color: $primary-white;
   }
-  .listNavigation:not(:last-child) {
-    margin-right: 15px;
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    color: $primary-white;
+
+    .listNavigation {
+      margin-right: 15px;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      .navLink {
+        text-decoration: none;
+        color: $primary-white;
+
+        &.active {
+          font-weight: bold;
+          color: red;
+        }
+      }
+    }
   }
 
   .searchContainer {
     position: relative;
+
     .search {
       width: 410px;
       height: 25px;
       padding-left: 25px;
       margin-top: 5px;
-
       border-radius: 5px;
-      border-color: $primary-white;
+      border: 1px solid $primary-white;
       background-color: inherit;
-    }
 
-    .search::placeholder {
-      font-size: 15px;
-      color: $primary-white;
+      &::placeholder {
+        font-size: 15px;
+        color: $primary-white;
+      }
     }
 
     .searchIcon {
       position: absolute;
       left: 5px;
-      top: 10px;
-
+      top: 50%;
+      transform: translateY(-35%);
       color: $primary-white;
     }
   }
-  .iconNav {
-    width: 35px;
-    height: 35px;
-    color: $primary-white;
-  }
 
   .socialLinks {
-    .iconNav:not(:last-child) {
-      margin-right: 10px;
+    display: flex;
+    gap: 10px;
+
+    .iconNav {
+      width: 35px;
+      height: 35px;
+      color: $primary-white;
     }
   }
+
   .userActions {
-    .iconNav:not(:last-child) {
-      margin-right: 10px;
+    display: flex;
+    gap: 10px;
+
+    .wrapIcon {
+      position: relative;
+
+      .iconNav {
+        width: 35px;
+        height: 35px;
+        color: $primary-white;
+      }
+
+      .totalFavorite {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #04080f;
+        color: rgb(7, 252, 252);
+        text-align: center;
+        font-size: 12px;
+        line-height: 15px;
+      }
     }
   }
-}
-
-.navLink {
-  text-decoration: none;
-  color: $primary-white;
-}
-
-.active {
-  font-weight: bold;
-  color: red;
 }

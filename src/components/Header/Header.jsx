@@ -1,56 +1,43 @@
-import { FaRegUser } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegUser, FaRegHeart, FaRegPaperPlane } from "react-icons/fa";
 import { BsBasket3 } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa6";
-import { FaRegPaperPlane } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 
-import s from "./Header.module.scss";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import s from "./Header.module.scss";
 
 export const Header = () => {
+  const totalFavorite = useSelector((state) => state.favorite.length);
+
   return (
-    <header className={s.heder}>
+    <header className={s.header}>
       <div className={s.container}>
         <p className={s.logo}>BON VINTAGE</p>
         <nav>
           <ul className={s.navigation}>
-            <li className={s.listNavigation}>
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  isActive ? `${s.active} ${s.navLink}` : s.navLink
-                }
-              >
-                ГОЛОВНА
-              </NavLink>
-            </li>
-            <li className={s.listNavigation}>
-              <NavLink
-                to="/catalog"
-                className={({ isActive }) =>
-                  isActive ? `${s.active} ${s.navLink}` : s.navLink
-                }
-              >
-                КАТАЛОГ
-              </NavLink>
-            </li>
+            {[
+              { to: "/", label: "ГОЛОВНА" },
+              { to: "/catalog", label: "КАТАЛОГ" },
+              { to: "/favorite", label: "ВПОДОБАНІ" },
+            ].map((link) => (
+              <li key={link.to} className={s.listNavigation}>
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) =>
+                    isActive ? `${s.active} ${s.navLink}` : s.navLink
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
             <li className={s.listNavigation}>ПРО НАС</li>
             <li className={s.listNavigation}>УВІЙ</li>
-
-            <li className={s.listNavigation}>
-              <NavLink
-                to="/favorite"
-                className={({ isActive }) =>
-                  isActive ? `${s.active} ${s.navLink}` : s.navLink
-                }
-              >
-                ВПОДАБАНІ
-              </NavLink>
-            </li>
           </ul>
           <div className={s.searchContainer}>
-            <input className={s.search} type="text" placeholder="пошук" />
+            <input className={s.search} type="text" placeholder="Пошук" />
             <CiSearch className={s.searchIcon} />
           </div>
         </nav>
@@ -59,9 +46,14 @@ export const Header = () => {
           <FaInstagram className={s.iconNav} />
         </div>
         <div className={s.userActions}>
-          <FaRegUser className={s.iconNav} />
-          <FaRegHeart className={s.iconNav} />
-          <BsBasket3 className={s.iconNav} />
+          {[FaRegUser, FaRegHeart, BsBasket3].map((Icon, index) => (
+            <div key={index} className={s.wrapIcon}>
+              <Icon className={s.iconNav} />
+              {Icon === FaRegHeart && totalFavorite > 0 && (
+                <p className={s.totalFavorite}>{totalFavorite}</p>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </header>
