@@ -1,8 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
+const initialState = {
+  favoriteList: [],
+};
+
 export const favoriteSlice = createSlice({
   name: "favorite",
-  initialState: [],
+  initialState,
   reducers: {
     addFavorite(state, action) {
       const isExist = state.some((item) => item === action.payload);
