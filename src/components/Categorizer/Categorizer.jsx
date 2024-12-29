@@ -3,12 +3,11 @@ import { Сategories } from "@/components/Сategories/Сategories.jsx";
 import { Filter } from "@/components/Filter/Filter.jsx";
 import { Sort } from "@/components/Sort/Sort.jsx";
 
-
-export const Categorizer = ({ onSortChange }) => {
+export const Categorizer = ({ onSortChange, onCategoryChange }) => {
   return (
     <section>
       <Sort onSortChange={onSortChange} />
-      <Сategories />
+      <Сategories onCategoryChange={onCategoryChange} />
       <Filter />
     </section>
   );

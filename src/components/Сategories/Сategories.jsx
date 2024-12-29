@@ -1,10 +1,23 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/rules-of-hooks */
 import { categories } from "@/fakeApi.js";
 import shared from "@/scss/base/shared.module.scss";
 import { useState } from "react";
 
-export const Сategories = () => {
-  const [getCategories, setCategories] = useState();
+
+import s from './Categories.module.scss'
+
+export const Сategories = ({ onCategoryChange }) => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category === selectedCategory ? null : category);
+    onCategoryChange(category);
+  };
+
+    const handleReset = () => {
+      setSelectedCategory(null);
+      onCategoryChange(null);
+    };
 
   return (
     <div>
@@ -15,12 +28,20 @@ export const Сategories = () => {
         {categories.map((item) => (
           <li
             key={item}
-            className={shared.listCategories}
-            onClick={() => setCategories(item)}
+            className={`${shared.listCategories} ${
+              selectedCategory === item ? s.active : ""
+            }`}
+            onClick={() => handleCategoryClick(item)}
           >
             {item}
           </li>
         ))}
+        <li
+          className={`${shared.listCategories} ${shared.resetButton}`}
+          onClick={handleReset}
+        >
+          Скинути фільтр
+        </li>
       </ul>
     </div>
   );

@@ -10,7 +10,7 @@ const Favorite = () => {
   const faforitItem = data.filter((item) => favorit.includes(item.id));
   return (
     <section className={s.containerFavorite}>
-      <CardList data={faforitItem} isLoading={isLoading} isError={isError} />
+      <CardList data={faforitItem} isLoading={isLoading} isError={isError} navigate = {null} />
     </section>
   );
 };

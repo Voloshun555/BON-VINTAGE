@@ -5,23 +5,33 @@ import s from "./CardList.module.scss";
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
 
-export const CardList = ({ data, isLoading, isError, sortType }) => {
+export const CardList = ({
+  data,
+  isLoading,
+  isError,
+  sortType,
+  selectedCategory,
+}) => {
   const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
   const searchQuery = useSelector((state) => state.filter.searchQuery);
 
   const filteredData = useMemo(() => {
     if (!data || !Array.isArray(data)) return [];
-    return data.filter((item) => {
-      const query = searchQuery.toLowerCase();
-      return (
-        item.title.toLowerCase().includes(query) ||
-        item.description.toLowerCase().includes(query) ||
-        item.country.toLowerCase().includes(query) ||
-        item.category.toLowerCase().includes(query) ||
-        item.material.toLowerCase().includes(query)
-      );
-    });
-  }, [data, searchQuery]);
+    return data
+      .filter((item) => {
+        const query = searchQuery.toLowerCase();
+        return (
+          item.title.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query) ||
+          item.country.toLowerCase().includes(query) ||
+          item.category.toLowerCase().includes(query) ||
+          item.material.toLowerCase().includes(query)
+        );
+      })
+      .filter((item) => {
+        return selectedCategory ? item.category === selectedCategory : true;
+      });
+  }, [data, searchQuery, selectedCategory]);
 
   const sortedAndFilteredData = useMemo(() => {
     if (!filteredData || !Array.isArray(filteredData)) return [];
@@ -44,8 +54,7 @@ export const CardList = ({ data, isLoading, isError, sortType }) => {
       <ul className={s.containerCards}>
         {isLoading && <div>...Loading</div>}
         {isError && <div>...Error</div>}
-        {!isLoading &&
-          !isError &&
+        {!isLoading && !isError && sortedAndFilteredData.length > 0 ? (
           sortedAndFilteredData.map(
             ({ image, country, id, price, title, description }) => (
               <Card
@@ -61,7 +70,10 @@ export const CardList = ({ data, isLoading, isError, sortType }) => {
                 isFavorite={isFavorite(id)}
               />
             )
-          )}
+          )
+        ) : (
+          <div className={s.emptyMessage}>Категорія відсутня</div>
+        )}
       </ul>
     </section>
   );

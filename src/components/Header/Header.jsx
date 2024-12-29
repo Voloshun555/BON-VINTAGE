@@ -13,7 +13,7 @@ export const Header = () => {
   const dispatch = useDispatch();
   const totalFavorite = useSelector((state) => state.favorite.length);
   const searchQuery = useSelector((state) => state.filter.searchQuery);
-
+  
   const handleSearch = (e) => {
     dispatch(setSearchQuery(e.target.value));
   }

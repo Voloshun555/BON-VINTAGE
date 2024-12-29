@@ -7,18 +7,23 @@ import { useState } from "react";
 
 const Catalog = () => {
   const { data, isLoading, isError } = useProducts(12);
-  const [sortType, setSortType] = useState('');
+  const [sortType, setSortType] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   return (
     <div>
       <CardSlide />
       <div className={s.containerCategorizer}>
-        <Categorizer onSortChange={setSortType} />
+        <Categorizer
+          onSortChange={setSortType}
+          onCategoryChange={setSelectedCategory}
+        />
         <CardList
           data={data}
           isLoading={isLoading}
           isError={isError}
           sortType={sortType}
+          selectedCategory={selectedCategory}
         />
       </div>
     </div>
