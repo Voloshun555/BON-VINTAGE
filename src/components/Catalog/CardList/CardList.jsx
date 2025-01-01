@@ -11,6 +11,7 @@ export const CardList = ({
   isError,
   sortType,
   selectedCategory,
+  selectedFilter,
 }) => {
   const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
   const searchQuery = useSelector((state) => state.filter.searchQuery);
@@ -30,8 +31,11 @@ export const CardList = ({
       })
       .filter((item) => {
         return selectedCategory ? item.category === selectedCategory : true;
+      })
+      .filter((item) => {
+        return selectedFilter ? item.material === selectedFilter : true;
       });
-  }, [data, searchQuery, selectedCategory]);
+  }, [data, searchQuery, selectedCategory, selectedFilter]);
 
   const sortedAndFilteredData = useMemo(() => {
     if (!filteredData || !Array.isArray(filteredData)) return [];

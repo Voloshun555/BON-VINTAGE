@@ -11,7 +11,9 @@ import { setSearchQuery } from "@/redux/searchQuery/searchQuery";
 
 export const Header = () => {
   const dispatch = useDispatch();
-  const totalFavorite = useSelector((state) => state.favorite.length);
+  const totalFavorite = useSelector(
+    (state) => state.favorite.favoriteList.length
+  );
   const searchQuery = useSelector((state) => state.filter.searchQuery);
   
   const handleSearch = (e) => {
@@ -60,11 +62,14 @@ export const Header = () => {
         </div>
         <div className={s.userActions}>
           {[FaRegUser, FaRegHeart, BsBasket3].map((Icon, index) => (
-            <div key={index} className={s.wrapIcon}>
+            <div
+              key={index}
+              className={s.wrapIcon}
+              data-total={
+                Icon === FaRegHeart && totalFavorite > 0 ? totalFavorite : ""
+              }
+            >
               <Icon className={s.iconNav} />
-              {Icon === FaRegHeart && totalFavorite > 0 && (
-                <p className={s.totalFavorite}>{totalFavorite}</p>
-              )}
             </div>
           ))}
         </div>

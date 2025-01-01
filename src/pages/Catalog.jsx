@@ -9,6 +9,7 @@ const Catalog = () => {
   const { data, isLoading, isError } = useProducts(12);
   const [sortType, setSortType] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedFilter, setSelectedFilter] = useState(null);
 
   return (
     <div>
@@ -17,6 +18,7 @@ const Catalog = () => {
         <Categorizer
           onSortChange={setSortType}
           onCategoryChange={setSelectedCategory}
+          onFilterChange={setSelectedFilter}
         />
         <CardList
           data={data}
@@ -24,6 +26,7 @@ const Catalog = () => {
           isError={isError}
           sortType={sortType}
           selectedCategory={selectedCategory}
+          selectedFilter={selectedFilter}
         />
       </div>
     </div>

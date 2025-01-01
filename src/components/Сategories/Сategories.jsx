@@ -9,6 +9,7 @@ import s from './Categories.module.scss'
 
 export const Сategories = ({ onCategoryChange }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  
   const handleCategoryClick = (category) => {
     setSelectedCategory(category === selectedCategory ? null : category);
     onCategoryChange(category);
