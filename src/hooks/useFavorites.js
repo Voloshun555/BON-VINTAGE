@@ -6,7 +6,7 @@ import {
 
 export const useFavorites = () => {
     const dispatch = useDispatch();
-    const favorites = useSelector((state) => state.favorite);
+    const favorites = useSelector((state) => state.favorite.favoriteList);
     
     const addFavoriteList = (id) => {
       dispatch(addFavorite(id));
@@ -16,7 +16,7 @@ export const useFavorites = () => {
       dispatch(removeFavorite(id));
     };
 
-    const isFavorite = (id) => favorites.includes(id);
+  const isFavorite = (id) => favorites.includes(id);
 
   return { addFavoriteList, removeFavoriteList, isFavorite };
 };

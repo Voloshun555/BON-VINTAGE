@@ -6,7 +6,7 @@ import s from "./Home.module.scss";
 
 const Favorite = () => {
   const { data = [], isLoading, isError } = useProducts(12);
-  const favorit = useSelector((state) => state.favorite);
+  const favorit = useSelector((state) => state.favorite.favoriteList);
   const faforitItem = data.filter((item) => favorit.includes(item.id));
   return (
     <section className={s.containerFavorite}>
