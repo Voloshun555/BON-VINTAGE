@@ -1,0 +1,66 @@
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 36px;
+  background-color: #1e1e1e;
+  z-index: 1000;
+
+
+
+  .closeButton {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .closeIcon {
+     color: white;
+  }
+
+  .itemNavLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    :not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .navLink {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+  }
+
+  .navLink:hover {
+    color: #007bff;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: auto;
+    padding-top: 20px;
+  }
+
+  .icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .icon:hover {
+    color: #007bff;
+  }
+}

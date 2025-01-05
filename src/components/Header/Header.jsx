@@ -2,23 +2,43 @@ import { FaRegUser, FaRegHeart, FaRegPaperPlane } from "react-icons/fa";
 import { BsBasket3 } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
+import { CiMenuBurger } from "react-icons/ci";
+import { RxCross1 } from "react-icons/rx";
 
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import s from "./Header.module.scss";
 import { setSearchQuery } from "@/redux/searchQuery/searchQuery";
+import { useEffect, useState } from "react";
+import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 
 export const Header = () => {
+  const [isOpen, setOpen] = useState();
+
   const dispatch = useDispatch();
   const totalFavorite = useSelector(
     (state) => state.favorite.favoriteList.length
   );
   const searchQuery = useSelector((state) => state.filter.searchQuery);
-  
+
   const handleSearch = (e) => {
     dispatch(setSearchQuery(e.target.value));
-  }
+  };
+
+  const toggleMenu = () => {
+    setOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 833) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  });
 
   return (
     <header className={s.header}>
@@ -73,7 +93,15 @@ export const Header = () => {
             </div>
           ))}
         </div>
+        <button className={s.buttonBurger} onClick={toggleMenu}>
+          {isOpen ? (
+            <RxCross1 className={s.burgerIcon} />
+          ) : (
+            <CiMenuBurger className={s.burgerIcon} />
+          )}
+        </button>
       </div>
+      {isOpen && <BurgerMenu onClose={toggleMenu} />}
     </header>
   );
 };
