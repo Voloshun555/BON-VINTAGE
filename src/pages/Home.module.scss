@@ -1,3 +1,5 @@
+@import "@/scss/base/variables.scss";
+@import "@/scss/base/mixins.scss";
 .heroContainer {
   position: relative;
 
@@ -7,6 +9,24 @@
   align-items: center;
   margin: 0 auto;
   padding: 20px 36px;
+
+  @include mobile-only {
+    flex-direction: column-reverse;
+  }
+}
+
+.hero {
+  min-width: 350px;
+   @include mobile-only {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 15px;
+
+  }
+  @include tablet-only {
+    margin-right: 15px;
+  }
 }
 
 .logo {
@@ -19,35 +39,46 @@
   color: #1f2e44;
 }
 .description {
-  width: 400px;
+  max-width: 400px;
   margin-bottom: 20px;
 
   font-size: 9px;
   font-weight: 400;
   text-transform: uppercase;
 
-  .bottomDescription {
-    text-align: center;
+  @include mobile-only {
+  text-align: center;
+
   }
+  
 }
 
 .imageHero {
   width: 660px;
   height: 650px;
   border-radius: 15px;
+  @include mobile-and-tablet {
+    width: clamp(260px, 50vw, 660px);
+    height: clamp(260px, 50vw, 650px);
+  }
 }
 .logoTitle {
-  position: absolute;
-
-  font-size: 100px;
-
-  bottom: 10px;
+  font-size: 35px;
   color: #1f2e44;
+
+  @include tablet-only {
+    font-size: clamp(10px, 5vw, 50px);
+
+  }
+  @include desktop-only {
+    position: absolute;
+    font-size: 100px;
+    bottom: 10px;
+  }
 }
 
-
-.containerFavorite{
+.containerFavorite {
   width: 1440px;
   padding: 20px;
-  margin:  25px auto;
+  margin: 25px auto;
 }
