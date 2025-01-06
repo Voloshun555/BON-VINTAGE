@@ -1,9 +1,16 @@
+@import "@/scss/base/variables.scss";
+@import "@/scss/base/mixins.scss";
+
 .containerSlider {
-  width: 1600px;
-  padding: 20px 20px;
-  margin: auto;
-  height: 100%;
-  .slideImage {
-    border-radius: 15px;
+  display: none;
+  @include tablet-and-desktop {
+    display: block;
+    max-width: 1600px;
+    padding: 20px 20px;
+    margin: auto;
+    height: 100%;
+    .slideImage {
+      border-radius: 15px;
+    }
   }
 }

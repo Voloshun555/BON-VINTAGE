@@ -12,6 +12,7 @@ import s from "./Header.module.scss";
 import { setSearchQuery } from "@/redux/searchQuery/searchQuery";
 import { useEffect, useState } from "react";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
+import { useMediaQuery } from "react-responsive";
 
 export const Header = () => {
   const [isOpen, setOpen] = useState();
@@ -30,15 +31,13 @@ export const Header = () => {
     setOpen(!isOpen);
   };
 
+  const isMobile = useMediaQuery({ maxWidth: 833 });
+
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 833) {
-        setOpen(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  });
+    if (!isMobile) {
+      setOpen(false);
+    }
+  }, [isMobile]);
 
   return (
     <header className={s.header}>
