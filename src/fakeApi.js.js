@@ -50,11 +50,11 @@ export const fetchFakeData = async (count = 12) => {
   });
 };
 
-export  const sortOptions = [
-  "За найновішими",
-  "За найбільшою ціною",
-  "За найменьшою ціною",
-];
+ export const sortOptions = [
+   { value: "newest", label: "За найновішими" },
+   { value: "highPrice", label: "За найбільшою ціною" },
+   { value: "lowPrice", label: "За найменшою ціною" },
+ ];
 export const categories = [
   "Сервізи",
   "Тарілки",

@@ -13,9 +13,9 @@ export const CardList = ({
   selectedCategory,
   selectedFilter,
 }) => {
+  console.log(selectedCategory);
   const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
   const searchQuery = useSelector((state) => state.filter.searchQuery);
-
   const filteredData = useMemo(() => {
     if (!data || !Array.isArray(data)) return [];
     return data

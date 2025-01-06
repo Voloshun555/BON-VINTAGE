@@ -1,3 +1,5 @@
+@import "@/scss/base/variables.scss";
+@import "@/scss/base/mixins.scss";
 .ContainerForTitle {
   display: flex;
   justify-content: center;
@@ -19,7 +21,14 @@
 
 .containerCategorizer {
   display: flex;
-  max-width: 1440px;
-  padding: 20px 34px;
-  margin: auto;
+  @include mobile-only {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include tablet-and-desktop {
+    max-width: 1440px;
+    padding: 20px 34px;
+    margin: auto;
+  }
 }

@@ -13,7 +13,7 @@ export const Filter = ({onFilterChange}) => {
     setSelectedFilter(filter === selectedFilter ? null : filter);
     onFilterChange(filter);
   }
-console.log(handleFilterClik);
+
   return (
     <div>
       <div className={shared.ContainerForTitle}>
