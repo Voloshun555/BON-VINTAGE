@@ -14,9 +14,10 @@ const Catalog = () => {
   const [sortType, setSortType] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedFilter, setSelectedFilter] = useState(null);
+  
+  const isMobile = useMediaQuery({ maxWidth: 1439 });
+  
 
-  const isMobile = useMediaQuery({ maxWidth: 833 });
-// console.table(selectedCategory.value);
   return (
     <div>
       <CardSlide />

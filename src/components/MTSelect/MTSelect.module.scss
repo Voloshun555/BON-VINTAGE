@@ -1,3 +1,6 @@
+@import "@/scss/base/variables.scss";
+@import "@/scss/base/mixins.scss";
+
 .container {
   padding: 15px;
 
@@ -7,6 +10,9 @@
     align-items: center;
 
     gap: 15px;
+    @include tablet-only {
+      flex-direction: row;
+    }
   }
 
   .label {

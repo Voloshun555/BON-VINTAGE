@@ -4,18 +4,28 @@ import { sortOptions, categories, materials } from "@/fakeApi.js";
 import s from "./MTSelect.module.scss";
 import { useState } from "react";
 
-
-// eslint-disable-next-line no-unused-vars
-export const MTSelect = ({ onSortChange, onCategoryChange, onFilterChange }) => {
- const [selectedCategory, setSelectedCategory] = useState(null);
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category === selectedCategory ? null : category);
-    onCategoryChange(category);
+export const MTSelect = ({
+  onSortChange,
+  onCategoryChange,
+  onFilterChange,
+}) => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedFilter, setSelectedFilter] = useState(null);
+  const handleCategoryClick = (selectedOption) => {
+    const value = selectedOption ? selectedOption.value : null;
+    setSelectedCategory(value);
+    onCategoryChange(value);
   };
 
- const handleSortChange = (selectedOption) => {
-   onSortChange(selectedOption ? selectedOption.value : null);
- };
+  const handleFilterClick = (selectedOption) => {
+    const value = selectedOption ? selectedOption.value : null;
+    setSelectedFilter(value);
+    onFilterChange(value);
+  };
+
+  const handleSortChange = (selectedOption) => {
+    onSortChange(selectedOption ? selectedOption.value : null);
+  };
   return (
     <section className={s.container}>
       <form className={s.form}>
@@ -37,8 +47,12 @@ export const MTSelect = ({ onSortChange, onCategoryChange, onFilterChange }) => 
             <p>Катигорії</p>
             <Select
               classNamePrefix="custom-select"
-              options={categories.map((item) => ({label: item, value: item}))}
-              value={selectedCategory}
+              options={categories.map((item) => ({ label: item, value: item }))}
+              value={
+                categories.find((item) => item === selectedCategory)
+                  ? { label: selectedCategory, value: selectedCategory }
+                  : null
+              }
               isClearable={true}
               isSearchable={true}
               placeholder="Оберіть категорію"
@@ -51,10 +65,16 @@ export const MTSelect = ({ onSortChange, onCategoryChange, onFilterChange }) => 
             <p>Фільтрувати</p>
             <Select
               classNamePrefix="custom-select"
-              options={materials}
+              options={materials.map((item) => ({ value: item, label: item }))}
+              value={
+                materials.find((item) => item === selectedFilter)
+                  ? { label: selectedFilter, value: selectedFilter }
+                  : null
+              }
               isClearable={true}
               isSearchable={true}
               placeholder="Оберіть матеріал"
+              onChange={handleFilterClick}
             />
           </label>
         </div>

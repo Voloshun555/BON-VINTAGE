@@ -21,7 +21,7 @@
 
 .containerCategorizer {
   display: flex;
-  @include mobile-only {
+  @include mobile-and-tablet {
     flex-direction: column;
     align-items: center;
   }

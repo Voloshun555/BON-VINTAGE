@@ -15,7 +15,7 @@
   }
 }
 .container{
-   @include tablet-and-desktop{
+   @include desktop-only{
    margin-left: 20px;
   }
  
