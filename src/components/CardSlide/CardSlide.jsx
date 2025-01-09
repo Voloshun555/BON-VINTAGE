@@ -46,7 +46,7 @@ export const CardSlide = () => {
             <img
               className={s.slideImage}
               loading="lazy"
-              src={product.image}
+              src={product.mainImage}
               alt={product.title}
             />
           </SwiperSlide>

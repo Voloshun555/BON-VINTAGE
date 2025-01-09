@@ -12,6 +12,7 @@ export const Card = ({
   addFavoriteList,
   removeFavoriteList,
   isFavorite,
+  onClick,
 }) => {
   const handleFavoriteClick = () => {
     isFavorite ? removeFavoriteList(id) : addFavoriteList(id);
@@ -20,7 +21,12 @@ export const Card = ({
   return (
     <li className={s.containerCard}>
       <div className={s.containerImg}>
-        <img className={s.catalogImg} src={image} alt={title || "product"} />
+        <img
+          className={s.catalogImg}
+          src={image}
+          alt={title || "product"}
+          onClick={onClick}
+        />
         <button
           className={`${s.buttonHeart} ${
             isFavorite ? s.buttonHeartActive : ""

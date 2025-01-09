@@ -3,7 +3,8 @@ import { Card } from "@/components/Catalog/Card/Card.jsx";
 import { useFavorites } from "@/hooks/useFavorites";
 import s from "./CardList.module.scss";
 import { useSelector } from "react-redux";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+import { Modal } from "@/components/Modal/Modal";
 
 export const CardList = ({
   data,
@@ -13,8 +14,16 @@ export const CardList = ({
   selectedCategory,
   selectedFilter,
 }) => {
+  const [isOpenModal, setOpenModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
   const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
   const searchQuery = useSelector((state) => state.filter.searchQuery);
+
+  const toggleModal = (item = null) => {
+    setOpenModal(!isOpenModal);
+    setSelectedItem(item);
+  };
+
   const filteredData = useMemo(() => {
     if (!data || !Array.isArray(data)) return [];
     return data
@@ -54,30 +63,53 @@ export const CardList = ({
 
   return (
     <section className={s.container}>
-      <ul className={s.containerCards}>
-        {isLoading && <div>...Loading</div>}
-        {isError && <div>...Error</div>}
-        {!isLoading && !isError && sortedAndFilteredData.length > 0 ? (
-          sortedAndFilteredData.map(
-            ({ image, country, id, price, title, description }) => (
-              <Card
-                key={id}
-                id={id}
-                image={image}
-                country={country}
-                price={price}
-                title={title}
-                description={description}
-                addFavoriteList={addFavoriteList}
-                removeFavoriteList={removeFavoriteList}
-                isFavorite={isFavorite(id)}
-              />
+      {!isOpenModal ? (
+        <ul className={s.containerCards}>
+          {isLoading && <div>...Loading</div>}
+          {isError && <div>...Error</div>}
+          {!isLoading && !isError && sortedAndFilteredData.length > 0 ? (
+            sortedAndFilteredData.map(
+              ({
+                mainImage,
+                country,
+                id,
+                price,
+                title,
+                description,
+                gallery,
+              }) => (
+                <Card
+                  key={id}
+                  id={id}
+                  image={mainImage}
+                  country={country}
+                  price={price}
+                  title={title}
+                  description={description}
+                  addFavoriteList={addFavoriteList}
+                  removeFavoriteList={removeFavoriteList}
+                  isFavorite={isFavorite(id)}
+                  onClick={() =>
+                    toggleModal({
+                      mainImage,
+                      country,
+                      id,
+                      price,
+                      title,
+                      description,
+                      gallery,
+                    })
+                  }
+                />
+              )
             )
-          )
-        ) : (
-          <div className={s.emptyMessage}>Категорія відсутня</div>
-        )}
-      </ul>
+          ) : (
+            <div className={s.emptyMessage}>Категорія відсутня</div>
+          )}
+        </ul>
+      ) : (
+        <Modal onClose={toggleModal} data={selectedItem} />
+      )}
     </section>
   );
 };
