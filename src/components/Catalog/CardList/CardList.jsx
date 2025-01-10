@@ -18,7 +18,7 @@ export const CardList = ({
   const [selectedItem, setSelectedItem] = useState(null);
   const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
   const searchQuery = useSelector((state) => state.filter.searchQuery);
-
+  
   const toggleModal = (item = null) => {
     setOpenModal(!isOpenModal);
     setSelectedItem(item);
@@ -77,6 +77,8 @@ export const CardList = ({
                 title,
                 description,
                 gallery,
+                category,
+                material,
               }) => (
                 <Card
                   key={id}
@@ -98,6 +100,8 @@ export const CardList = ({
                       title,
                       description,
                       gallery,
+                      category,
+                      material,
                     })
                   }
                 />
