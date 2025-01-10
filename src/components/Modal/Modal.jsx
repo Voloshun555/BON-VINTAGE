@@ -32,7 +32,10 @@ export const Modal = ({ onClose, data }) => {
                 ) : item.type === "video" ? (
                   <div className={s.videoContainer}>
                     <video className={s.galleryVideo} controls={false}>
-                      <source src={item.url} type="video/mp4" />
+                      <source
+                        src={item.url.replace(".mp4", ".webm")}
+                        type="video/webm"
+                      />
                       Ваш браузер не підтримує відео.
                     </video>
                     <button
@@ -55,7 +58,6 @@ export const Modal = ({ onClose, data }) => {
           <div
             className={s.videoModalContent}
             onClick={(e) => e.stopPropagation()}
-            
           >
             <video className={s.modalVideo} controls autoPlay>
               <source src={videoModal} type="video/mp4" />
@@ -65,7 +67,7 @@ export const Modal = ({ onClose, data }) => {
               className={s.closeVideoButton}
               onClick={handleCloseVideoModal}
             >
-              ✖ 
+              ✖
             </button>
           </div>
         </div>
