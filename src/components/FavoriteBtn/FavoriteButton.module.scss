@@ -1,0 +1,9 @@
+  .buttonHeartActive{
+         fill: aqua;
+        }
+        .iconHeart{
+            transition: transform 0.25s ease, color 0.25s ease;
+            &:hover {
+             transform: scale(1.2);
+           }
+        }

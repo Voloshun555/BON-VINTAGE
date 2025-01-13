@@ -16,12 +16,14 @@
 
     @include mobile-and-tablet {
       display: flex;
-     flex-direction: column;
+      flex-direction: column;
     }
 
     .imageContainer {
+      position: relative;
       display: flex;
       height: 675px;
+      margin-bottom: 15px;
       gap: 20px;
 
       .mainImage {
@@ -29,6 +31,19 @@
         height: 675px;
         border-radius: 15px;
         object-fit: cover;
+      }
+      .grtg {
+        position: absolute;
+      }
+      .buttonHeart {
+        position: absolute;
+        bottom: 15px;
+        right: 150px;
+        .iconHeart {
+          color: rgb(237, 237, 237);
+          width: 50px;
+          height: 50px;
+        }
       }
 
       .gallery {
@@ -83,27 +98,38 @@
         }
       }
     }
-    .containerDescription{
+    .containerDescription {
       width: 500px;
 
-      .titleDes{
+      .titleDes {
         margin-bottom: 50px;
       }
 
-
-      .productDetails{
+      .productDetails {
         display: flex;
         flex-direction: column;
         gap: 5px;
         margin-bottom: 30px;
       }
 
-      .productInfo{
-         display: flex;
+      .productInfo {
+        display: flex;
         flex-direction: column;
         gap: 20px;
-        
       }
+    }
+    .addBasket {
+      width: 100%;
+      padding: 15px;
+      border-radius: 5px;
+      color: antiquewhite;
+      background-color: #1f2e44;
+      margin-bottom: 15px;
+    }
+    .priceInfo{
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
     }
   }
 
@@ -149,6 +175,7 @@
     }
   }
 }
+
 .gallery::-webkit-scrollbar {
   width: 2px;
   background-color: transparent;

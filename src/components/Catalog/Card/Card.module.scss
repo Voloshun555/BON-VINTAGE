@@ -1,7 +1,12 @@
-@import "@/scss/base/variables";
+@import "@/scss/base/variables.scss";
+@import "@/scss/base/mixins.scss";
 
 .containerCard {
+  display: flex;
+  flex-direction: column;
+
   width: 270px;
+  height: 100%;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -24,33 +29,18 @@
       position: absolute;
       bottom: 8px;
       right: 8px;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-
       .iconHeart {
         width: 35px;
         height: 35px;
         color: $primary-white;
-        transition: transform 0.25s ease, color 0.25s ease;
-
-        &:hover {
-          transform: scale(1.2);
-        }
-      }
-    }
-
-    .buttonHeartActive {
-      .iconHeart {
-        fill: aqua;
       }
     }
   }
 
   .item {
     margin-top: 15px;
+    margin-bottom: 10px;
     padding: 0 10px;
-
     .itemDetails {
       display: flex;
       justify-content: space-between;
@@ -72,5 +62,13 @@
       font-size: 14px;
       color: $primary-dark;
     }
+  }
+  .btnBascket {
+    margin: auto;
+    padding: 5px 0;
+    margin-bottom: 15px;
+    border: 2px solid #4f5a6c;
+    border-radius: 5px;
+    width: 90%;
   }
 }

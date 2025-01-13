@@ -1,12 +1,20 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import s from "./Modal.module.scss";
+import { useFavorites } from "@/hooks/useFavorites";
+import { FavoriteButton } from "../FavoriteBtn/FavoriteButton";
 
 export const Modal = ({ onClose, data }) => {
   const [currentImage, setCurrentImage] = useState(data.mainImage);
-  const [videoModal, setVideoModal] = useState(null); 
+  const [videoModal, setVideoModal] = useState(null);
   const handleCloseVideoModal = () => setVideoModal(null);
-  console.log(data)
+  const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
+
+  const handleFavoriteClick = () => {
+    isFavorite(data.id)
+      ? removeFavoriteList(data.id)
+      : addFavoriteList(data.id);
+  };
 
   return (
     <div className={s.modal}>
@@ -14,41 +22,54 @@ export const Modal = ({ onClose, data }) => {
         Вернутись назад
       </button>
       <div className={s.wrapInfo}>
-        <div className={s.imageContainer}>
-          <img
-            className={s.mainImage}
-            src={currentImage}
-            alt="Головне зображення"
-          />
-          <ul className={s.gallery}>
-            {data.gallery.map((item, index) => (
-              <li key={index} className={s.galleryItem}>
-                {item.type === "image" ? (
-                  <img
-                    className={s.galleryImage}
-                    src={item.url}
-                    alt={item.description || `Зображення ${index + 1}`}
-                    onClick={() => setCurrentImage(item.url)}
-                  />
-                ) : item.type === "video" ? (
-                  <div className={s.videoContainer}>
-                    <video className={s.galleryVideo} controls={false}>
-                      <source
-                        src={item.url.replace(".mp4", ".webm")}
-                        type="video/webm"
-                      />
-                      Ваш браузер не підтримує відео.
-                    </video>
-                    <button
-                      className={s.playButton}
-                      onClick={() => setVideoModal(item.url)}
-                    >
-                      ▶ Play
-                    </button>
-                  </div>
-                ) : null}
-              </li>
-            ))}
+        <div>
+          <div className={s.imageContainer}>
+            <img
+              className={s.mainImage}
+              src={currentImage}
+              alt="Головне зображення"
+            />
+            <FavoriteButton
+              buttonHeart={`${s.buttonHeart}`}
+              iconHeart={s.iconHeart}
+              isFavorite={isFavorite(data.id)}
+              onClick={handleFavoriteClick}
+            />
+            <ul className={s.gallery}>
+              {data.gallery.map((item, index) => (
+                <li key={index} className={s.galleryItem}>
+                  {item.type === "image" ? (
+                    <img
+                      className={s.galleryImage}
+                      src={item.url}
+                      alt={item.description || `Зображення ${index + 1}`}
+                      onClick={() => setCurrentImage(item.url)}
+                    />
+                  ) : item.type === "video" ? (
+                    <div className={s.videoContainer}>
+                      <video className={s.galleryVideo} controls={false}>
+                        <source
+                          src={item.url.replace(".mp4", ".webm")}
+                          type="video/webm"
+                        />
+                        Ваш браузер не підтримує відео.
+                      </video>
+                      <button
+                        className={s.playButton}
+                        onClick={() => setVideoModal(item.url)}
+                      >
+                        ▶ Play
+                      </button>
+                    </div>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <button className={s.addBasket}>ДОДАТИ ДО КОШИКУ</button>
+          <ul className={s.priceInfo}>
+            <li>€ 222</li>
+            <li>{data.price}: грн</li>
           </ul>
         </div>
         <div className={s.containerDescription}>
@@ -90,7 +111,6 @@ export const Modal = ({ onClose, data }) => {
           </ul>
         </div>
       </div>
-
       {videoModal && (
         <div className={s.videoModal} onClick={handleCloseVideoModal}>
           <div

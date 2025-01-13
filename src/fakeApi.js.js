@@ -37,14 +37,12 @@ const generateFakeData = (count) => {
       "Тканина",
       "Папір",
     ]),
-    mainImage: `https://picsum.photos/300/400?random=${index + 1}`, // Основна картинка
+    mainImage: `https://picsum.photos/300/400?random=${index + 1}`, 
     gallery: [
-      // Генеруємо 6 зображень
       ...Array.from({ length: 6 }).map((_, i) => ({
         type: "image",
         url: `https://picsum.photos/300/400?random=${index * 10 + i + 1}`,
       })),
-      // Додаємо відео
       {
         type: "video",
         url: "https://www.w3schools.com/html/mov_bbb.mp4",

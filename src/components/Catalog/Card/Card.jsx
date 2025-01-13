@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { CiHeart } from "react-icons/ci";
 import s from "./Card.module.scss";
+import { FavoriteButton } from "@/components/FavoriteBtn/FavoriteButton";
 
 export const Card = ({
   image,
@@ -14,9 +14,10 @@ export const Card = ({
   isFavorite,
   onClick,
 }) => {
-  const handleFavoriteClick = () => {
-    isFavorite ? removeFavoriteList(id) : addFavoriteList(id);
-  };
+   const handleFavoriteClick = () => {
+     isFavorite ? removeFavoriteList(id) : addFavoriteList(id);
+   };
+
 
   return (
     <li className={s.containerCard}>
@@ -24,29 +25,27 @@ export const Card = ({
         <img
           className={s.catalogImg}
           src={image}
-          alt={title || "product"}
+          alt={title || "Зображення продукту"}
           onClick={onClick}
         />
-        <button
-          className={`${s.buttonHeart} ${
-            isFavorite ? s.buttonHeartActive : ""
-          }`}
+        <FavoriteButton
+          buttonHeart={`${s.buttonHeart}`}
+          iconHeart={s.iconHeart}
+          isFavorite={isFavorite}
           onClick={handleFavoriteClick}
-          aria-label="Add to favorites"
-        >
-          <CiHeart className={s.iconHeart} />
-        </button>
+        />
       </div>
-      <ul className={s.item}>
-        <li className={s.itemList}>
-          <div className={s.itemDetails}>
-            <h3 className={s.itemTitle}>{description}</h3>
-            <p className={s.itemPrice}>Ціна: {price}</p>
-          </div>
-        </li>
-        <li className={s.itemList}>{title}</li>
-        <li className={s.itemList}>{country}</li>
-      </ul>
+      <div className={s.item}>
+        <div className={s.itemDetails}>
+          <h3 className={s.itemTitle}>{description}</h3>
+          <p className={s.itemPrice}>Ціна: {price}</p>
+        </div>
+        <p className={s.itemList}>{title}</p>
+        <p className={s.itemList}>{country}</p>
+      </div>
+      <button className={s.btnBascket} aria-label="Додати до кошика">
+        додати до кошику
+      </button>
     </li>
   );
 };
