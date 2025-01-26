@@ -9,8 +9,7 @@ import s from "@/scss/base/shared.module.scss";
 import { useMediaQuery } from "react-responsive";
 import { MTSelect } from "@/components/MTSelect/MTSelect";
 
-const Catalog = () => {
-  const { data, isLoading, isError } = useProducts(100);
+const Catalog = ({data, isLoading, isError}) => {
   const [sortType, setSortType] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedFilter, setSelectedFilter] = useState(null);

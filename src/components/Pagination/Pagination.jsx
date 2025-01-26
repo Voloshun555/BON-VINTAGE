@@ -27,7 +27,7 @@ export const Pagination = ({
         {arrPagination.map((page) => (
           <li
             key={page}
-            className={s.paginationItem}
+            className={`${s.paginationItem} ${curentPage === page ? s.isActive : ''}`}
             onClick={() => handlePageChange(page)}
           >
             <a href="#" className={s.paginationLink}>

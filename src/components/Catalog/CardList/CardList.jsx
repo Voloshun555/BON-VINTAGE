@@ -18,8 +18,8 @@ export const CardList = ({
   const [isOpenModal, setOpenModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [curentPage, setCurentPage] = useState(1);
-  const [cardsPerPage] = useState(12)
-  
+  const [cardsPerPage] = useState(12);
+
   const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
   const searchQuery = useSelector((state) => state.filter.searchQuery);
 
@@ -65,7 +65,6 @@ export const CardList = ({
     });
   }, [filteredData, sortType]);
 
-
   const lastCardIndex = curentPage * cardsPerPage;
   const firstCardIndex = lastCardIndex - cardsPerPage;
   const currentCards = sortedAndFilteredData.slice(
@@ -80,7 +79,8 @@ export const CardList = ({
           <ul className={s.containerCards}>
             {isLoading && <div>...Loading</div>}
             {isError && <div>...Error</div>}
-            {!isLoading && !isError && sortedAndFilteredData.length > 0 ? (
+            {!isLoading &&
+              !isError &&
               currentCards.map(
                 ({
                   mainImage,
@@ -119,17 +119,16 @@ export const CardList = ({
                     }
                   />
                 )
-              )
-            ) : (
-              <div className={s.emptyMessage}>Категорія відсутня</div>
-            )}
+              )}
           </ul>
-          <Pagination
-            totalCards={sortedAndFilteredData.length}
-            cardsPerPage={cardsPerPage}
-            curentPage={curentPage}
-            setCurrentPage={setCurentPage}
-          />
+          {currentCards.length > 0 ? (
+            <Pagination
+              totalCards={sortedAndFilteredData.length}
+              cardsPerPage={cardsPerPage}
+              curentPage={curentPage}
+              setCurrentPage={setCurentPage}
+            />
+          ) : null}
         </>
       ) : (
         <Modal onClose={toggleModal} data={selectedItem} />

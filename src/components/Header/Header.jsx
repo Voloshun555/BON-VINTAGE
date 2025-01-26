@@ -1,11 +1,11 @@
 import { FaRegUser, FaRegHeart, FaRegPaperPlane } from "react-icons/fa";
 import { BsBasket3 } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa6";
-import { CiSearch } from "react-icons/ci";
+import { CiGlass, CiSearch } from "react-icons/ci";
 import { CiMenuBurger } from "react-icons/ci";
 import { RxCross1 } from "react-icons/rx";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import s from "./Header.module.scss";
@@ -16,7 +16,8 @@ import { useMediaQuery } from "react-responsive";
 
 export const Header = () => {
   const [isOpen, setOpen] = useState();
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const totalFavorite = useSelector(
     (state) => state.favorite.favoriteList.length
@@ -25,6 +26,13 @@ export const Header = () => {
 
   const handleSearch = (e) => {
     dispatch(setSearchQuery(e.target.value));
+  };
+  const handleSumbit = (e) => {
+    e.preventDefault();
+    if (location.pathname !== "/catalog") {
+      navigate("/catalog");
+    }
+    searchQuery('')
   };
 
   const toggleMenu = () => {
@@ -65,14 +73,16 @@ export const Header = () => {
             <li className={s.listNavigation}>УВІЙ</li>
           </ul>
           <div className={s.searchContainer}>
-            <input
-              className={s.search}
-              type="text"
-              placeholder="Пошук"
-              value={searchQuery}
-              onChange={handleSearch}
-            />
-            <CiSearch className={s.searchIcon} />
+            <form onSubmit={handleSumbit}>
+              <input
+                className={s.search}
+                type="text"
+                placeholder="Пошук"
+                value={searchQuery}
+                onChange={handleSearch}
+              />
+              <CiSearch className={s.searchIcon} />
+            </form>
           </div>
         </nav>
         <div className={s.socialLinks}>
