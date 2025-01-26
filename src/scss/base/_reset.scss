@@ -1,6 +1,7 @@
+@use './variables' as *;
+
 body {
-  font-family: MessinaSansMono-Regular, RightGrotesk, BiroScriptPlus, Roboto,
-    sans-serif;
+  font-family: $default-font;
   background-color: rgba(234, 237, 202, 0.44);
   color: rgb(0, 0, 0);
   
