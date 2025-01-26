@@ -41,20 +41,18 @@
     margin-top: 15px;
     margin-bottom: 10px;
     padding: 0 10px;
-    .itemDetails {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
 
-      .itemTitle {
-        font-size: 16px;
-        font-weight: 600;
-      }
+    display: flex;
+    justify-content: space-between;
+    
+    .itemTitle {
+      font-size: 16px;
+      font-weight: 600;
+    }
 
-      .itemPrice {
-        font-size: 14px;
-        color: $primary-gray;
-      }
+    .itemPrice {
+      font-size: 14px;
+      color: $primary-gray;
     }
 
     .itemList {

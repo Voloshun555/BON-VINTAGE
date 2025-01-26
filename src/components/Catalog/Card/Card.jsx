@@ -4,7 +4,6 @@ import { FavoriteButton } from "@/components/FavoriteBtn/FavoriteButton";
 
 export const Card = ({
   image,
-  country,
   price,
   title,
   description,
@@ -36,12 +35,8 @@ export const Card = ({
         />
       </div>
       <div className={s.item}>
-        <div className={s.itemDetails}>
           <h3 className={s.itemTitle}>{description}</h3>
           <p className={s.itemPrice}>Ціна: {price}</p>
-        </div>
-        <p className={s.itemList}>{title}</p>
-        <p className={s.itemList}>{country}</p>
       </div>
       <button className={s.btnBascket} aria-label="Додати до кошика">
         додати до кошику
