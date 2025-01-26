@@ -5,6 +5,7 @@ import s from "./CardList.module.scss";
 import { useSelector } from "react-redux";
 import { useMemo, useState } from "react";
 import { Modal } from "@/components/Modal/Modal";
+import { Pagination } from "@/components/Pagination/Pagination";
 
 export const CardList = ({
   data,
@@ -16,6 +17,9 @@ export const CardList = ({
 }) => {
   const [isOpenModal, setOpenModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [curentPage, setCurentPage] = useState(1);
+  const [cardsPerPage] = useState(12)
+  
   const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
   const searchQuery = useSelector((state) => state.filter.searchQuery);
 
@@ -61,56 +65,72 @@ export const CardList = ({
     });
   }, [filteredData, sortType]);
 
+
+  const lastCardIndex = curentPage * cardsPerPage;
+  const firstCardIndex = lastCardIndex - cardsPerPage;
+  const currentCards = sortedAndFilteredData.slice(
+    firstCardIndex,
+    lastCardIndex
+  );
+
   return (
     <section className={s.container}>
       {!isOpenModal ? (
-        <ul className={s.containerCards}>
-          {isLoading && <div>...Loading</div>}
-          {isError && <div>...Error</div>}
-          {!isLoading && !isError && sortedAndFilteredData.length > 0 ? (
-            sortedAndFilteredData.map(
-              ({
-                mainImage,
-                country,
-                id,
-                price,
-                title,
-                description,
-                gallery,
-                category,
-                material,
-              }) => (
-                <Card
-                  key={id}
-                  id={id}
-                  image={mainImage}
-                  country={country}
-                  price={price}
-                  title={title}
-                  description={description}
-                  addFavoriteList={addFavoriteList}
-                  removeFavoriteList={removeFavoriteList}
-                  isFavorite={isFavorite(id)}
-                  onClick={() =>
-                    toggleModal({
-                      mainImage,
-                      country,
-                      id,
-                      price,
-                      title,
-                      description,
-                      gallery,
-                      category,
-                      material,
-                    })
-                  }
-                />
+        <>
+          <ul className={s.containerCards}>
+            {isLoading && <div>...Loading</div>}
+            {isError && <div>...Error</div>}
+            {!isLoading && !isError && sortedAndFilteredData.length > 0 ? (
+              currentCards.map(
+                ({
+                  mainImage,
+                  country,
+                  id,
+                  price,
+                  title,
+                  description,
+                  gallery,
+                  category,
+                  material,
+                }) => (
+                  <Card
+                    key={id}
+                    id={id}
+                    image={mainImage}
+                    country={country}
+                    price={price}
+                    title={title}
+                    description={description}
+                    addFavoriteList={addFavoriteList}
+                    removeFavoriteList={removeFavoriteList}
+                    isFavorite={isFavorite(id)}
+                    onClick={() =>
+                      toggleModal({
+                        mainImage,
+                        country,
+                        id,
+                        price,
+                        title,
+                        description,
+                        gallery,
+                        category,
+                        material,
+                      })
+                    }
+                  />
+                )
               )
-            )
-          ) : (
-            <div className={s.emptyMessage}>Категорія відсутня</div>
-          )}
-        </ul>
+            ) : (
+              <div className={s.emptyMessage}>Категорія відсутня</div>
+            )}
+          </ul>
+          <Pagination
+            totalCards={sortedAndFilteredData.length}
+            cardsPerPage={cardsPerPage}
+            curentPage={curentPage}
+            setCurrentPage={setCurentPage}
+          />
+        </>
       ) : (
         <Modal onClose={toggleModal} data={selectedItem} />
       )}

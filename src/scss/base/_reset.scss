@@ -1,15 +1,18 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 body {
   font-family: $default-font;
   background-color: rgba(234, 237, 202, 0.44);
   color: rgb(0, 0, 0);
-  
 }
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+a {
+  text-decoration: none;
 }
 
 button {
@@ -20,4 +23,3 @@ button {
     cursor: pointer;
   }
 }
-

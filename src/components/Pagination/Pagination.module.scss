@@ -1,0 +1,61 @@
+@import "@/scss/base/variables.scss";
+@import "@/scss/base/mixins.scss";
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  .pagination {
+    display: flex;
+    gap: 5px;
+
+    .paginationItem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 25px;
+      min-height: 25px;
+      padding: 5px;
+      background-color: $primary-blue;
+
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(0, 0, 0);
+        color: white;
+      }
+
+      .paginationLink {
+        color: $primary-white;
+      }
+    }
+  }
+
+  .prev,
+  .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    min-width: 25px;
+    min-height: 25px;
+    padding: 5px;
+    background-color: $primary-blue;
+    color: $primary-white;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(0, 0, 0);
+      color: white;
+    }
+  }
+  .prev {
+    margin-right: 10px;
+  }
+  .next {
+    margin-left: 10px;
+  }
+}
