@@ -9,8 +9,7 @@ const Catalog = lazy(() => import("./pages/Catalog"));
 const Favorite = lazy(() => import("./pages/Favorite"));
 
 function App() {
-  const { data, isLoading, isError } = useProducts(100);
-
+  const { data, isLoading, isError } = useProducts(250);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

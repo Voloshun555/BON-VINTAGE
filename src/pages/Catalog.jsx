@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 import { CardSlide } from "@/components/CardSlide/CardSlide";
 import { CardList } from "@/components/Catalog/CardList/CardList";
 import { Categorizer } from "@/components/Categorizer/Categorizer";
-import { useProducts } from "@/hooks/useProducts";
 import { useState } from "react";
 
 
