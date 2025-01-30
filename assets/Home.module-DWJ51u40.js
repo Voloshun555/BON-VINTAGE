@@ -1,0 +1,1 @@
+const o="_heroContainer_1gadx_1",t="_hero_1gadx_1",e="_logo_1gadx_34",n="_title_1gadx_39",i="_description_1gadx_45",_="_imageHero_1gadx_58",r="_logoTitle_1gadx_70",a="_containerFavorite_1gadx_87",c="_container_1gadx_87",g={heroContainer:o,hero:t,logo:e,title:n,description:i,imageHero:_,logoTitle:r,containerFavorite:a,container:c};export{g as s};
