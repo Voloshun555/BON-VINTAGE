@@ -19,7 +19,6 @@ export const CardList = ({
   const [selectedItem, setSelectedItem] = useState(null);
   const [curentPage, setCurentPage] = useState(1);
   const [cardsPerPage] = useState(12);
-
   const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
   const searchQuery = useSelector((state) => state.filter.searchQuery);
 
