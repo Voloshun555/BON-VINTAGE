@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/rules-of-hooks */
+
 import { categories } from "@/fakeApi.js";
 import shared from "@/scss/base/shared.module.scss";
 import { useState } from "react";

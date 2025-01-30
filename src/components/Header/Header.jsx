@@ -1,7 +1,7 @@
 import { FaRegUser, FaRegHeart, FaRegPaperPlane } from "react-icons/fa";
 import { BsBasket3 } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa6";
-import { CiGlass, CiSearch } from "react-icons/ci";
+import { CiSearch } from "react-icons/ci";
 import { CiMenuBurger } from "react-icons/ci";
 import { RxCross1 } from "react-icons/rx";
 
@@ -13,16 +13,17 @@ import { setSearchQuery } from "@/redux/searchQuerySlice/searchQuerySlice";
 import { useEffect, useState } from "react";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 import { useMediaQuery } from "react-responsive";
+import { favoriteList, searchQueryFilter } from "@/redux/selectors";
 
 export const Header = () => {
   const [isOpen, setOpen] = useState();
+
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const totalFavorite = useSelector(
-    (state) => state.favorite.favoriteList.length
-  );
-  const searchQuery = useSelector((state) => state.filter.searchQuery);
+
+  const totalFavorite = useSelector(favoriteList).length;
+  const searchQuery = useSelector(searchQueryFilter);
 
   const handleSearch = (e) => {
     dispatch(setSearchQuery(e.target.value));
@@ -32,7 +33,6 @@ export const Header = () => {
     if (location.pathname !== "/catalog") {
       navigate("/catalog");
     }
-    searchQuery('')
   };
 
   const toggleMenu = () => {

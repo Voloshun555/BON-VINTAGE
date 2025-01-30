@@ -3,10 +3,11 @@ import { CardList } from "@/components/Catalog/CardList/CardList";
 import { useSelector } from "react-redux";
 
 import s from "./Home.module.scss";
+import { favoriteList } from "@/redux/selectors";
 
 const Favorite = ({ data, isLoading, isError }) => {
-  const favoriteList = useSelector((state) => state.favorite.favoriteList);
-  const favoriteItems = data ? data.filter((item) => favoriteList.includes(item.id)) : [];
+  const favoriteListItems = useSelector(favoriteList);
+  const favoriteItems = data ? data.filter((item) => favoriteListItems.includes(item.id)) : [];
   
   return (
     <section className={s.containerFavorite}>

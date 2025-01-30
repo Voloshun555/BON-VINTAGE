@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { materials } from "@/fakeApi.js";
 import shared from "@/scss/base/shared.module.scss";
 import { useState } from "react";

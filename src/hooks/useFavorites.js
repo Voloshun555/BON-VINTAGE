@@ -3,10 +3,11 @@ import {
   addFavorite,
   removeFavorite,
 } from "@/redux/favoriteSlice/favoriteSlice";
+import { favoriteList } from "@/redux/selectors";
 
 export const useFavorites = () => {
     const dispatch = useDispatch();
-    const favorites = useSelector((state) => state.favorite.favoriteList);
+    const favorites = useSelector(favoriteList);
     
     const addFavoriteList = (id) => {
       dispatch(addFavorite(id));
