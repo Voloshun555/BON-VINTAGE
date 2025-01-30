@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { CiGlass } from "react-icons/ci";
 import s from "./Pagination.module.scss";
 
 export const Pagination = ({
@@ -8,6 +9,7 @@ export const Pagination = ({
   setCurrentPage,
 }) => {
   const totalPages = Math.ceil(totalCards / cardsPerPage);
+<<<<<<< Updated upstream
   const visibleCount = 12;
 
   let startPage = Math.max(1, curentPage - Math.floor(visibleCount / 2));
@@ -22,6 +24,10 @@ export const Pagination = ({
     { length: endPage - startPage + 1 },
     (_, i) => startPage + i
   );
+=======
+  const arrPagination = Array.from({ length: totalPages }, (_, i) => i + 1);
+  
+>>>>>>> Stashed changes
 
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
@@ -30,7 +36,7 @@ export const Pagination = ({
   };
 
   return (
-    <section className={s.container}>
+    <div className={s.container}>
       <button
         className={s.prev}
         disabled={curentPage === 1}
@@ -95,6 +101,6 @@ export const Pagination = ({
       >
         --&gt;
       </button>
-    </section>
+    </div>
   );
 };

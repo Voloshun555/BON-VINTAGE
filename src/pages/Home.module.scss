@@ -64,7 +64,7 @@
   font-size: clamp(20px, 3vw, 25px);
   color: #1f2e44;
 
-  @include tablet-only {
+  @include tablet-only {  
     font-size: clamp(10px, 3vw, 50px);
   }
   @include desktop-only {
@@ -75,7 +75,10 @@
 }
 
 .containerFavorite {
-  width: 1440px;
   padding: 20px;
   margin: 25px auto;
+  .container{
+    display: flex;
+    justify-content: center;
+  }
 }

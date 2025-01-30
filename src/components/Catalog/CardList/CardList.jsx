@@ -73,7 +73,7 @@ export const CardList = ({
   );
 
   return (
-    <section className={s.container}>
+    <div className={s.container}>
       {!isOpenModal ? (
         <>
           <ul className={s.containerCards}>
@@ -133,6 +133,6 @@ export const CardList = ({
       ) : (
         <Modal onClose={toggleModal} data={selectedItem} />
       )}
-    </section>
+    </div>
   );
 };
