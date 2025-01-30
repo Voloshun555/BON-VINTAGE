@@ -1,26 +1,32 @@
 /* eslint-disable react/prop-types */
 import { Card } from "@/components/Catalog/Card/Card.jsx";
 import { useFavorites } from "@/hooks/useFavorites";
-import s from "./CardList.module.scss";
 import { useSelector } from "react-redux";
 import { useMemo, useState } from "react";
 import { Modal } from "@/components/Modal/Modal";
 import { Pagination } from "@/components/Pagination/Pagination";
+import {
+  searchQueryFilter,
+  selectCatalogCategory,
+  selectCatalogFilter,
+  selectCatalogSortType,
+} from "@/redux/selectors";
 
-export const CardList = ({
-  data,
-  isLoading,
-  isError,
-  sortType,
-  selectedCategory,
-  selectedFilter,
-}) => {
+import s from "./CardList.module.scss";
+
+export const CardList = ({ data, isLoading, isError }) => {
+  
   const [isOpenModal, setOpenModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [curentPage, setCurentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [cardsPerPage] = useState(12);
+
   const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
-  const searchQuery = useSelector((state) => state.filter.searchQuery);
+
+  const searchQuery = useSelector(searchQueryFilter);
+  const selectedFilter = useSelector(selectCatalogFilter);
+  const selectedCategory = useSelector(selectCatalogCategory);
+  const sortType = useSelector(selectCatalogSortType);
 
   const toggleModal = (item = null) => {
     setOpenModal(!isOpenModal);
@@ -28,24 +34,27 @@ export const CardList = ({
   };
 
   const filteredData = useMemo(() => {
-    if (!data || !Array.isArray(data)) return [];
-    return data
-      .filter((item) => {
-        const query = searchQuery.toLowerCase();
-        return (
-          item.title.toLowerCase().includes(query) ||
-          item.description.toLowerCase().includes(query) ||
-          item.country.toLowerCase().includes(query) ||
-          item.category.toLowerCase().includes(query) ||
-          item.material.toLowerCase().includes(query)
-        );
-      })
-      .filter((item) => {
-        return selectedCategory ? item.category === selectedCategory : true;
-      })
-      .filter((item) => {
-        return selectedFilter ? item.material === selectedFilter : true;
-      });
+    if (!Array.isArray(data)) return [];
+
+    return data.filter((item) => {
+      const query = searchQuery.toLowerCase();
+      const matchesQuery = [
+        item.title,
+        item.description,
+        item.country,
+        item.category,
+        item.material,
+      ].some((field) => field.toLowerCase().includes(query));
+
+      const matchesCategory = selectedCategory
+        ? item.category === selectedCategory
+        : true;
+      const matchesFilter = selectedFilter
+        ? item.material === selectedFilter
+        : true;
+
+      return matchesQuery && matchesCategory && matchesFilter;
+    });
   }, [data, searchQuery, selectedCategory, selectedFilter]);
 
   const sortedAndFilteredData = useMemo(() => {
@@ -64,7 +73,7 @@ export const CardList = ({
     });
   }, [filteredData, sortType]);
 
-  const lastCardIndex = curentPage * cardsPerPage;
+  const lastCardIndex = currentPage * cardsPerPage;
   const firstCardIndex = lastCardIndex - cardsPerPage;
   const currentCards = sortedAndFilteredData.slice(
     firstCardIndex,
@@ -124,8 +133,8 @@ export const CardList = ({
             <Pagination
               totalCards={sortedAndFilteredData.length}
               cardsPerPage={cardsPerPage}
-              curentPage={curentPage}
-              setCurrentPage={setCurentPage}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
             />
           ) : null}
         </>

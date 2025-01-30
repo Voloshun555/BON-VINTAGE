@@ -1,30 +1,31 @@
 /* eslint-disable react/prop-types */
 import Select from "react-select";
+import { useDispatch } from "react-redux";
+import {
+  setSelectedCategory,
+  setSelectedFilter,
+  setSortType,
+} from "@/redux/viewOptionsSlice/viewOptionsSlice";
 import { sortOptions, categories, materials } from "@/fakeApi.js";
-import s from "./MTSelect.module.scss";
-import { useState } from "react";
 
-export const MTSelect = ({
-  onSortChange,
-  onCategoryChange,
-  onFilterChange,
-}) => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedFilter, setSelectedFilter] = useState(null);
+import s from "./MTSelect.module.scss";
+
+export const MTSelect = () => {
+  const dispatch = useDispatch();
+
   const handleCategoryClick = (selectedOption) => {
     const value = selectedOption ? selectedOption.value : null;
-    setSelectedCategory(value);
-    onCategoryChange(value);
+    dispatch(setSelectedCategory(value));
   };
 
   const handleFilterClick = (selectedOption) => {
     const value = selectedOption ? selectedOption.value : null;
-    setSelectedFilter(value);
-    onFilterChange(value);
+    dispatch(setSelectedFilter(value));
   };
 
   const handleSortChange = (selectedOption) => {
-    onSortChange(selectedOption ? selectedOption.value : null);
+    const value = selectedOption ? selectedOption.value : null;
+    dispatch(setSortType(value));
   };
   return (
     <section className={s.container}>
@@ -48,11 +49,6 @@ export const MTSelect = ({
             <Select
               classNamePrefix="custom-select"
               options={categories.map((item) => ({ label: item, value: item }))}
-              value={
-                categories.find((item) => item === selectedCategory)
-                  ? { label: selectedCategory, value: selectedCategory }
-                  : null
-              }
               isClearable={true}
               isSearchable={true}
               placeholder="Оберіть категорію"
@@ -66,11 +62,6 @@ export const MTSelect = ({
             <Select
               classNamePrefix="custom-select"
               options={materials.map((item) => ({ value: item, label: item }))}
-              value={
-                materials.find((item) => item === selectedFilter)
-                  ? { label: selectedFilter, value: selectedFilter }
-                  : null
-              }
               isClearable={true}
               isSearchable={true}
               placeholder="Оберіть матеріал"

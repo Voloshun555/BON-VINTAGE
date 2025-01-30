@@ -11,7 +11,8 @@ import {
   REGISTER,
   REHYDRATE,
 } from "redux-persist";
-import { filterSlice } from "./searchQuery/searchQuery";
+import { filterSlice } from "./searchQuerySlice/searchQuerySlice";
+import { viewOptionsSlice } from "./viewOptionsSlice/viewOptionsSlice";
 
 const persistConfig = {
   key: "root",
@@ -22,6 +23,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   favorite: favoriteSlice.reducer,
   filter: filterSlice.reducer,
+  options: viewOptionsSlice.reducer,
 });
 
 const persistUsersReducer = persistReducer(persistConfig, rootReducer);

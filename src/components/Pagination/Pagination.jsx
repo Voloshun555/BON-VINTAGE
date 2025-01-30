@@ -4,13 +4,13 @@ import s from "./Pagination.module.scss";
 export const Pagination = ({
   totalCards,
   cardsPerPage,
-  curentPage,
+  currentPage,
   setCurrentPage,
 }) => {
   const totalPages = Math.ceil(totalCards / cardsPerPage);
   const visibleCount = 12;
 
-  let startPage = Math.max(1, curentPage - Math.floor(visibleCount / 2));
+  let startPage = Math.max(1, currentPage - Math.floor(visibleCount / 2));
   let endPage = startPage + visibleCount - 1;
 
   if (endPage > totalPages) {
@@ -33,8 +33,8 @@ export const Pagination = ({
     <section className={s.container}>
       <button
         className={s.prev}
-        disabled={curentPage === 1}
-        onClick={() => handlePageChange(curentPage - 1)}
+        disabled={currentPage === 1}
+        onClick={() => handlePageChange(currentPage - 1)}
       >
         &lt;--
       </button>
@@ -42,7 +42,7 @@ export const Pagination = ({
         <div className={s.prevContainer}>
           <button
             className={s.prev}
-            disabled={curentPage === 1}
+            disabled={currentPage === 1}
             onClick={() => handlePageChange(1)}
           >
             1
@@ -60,7 +60,7 @@ export const Pagination = ({
           <li
             key={page}
             className={`${s.paginationItem} ${
-              curentPage === page ? s.isActive : ""
+              currentPage === page ? s.isActive : ""
             }`}
             onClick={() => handlePageChange(page)}
           >
@@ -81,7 +81,7 @@ export const Pagination = ({
           </button>
           <button
             className={s.next}
-            disabled={curentPage === totalPages}
+            disabled={currentPage === totalPages}
             onClick={() => handlePageChange(totalPages)}
           >
             {totalPages}
@@ -90,8 +90,8 @@ export const Pagination = ({
       )}
       <button
         className={s.next}
-        disabled={curentPage === totalPages}
-        onClick={() => handlePageChange(curentPage + 1)}
+        disabled={currentPage === totalPages}
+        onClick={() => handlePageChange(currentPage + 1)}
       >
         --&gt;
       </button>

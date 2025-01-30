@@ -1,15 +1,17 @@
-/* eslint-disable react/prop-types */
-import { useState } from "react";
 import s from "./Sort.module.scss";
 import shared from "@/scss/base/shared.module.scss";
 import { sortOptions } from "@/fakeApi.js";
+import { useDispatch } from "react-redux";
+import { setSortType } from "@/redux/viewOptionsSlice/viewOptionsSlice";
+import { useState } from "react";
 
-export const Sort = ({ onSortChange }) => {
-  const [selectedSort, setSelectedSort] = useState();
+export const Sort = () => {
+  const [activeSort, setActiveSort] = useState(null);
+  const dispatch = useDispatch();
 
   const handleSortChange = (sortType) => {
-    setSelectedSort(sortType);
-    onSortChange(sortType);
+    setActiveSort(sortType);
+    dispatch(setSortType(sortType));
   };
 
   return (
@@ -22,7 +24,7 @@ export const Sort = ({ onSortChange }) => {
           <li
             key={value}
             className={`${shared.listCategories} ${
-              selectedSort === value ? s.active : ""
+              activeSort === value ? s.active : ""
             }`}
             onClick={() => handleSortChange(value)}
           >

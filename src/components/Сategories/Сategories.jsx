@@ -4,21 +4,20 @@ import { categories } from "@/fakeApi.js";
 import shared from "@/scss/base/shared.module.scss";
 import { useState } from "react";
 
+import { useDispatch } from "react-redux";
+import { setSelectedCategory } from "@/redux/viewOptionsSlice/viewOptionsSlice";
 
-import s from './Categories.module.scss'
+import s from "./Categories.module.scss";
 
-export const Сategories = ({ onCategoryChange }) => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  
+export const Сategories = () => {
+  const [activeCategories, setActiveCategories] = useState();
+
+  const dispatch = useDispatch();
+
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category === selectedCategory ? null : category);
-    onCategoryChange(category);
+    setActiveCategories(category);
+    dispatch(setSelectedCategory(category));
   };
-
-    const handleReset = () => {
-      setSelectedCategory(null);
-      onCategoryChange(null);
-    };
 
   return (
     <div>
@@ -30,7 +29,7 @@ export const Сategories = ({ onCategoryChange }) => {
           <li
             key={item}
             className={`${shared.listCategories} ${
-              selectedCategory === item ? s.active : ""
+              activeCategories === item ? s.active : ""
             }`}
             onClick={() => handleCategoryClick(item)}
           >
@@ -39,7 +38,7 @@ export const Сategories = ({ onCategoryChange }) => {
         ))}
         <li
           className={`${shared.listCategories} ${shared.resetButton}`}
-          onClick={handleReset}
+          onClick={() => handleCategoryClick(null)}
         >
           Скинути фільтр
         </li>

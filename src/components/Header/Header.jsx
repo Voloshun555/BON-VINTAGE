@@ -9,7 +9,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import s from "./Header.module.scss";
-import { setSearchQuery } from "@/redux/searchQuery/searchQuery";
+import { setSearchQuery } from "@/redux/searchQuerySlice/searchQuerySlice";
 import { useEffect, useState } from "react";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 import { useMediaQuery } from "react-responsive";

@@ -2,16 +2,17 @@
 import { materials } from "@/fakeApi.js";
 import shared from "@/scss/base/shared.module.scss";
 import { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { setSelectedFilter } from "@/redux/viewOptionsSlice/viewOptionsSlice";
 import s from "./Filter.module.scss"
 
-export const Filter = ({onFilterChange}) => {
-  const [selectedFilter, setSelectedFilter] = useState()
-
+export const Filter = () => {
+  const [activeFilter, setActiveFilter] = useState()
+  const dispatch = useDispatch();
 
   const handleFilterClik = (filter) => {
-    setSelectedFilter(filter === selectedFilter ? null : filter);
-    onFilterChange(filter);
+    setActiveFilter(filter)
+    dispatch(setSelectedFilter(filter))
   }
 
   return (
@@ -25,7 +26,7 @@ export const Filter = ({onFilterChange}) => {
           <li
             key={item}
             className={`${shared.listCategories} ${
-              selectedFilter === item ? s.active : ""
+              activeFilter === item ? s.active : ""
             }`}
             onClick={() => handleFilterClik(item)}
           >
