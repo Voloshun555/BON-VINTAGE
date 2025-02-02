@@ -22,7 +22,8 @@ export const CardList = ({ data, isLoading, isError }) => {
     setSelectedItem(item);
   };
 
-  const filteredData = useFilteredCards(data);
+ const filteredData = useFilteredCards(data);
+
 
   const lastCardIndex = currentPage * cardsPerPage;
   const firstCardIndex = lastCardIndex - cardsPerPage;

@@ -4,6 +4,8 @@ const initialState = {
   sortType: "",
   selectedCategory: null,
   selectedFilter: null,
+  selectedCategoryByFilter: [],
+  selectedFilterByCategory: [],
 };
 
 export const viewOptionsSlice = createSlice({
@@ -19,10 +21,19 @@ export const viewOptionsSlice = createSlice({
     setSelectedFilter: (state, action) => {
       state.selectedFilter = action.payload;
     },
+    updateVisibleCategories: (state, action) => {
+      state.selectedCategoryByFilter = action.payload;
+    },
+    updateVisibleFilterMaterials: (state, action) => {
+      state.selectedFilterByCategory = action.payload;
+    },
   },
 });
 
-export const { setSortType, setSelectedCategory, setSelectedFilter } =
-  viewOptionsSlice.actions;
-
-export const selectCatalogState = (state) => state.catalog;
+export const {
+  setSortType,
+  setSelectedCategory,
+  setSelectedFilter,
+  updateVisibleCategories,
+  updateVisibleFilterMaterials,
+} = viewOptionsSlice.actions;
