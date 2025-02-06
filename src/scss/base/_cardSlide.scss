@@ -1,21 +1,26 @@
-// .swiper {
-//   width: 100%;
-//   height: auto;
-// }
-// .swiper-wrapper {
+@import "@/scss/base/variables.scss";
+@import "@/scss/base/mixins.scss";
+.swiper {
+  width: 100%;
+  height: auto;
+}
+.swiper-wrapper {
+  // height: 250px;
+}
+.swiper-slide {
+  @include tablet-only {
+    img {
+  
+    }
+  }
+}
 
-// }
-// .swiper-slide {
-//   img {
-//   }
-// }
+@media (max-width: 833px) {
+  .swiper-slide img {
+  }
+}
 
-// @media (max-width: 833px) {
-//   .swiper-slide img {
-//   }
-// }
-
-// @media (min-width: 1200px) {
-//   .swiper-slide img {
-//   }
-// }
+@media (min-width: 1200px) {
+  .swiper-slide img {
+  }
+}

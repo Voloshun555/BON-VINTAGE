@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useMediaQuery } from "react-responsive";
 import s from "./Pagination.module.scss";
 
 export const Pagination = ({
@@ -7,8 +8,9 @@ export const Pagination = ({
   currentPage,
   setCurrentPage,
 }) => {
+  const isMobile = useMediaQuery({ maxWidth: 833 });
   const totalPages = Math.ceil(totalCards / cardsPerPage);
-  const visibleCount = 12;
+  const visibleCount = isMobile ? 4 : 12;
 
   let startPage = Math.max(1, currentPage - Math.floor(visibleCount / 2));
   let endPage = startPage + visibleCount - 1;
@@ -31,13 +33,16 @@ export const Pagination = ({
 
   return (
     <section className={s.container}>
-      <button
-        className={s.prev}
-        disabled={currentPage === 1}
-        onClick={() => handlePageChange(currentPage - 1)}
-      >
-        &lt;--
-      </button>
+      {!isMobile && (
+        <button
+          className={s.prev}
+          disabled={currentPage === 1}
+          onClick={() => handlePageChange(currentPage - 1)}
+        >
+          &lt;--
+        </button>
+      )}
+
       {startPage > 2 && (
         <div className={s.prevContainer}>
           <button
@@ -88,13 +93,16 @@ export const Pagination = ({
           </button>
         </div>
       )}
-      <button
-        className={s.next}
-        disabled={currentPage === totalPages}
-        onClick={() => handlePageChange(currentPage + 1)}
-      >
-        --&gt;
-      </button>
+
+      {!isMobile && (
+        <button
+          className={s.next}
+          disabled={currentPage === totalPages}
+          onClick={() => handlePageChange(currentPage + 1)}
+        >
+          --&gt;
+        </button>
+      )}
     </section>
   );
 };

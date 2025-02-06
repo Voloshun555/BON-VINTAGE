@@ -12,8 +12,10 @@
   padding: 36px;
   background-color: #1e1e1e;
   z-index: 1000;
-
-
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0s 0.3s;
 
   .closeButton {
     align-self: flex-end;
@@ -24,7 +26,7 @@
   }
 
   .closeIcon {
-     color: white;
+    color: white;
   }
 
   .itemNavLink {
@@ -63,4 +65,11 @@
   .icon:hover {
     color: #007bff;
   }
+
+ 
 }
+.container.active {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;}

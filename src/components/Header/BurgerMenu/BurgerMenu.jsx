@@ -10,11 +10,13 @@ import { RxCross1 } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
 import s from "./BurgerMenu.module.scss";
 
+
 const BurgerMenuModal = document.getElementById("MenuBurger");
 
-export const BurgerMenu = ({ onClose }) => {
+export const BurgerMenu = ({ onClose, isOpen}) => {
+
   return createPortal(
-    <section className={s.container}>
+    <section className={`${s.container} ${isOpen ? s.active : ""}`}>
       <button className={s.closeButton} onClick={onClose}>
         <RxCross1 className={s.closeIcon} />
       </button>

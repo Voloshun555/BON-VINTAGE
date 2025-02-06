@@ -16,7 +16,7 @@ import { useMediaQuery } from "react-responsive";
 import { favoriteList, searchQueryFilter } from "@/redux/selectors";
 
 export const Header = () => {
-  const [isOpen, setOpen] = useState();
+  const [isOpen, setOpen] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -110,7 +110,7 @@ export const Header = () => {
           )}
         </button>
       </div>
-      {isOpen && <BurgerMenu onClose={toggleMenu} />}
+      <BurgerMenu onClose={toggleMenu} isOpen={isOpen} />
     </header>
   );
 };

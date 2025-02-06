@@ -81,7 +81,7 @@ export const CardList = ({ data, isLoading, isError }) => {
                 )
               )}
           </ul>
-          {currentCards.length > 0 ? (
+          {  currentCards.length > 0 ? (
             <Pagination
               totalCards={filteredData.length}
               cardsPerPage={cardsPerPage}

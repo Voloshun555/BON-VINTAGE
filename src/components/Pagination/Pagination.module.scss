@@ -1,11 +1,13 @@
 @import "@/scss/base/variables.scss";
 @import "@/scss/base/mixins.scss";
 
-
 .container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  @include mobile-only {
+    margin-bottom: 20px;
+  }
   .pagination {
     display: flex;
     gap: 5px;
@@ -31,12 +33,12 @@
         color: $primary-white;
       }
     }
-    .isActive{
+    .isActive {
       background-color: rgb(136, 184, 184);
     }
   }
 
-  .prevContainer{
+  .prevContainer {
     display: flex;
   }
 
@@ -58,7 +60,7 @@
       background-color: rgb(0, 0, 0);
       color: white;
     }
-    &:disabled{
+    &:disabled {
       display: none;
     }
   }

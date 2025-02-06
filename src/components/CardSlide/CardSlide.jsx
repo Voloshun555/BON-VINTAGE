@@ -27,8 +27,8 @@ export const CardSlide = () => {
         spaceBetween={10}
         breakpoints={{
           834: {
-            slidesPerView: 4,
-            spaceBetween: 50,
+            slidesPerView: 5,
+            spaceBetween: 20,
           },
           1440: {
             slidesPerView: 8,
