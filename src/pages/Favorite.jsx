@@ -4,14 +4,18 @@ import { useSelector } from "react-redux";
 
 import s from "./Home.module.scss";
 import { favoriteList } from "@/redux/selectors";
+import { Title } from "@/components/Title/Title";
 
 const Favorite = ({ data, isLoading, isError }) => {
   const favoriteListItems = useSelector(favoriteList);
-  const favoriteItems = data ? data.filter((item) => favoriteListItems.includes(item.id)) : [];
-  
+  const favoriteItems = data
+    ? data.filter((item) => favoriteListItems.includes(item.id))
+    : [];
+
   return (
     <section className={s.containerFavorite}>
       <div className={s.container}>
+        <Title />
         <CardList
           data={favoriteItems}
           isLoading={isLoading}

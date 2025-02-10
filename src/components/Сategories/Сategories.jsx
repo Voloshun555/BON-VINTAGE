@@ -40,7 +40,7 @@ export const Categories = () => {
           <li
             key={item}
             className={`${shared.listCategories} ${
-              activeCategories === item ? s.active : ""
+              activeCategories === item ? shared.active : ""
             } 
               ${
                 disableCategori.length > 0 && disableCategori.includes(item)

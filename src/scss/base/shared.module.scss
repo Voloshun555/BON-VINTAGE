@@ -15,9 +15,15 @@
 }
 .grupCategories {
   margin-bottom: 25px;
+  color: $primary-blue-categorise;
   .listCategories:not(:last-child) {
     margin-bottom: 10px;
   }
+}
+
+.listCategories:hover{
+color: $primary-blue;
+cursor: pointer;
 }
 
 .containerCategorizer {
@@ -34,4 +40,7 @@
     padding: 20px 34px;
     margin: auto;
   }
+}
+.active{
+  color: $primary-blue;
 }

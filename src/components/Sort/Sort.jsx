@@ -24,7 +24,7 @@ export const Sort = () => {
           <li
             key={value}
             className={`${shared.listCategories} ${
-              activeSort === value ? s.active : ""
+              activeSort === value ? shared.active : ""
             }`}
             onClick={() => handleSortChange(value)}
           >

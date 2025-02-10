@@ -44,7 +44,7 @@ export const FilterMaterials = () => {
           <li
             key={item}
             className={`${shared.listCategories} ${
-              activeFilter === item ? s.active : ""
+              activeFilter === item ? shared.active : ""
             } ${
               disableMaterials.length > 0 && disableMaterials.includes(item)
                 ? s.disabled
