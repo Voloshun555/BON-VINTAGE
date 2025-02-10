@@ -39,7 +39,7 @@ export const Header = () => {
     setOpen(!isOpen);
   };
 
-  const isMobile = useMediaQuery({ maxWidth: 833 });
+  const isMobile = useMediaQuery({ maxWidth: 1439 });
 
   useEffect(() => {
     if (!isMobile) {
@@ -50,7 +50,9 @@ export const Header = () => {
   return (
     <header className={s.header}>
       <div className={s.container}>
-        <p className={s.logo}>BON VINTAGE</p>
+        <p className={s.logo}>
+          BON <span className={s.mobiLogoNone}>VINTAGE</span>{" "}
+        </p>
         <nav>
           <ul className={s.navigation}>
             {[

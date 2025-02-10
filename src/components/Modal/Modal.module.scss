@@ -2,6 +2,10 @@
 @import "@/scss/base/mixins.scss";
 
 .modal {
+  @include mobile-only {
+    width: 315px;
+    padding: 15px;
+  }
   .closeButton {
     padding: 5px;
     background-color: $primary-blue;
@@ -38,6 +42,9 @@
         height: 675px;
         border-radius: 15px;
         object-fit: cover;
+        @include mobile-only {
+          height: 300px;
+        }
       }
 
       .buttonHeart {
@@ -45,8 +52,13 @@
         bottom: 15px;
         right: 150px;
 
+        @include mobile-only {
+          bottom: 140px;
+          right: 20px;
+        }
+
         .iconHeart {
-          color: rgb(237, 237, 237);
+          color: $primary-white;
           width: 50px;
           height: 50px;
         }
@@ -68,11 +80,22 @@
           height: 100%;
         }
 
+        @include mobile-only {
+          width: 285px;
+          padding: 5px;
+        }
+
         .galleryItem {
           flex: 0 0 auto;
           width: 100px;
           height: 100px;
           border-radius: 15px;
+
+          @include mobile-only {
+            width: 80px;
+            height: 80px;
+          
+          }
 
           .galleryImage {
             width: 100%;
@@ -88,6 +111,12 @@
             width: 100px;
             height: 100px;
 
+            @include mobile-only {
+              width: 80px;
+              height: 80px;
+            
+            }
+
             .galleryVideo {
               width: 100%;
               height: 100%;
@@ -101,7 +130,7 @@
               left: 50%;
               transform: translate(-50%, -50%);
               background-color: rgba(20, 19, 19, 0.571);
-              color: white;
+              color: $primary-white;
               border: none;
               border-radius: 50%;
               width: 40px;
@@ -118,6 +147,10 @@
 
     .containerDescription {
       width: 500px;
+
+      @include mobile-only {
+        width: 280px;
+      }
 
       .titleDes {
         margin-bottom: 50px;
@@ -141,8 +174,8 @@
       width: 100%;
       padding: 15px;
       border-radius: 5px;
-      color: antiquewhite;
-      background-color: #1f2e44;
+      color: $primary-white;
+      background-color: $primary-blue;
       margin-bottom: 15px;
     }
 
@@ -181,7 +214,7 @@
         top: 5px;
         right: 20px;
         background-color: #ffffff14;
-        color: black;
+        color: $primary-dark;
         border: none;
         border-radius: 50%;
         width: 30px;
@@ -196,8 +229,11 @@
 }
 
 .gallery::-webkit-scrollbar {
-  width: 2px;
+  width: 1px;
   background-color: transparent;
+  @include mobile-only {
+    height: 5px;
+  }
 }
 
 .gallery::-webkit-scrollbar-thumb {

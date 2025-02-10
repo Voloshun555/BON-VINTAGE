@@ -32,6 +32,12 @@
     }
   }
 
+  .mobiLogoNone {
+    @include mobile-only {
+      display: none;
+    }
+  }
+
   .navigation {
     display: flex;
     align-items: center;
@@ -74,15 +80,21 @@
       border-radius: 5px;
       border: 1px solid $primary-white;
       background-color: inherit;
+      @include mobile-only {
+        width: clamp(100px, 40vw, 400px);
+        height: 55px;
+        border-radius: 25px;
+        margin-right: auto;
+      }
 
       &::placeholder {
         font-size: 15px;
         color: $primary-white;
       }
 
-      @include mobile-only {
-        display: none;
-      }
+      // @include mobile-only {
+      //   display: none;
+      // }
     }
 
     .searchIcon {
@@ -91,10 +103,11 @@
       top: 50%;
       transform: translateY(-35%);
       color: $primary-white;
-      @include mobile-only {
-        display: none;
-      }
     }
+
+    // @include mobile-only {
+    //   display: none;
+    // }
   }
 
   .socialLinks {
@@ -107,8 +120,9 @@
       color: $primary-white;
 
       @include tablet-only {
-        width: clamp(25px, 3vw, 35px);
-        height: clamp(25px, 3vw, 35px);
+        // width: clamp(25px, 3vw, 35px);
+        // height: clamp(25px, 3vw, 35px);
+        display: none;
       }
     }
 
@@ -120,7 +134,9 @@
   .userActions {
     display: flex;
     gap: 10px;
-
+    @include mobile-only {
+      display: none;
+    }
     .wrapIcon {
       position: relative;
 
@@ -154,14 +170,11 @@
         display: none;
       }
     }
-    @include mobile-only {
-      display: none;
-    }
   }
   .buttonBurger {
     display: none;
 
-    @include mobile-only {
+    @include mobile-and-tablet {
       display: block;
     }
     .burgerIcon {

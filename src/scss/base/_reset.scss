@@ -1,9 +1,12 @@
 @use "./variables" as *;
 
+
 body {
   font-family: $default-font;
   background-color: rgba(234, 237, 202, 0.44);
   color: rgb(0, 0, 0);
+  overflow-x: hidden;
+ 
 }
 img {
   display: block;
@@ -22,4 +25,5 @@ button {
   &:hover {
     cursor: pointer;
   }
+  padding: 0;
 }
