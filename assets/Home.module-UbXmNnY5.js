@@ -1,1 +1,0 @@
-const o="_heroContainer_gy5a5_1",t="_hero_gy5a5_1",e="_logo_gy5a5_34",n="_title_gy5a5_39",i="_description_gy5a5_45",_="_imageHero_gy5a5_58",r="_logoTitle_gy5a5_70",a="_containerFavorite_gy5a5_87",c="_container_gy5a5_87",g={heroContainer:o,hero:t,logo:e,title:n,description:i,imageHero:_,logoTitle:r,containerFavorite:a,container:c};export{g as s};
