@@ -8,6 +8,7 @@ import { RxCross1 } from "react-icons/rx";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+
 import s from "./Header.module.scss";
 import { setSearchQuery } from "@/redux/searchQuerySlice/searchQuerySlice";
 import { useEffect, useState } from "react";
@@ -26,10 +27,12 @@ export const Header = () => {
   const searchQuery = useSelector(searchQueryFilter);
 
   const handleSearch = (e) => {
-    dispatch(setSearchQuery(e.target.value));
+    const query = e.target.value;
+    dispatch(setSearchQuery(query));
   };
-  const handleSumbit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    if (!searchQuery.trim()) return;
     if (location.pathname !== "/catalog") {
       navigate("/catalog");
     }
@@ -75,7 +78,7 @@ export const Header = () => {
             <li className={s.listNavigation}>УВІЙ</li>
           </ul>
           <div className={s.searchContainer}>
-            <form onSubmit={handleSumbit}>
+            <form onSubmit={handleSubmit}>
               <input
                 className={s.search}
                 type="text"
@@ -83,7 +86,9 @@ export const Header = () => {
                 value={searchQuery}
                 onChange={handleSearch}
               />
-              <CiSearch className={s.searchIcon} />
+              <button className={s.wrapIconSearch}>
+                <CiSearch className={s.searchIcon} />
+              </button>
             </form>
           </div>
         </nav>
