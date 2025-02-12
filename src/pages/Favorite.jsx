@@ -16,12 +16,16 @@ const Favorite = ({ data, isLoading, isError }) => {
     <section className={s.containerFavorite}>
       <div className={s.container}>
         <Title />
-        <CardList
-          data={favoriteItems}
-          isLoading={isLoading}
-          isError={isError}
-          navigate={null}
-        />
+        {favoriteItems.length === 0 ? (
+          <p className={s.emptyWishlist}>Ваш список бажань порожній </p>
+        ) : (
+          <CardList
+            data={favoriteItems}
+            isLoading={isLoading}
+            isError={isError}
+            style={s.wrapFavorite}
+          />
+        )}
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ import { useFilteredCards } from "@/hooks/useFilteredCards";
 
 import s from "./CardList.module.scss";
 
-export const CardList = ({ data, isLoading, isError }) => {
+export const CardList = ({ data, isLoading, isError, style }) => {
 
   const [isOpenModal, setOpenModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -33,7 +33,7 @@ export const CardList = ({ data, isLoading, isError }) => {
   );
 
   return (
-    <div className={s.container}>
+    <div className={`${s.container} ${style}`}>
       {!isOpenModal ? (
         <>
           <ul className={s.containerCards}>
