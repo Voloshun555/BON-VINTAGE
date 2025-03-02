@@ -108,7 +108,6 @@
         width: 45px;
         height: 45px;
         right: 5px;
-        
       }
       .searchIcon {
         color: $primary-white;
@@ -121,77 +120,59 @@
     }
   }
 
-  .socialLinks {
+  .wrapSocialUser {
     display: flex;
-    gap: 10px;
+    gap: 80px;
 
+    .socialLinks {
+      display: none;
+      @include desktop-only {
+        display: flex;
+        gap: 10px;
+      }
+    }
     .iconNav {
       width: 35px;
       height: 35px;
-      color: $primary-white;
-
-      @include tablet-only {
-        // width: clamp(25px, 3vw, 35px);
-        // height: clamp(25px, 3vw, 35px);
+      fill: $primary-white;
+    }
+    .userActions {
+      display: flex;
+      gap: 10px;
+      @include mobile-only {
         display: none;
       }
-    }
 
-    @include mobile-only {
-      display: none;
-    }
-  }
+      .wrapIcon{
+        position: relative;
 
-  .userActions {
-    display: flex;
-    gap: 10px;
-    @include mobile-only {
-      display: none;
-    }
-    .wrapIcon {
-      position: relative;
-
-      .iconNav {
-        width: 35px;
-        height: 35px;
-        color: $primary-white;
-        @include tablet-only {
-          width: clamp(25px, 3vw, 35px);
-          height: clamp(25px, 3vw, 35px);
+        .totalFavorite{
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          background: red;
+          color: #fff;
+          font-size: 12px;
+          border-radius: 50%;
+          padding: 2px 6px;
+          min-width: 18px;
+          text-align: center;
+          line-height: 1;
+  
         }
       }
-
-      &[data-total]:after {
-        content: attr(data-total);
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        background: red;
-        color: white;
-        font-size: 12px;
-        border-radius: 50%;
-        padding: 2px 6px;
-        min-width: 18px;
-        text-align: center;
-        line-height: 1;
-        display: inline-block;
-      }
-
-      &[data-total=""]::after {
-        display: none;
-      }
     }
   }
-  .buttonBurger {
-    display: none;
+}
+.buttonBurger {
+  display: none;
 
-    @include mobile-and-tablet {
-      display: block;
-    }
-    .burgerIcon {
-      width: 35px;
-      height: 35px;
-      color: white;
-    }
+  @include mobile-and-tablet {
+    display: block;
+  }
+  .burgerIcon {
+    width: 35px;
+    height: 35px;
+    fill: white;
   }
 }

@@ -1,20 +1,17 @@
-import { FaRegUser, FaRegHeart, FaRegPaperPlane } from "react-icons/fa";
-import { BsBasket3 } from "react-icons/bs";
-import { FaInstagram } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
-import { CiMenuBurger } from "react-icons/ci";
-import { RxCross1 } from "react-icons/rx";
+
 
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-
-import s from "./Header.module.scss";
 import { setSearchQuery } from "@/redux/searchQuerySlice/searchQuerySlice";
 import { useEffect, useState } from "react";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 import { useMediaQuery } from "react-responsive";
 import { favoriteList, searchQueryFilter } from "@/redux/selectors";
+import { Icon } from "../Icon/Icon";
+
+import s from "./Header.module.scss";
 
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -92,30 +89,41 @@ export const Header = () => {
             </form>
           </div>
         </nav>
-        <div className={s.socialLinks}>
-          <FaRegPaperPlane className={s.iconNav} />
-          <FaInstagram className={s.iconNav} />
-        </div>
-        <div className={s.userActions}>
-          {[FaRegUser, FaRegHeart, BsBasket3].map((Icon, index) => (
-            <div
-              key={index}
-              className={s.wrapIcon}
-              data-total={
-                Icon === FaRegHeart && totalFavorite > 0 ? totalFavorite : ""
-              }
-            >
-              <Icon className={s.iconNav} />
-            </div>
-          ))}
-        </div>
-        <button className={s.buttonBurger} onClick={toggleMenu}>
+        <div className={s.wrapSocialUser}>
+          <ul className={s.socialLinks}>
+            <li>
+              <a>
+                <Icon id={"icon-e_etsy"} style={s.iconNav} />
+              </a>
+            </li>
+            <li>
+              <a>
+                <Icon id={"icon-insta"} style={s.iconNav} />
+              </a>
+            </li>
+          </ul>
+
+          <ul className={s.userActions}>
+            <li>
+              <Icon id={"icon-user"} style={s.iconNav} />
+            </li>
+            <li className={s.wrapIcon}>
+              <Icon id={"icon-heart"} style={`${s.iconNav}`} />
+              {totalFavorite > 0 && <p className={s.totalFavorite}>{totalFavorite}</p>}
+            </li>
+            <li>
+              <Icon id={"icon-basket"} style={s.iconNav} />
+            </li>
+          </ul>
+          <button className={s.buttonBurger} onClick={toggleMenu}>
           {isOpen ? (
-            <RxCross1 className={s.burgerIcon} />
+            <Icon style={s.burgerIcon} id={'icon-cross'}/>
           ) : (
-            <CiMenuBurger className={s.burgerIcon} />
+            <Icon style={s.burgerIcon} id={'icon-burgerMenu'}/>
           )}
         </button>
+        </div>
+
       </div>
       <BurgerMenu onClose={toggleMenu} isOpen={isOpen} />
     </header>
