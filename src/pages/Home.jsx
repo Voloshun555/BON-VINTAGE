@@ -1,4 +1,5 @@
 import s from "./Home.module.scss";
+import iconSvg from '/assets/images/images.jfif'
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
         </p>
         <h2 className={s.logoTitle}>ANTIQUE & VINTAGE STORE</h2>
       </div>
-      <img className={s.imageHero} src="/assets/images/images.jfif" alt="lion" />
+      <img className={s.imageHero} src={iconSvg} alt="lion" />
     </section>
   );
 };
