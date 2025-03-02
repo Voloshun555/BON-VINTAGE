@@ -1,5 +1,6 @@
-import { CiHeart } from "react-icons/ci";
+
 import s from "./FavoriteButton.module.scss";
+import { Icon } from "../Icon/Icon";
 
 // eslint-disable-next-line react/prop-types
 export const FavoriteButton = ({ isFavorite, onClick, buttonHeart, iconHeart }) => {
@@ -9,7 +10,8 @@ export const FavoriteButton = ({ isFavorite, onClick, buttonHeart, iconHeart }) 
       onClick={onClick}
       aria-label={isFavorite ? "Видалити з улюбленого" : "Додати до улюбленого"}
     >
-      <CiHeart
+      <Icon
+      id={'icon-heart'}
         className={`${iconHeart} ${s.iconHeart} ${
           isFavorite ? s.buttonHeartActive : ""
         }`}

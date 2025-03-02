@@ -93,33 +93,33 @@ export const Header = () => {
           <ul className={s.socialLinks}>
             <li>
               <a>
-                <Icon id={"icon-e_etsy"} style={s.iconNav} />
+                <Icon id={"icon-e_etsy"} className={s.iconNav} />
               </a>
             </li>
             <li>
               <a>
-                <Icon id={"icon-insta"} style={s.iconNav} />
+                <Icon id={"icon-insta"} className={s.iconNav} />
               </a>
             </li>
           </ul>
 
           <ul className={s.userActions}>
             <li>
-              <Icon id={"icon-user"} style={s.iconNav} />
+              <Icon id={"icon-user"} className={s.iconNav} />
             </li>
             <li className={s.wrapIcon}>
-              <Icon id={"icon-heart"} style={`${s.iconNav}`} />
+              <Icon id={"icon-heart"} className={`${s.iconNav}`} />
               {totalFavorite > 0 && <p className={s.totalFavorite}>{totalFavorite}</p>}
             </li>
             <li>
-              <Icon id={"icon-basket"} style={s.iconNav} />
+              <Icon id={"icon-basket"} className={s.iconNav} />
             </li>
           </ul>
           <button className={s.buttonBurger} onClick={toggleMenu}>
           {isOpen ? (
-            <Icon style={s.burgerIcon} id={'icon-cross'}/>
+            <Icon className={s.burgerIcon} id={'icon-cross'}/>
           ) : (
-            <Icon style={s.burgerIcon} id={'icon-burgerMenu'}/>
+            <Icon className={s.burgerIcon} id={'icon-burgerMenu'}/>
           )}
         </button>
         </div>
