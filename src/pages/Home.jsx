@@ -1,4 +1,3 @@
-import image from "../assets/images.jfif";
 import s from "./Home.module.scss";
 
 const Home = () => {
@@ -16,7 +15,7 @@ const Home = () => {
         </p>
         <h2 className={s.logoTitle}>ANTIQUE & VINTAGE STORE</h2>
       </div>
-      <img className={s.imageHero} src={image} alt="lion" />
+      <img className={s.imageHero} src="/assets/images/images.jfif" alt="lion" />
     </section>
   );
 };

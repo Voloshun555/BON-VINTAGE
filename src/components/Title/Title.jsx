@@ -1,5 +1,6 @@
+import { Icon } from "../Icon/Icon";
 import s from "./Title.module.scss";
-import spriteSvg from "@/assets/svg/sprite.svg";
+// import spriteSvg from "@/assets/svg/sprite.svg";
 
 export const Title = () => {
   return (
@@ -11,9 +12,7 @@ export const Title = () => {
         Предмети з історією, які наповнюють ваш дім <br /> унікальністю та
         чарівністю
       </p>
-      <svg className={s.YourFavoIcon}>
-        <use href={`${spriteSvg}#icon-your-favorites`} />{" "}
-      </svg>
+      <Icon id={'icon-your-favorites'} style={s.YourFavoIcon}/>
     </div>
   );
 };
