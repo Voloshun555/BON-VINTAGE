@@ -1,5 +1,5 @@
 import s from "./Title.module.scss";
-import sdfg from "../../assets/yourfavorites.svg";
+import spriteSvg from "@/assets/svg/sprite.svg";
 
 export const Title = () => {
   return (
@@ -11,7 +11,9 @@ export const Title = () => {
         Предмети з історією, які наповнюють ваш дім <br /> унікальністю та
         чарівністю
       </p>
-      <img className={s.YourFavoIcon} src={sdfg} alt="Your Favorites" />
+      <svg className={s.YourFavoIcon}>
+        <use href={`${spriteSvg}#icon-your-favorites`} />{" "}
+      </svg>
     </div>
   );
 };
