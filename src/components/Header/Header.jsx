@@ -1,6 +1,5 @@
 import { CiSearch } from "react-icons/ci";
 
-
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -39,20 +38,21 @@ export const Header = () => {
     setOpen(!isOpen);
   };
 
-  const isMobile = useMediaQuery({ maxWidth: 1439 });
+  const isMobileAndTablet = useMediaQuery({ maxWidth: 1439 });
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobileAndTablet) {
       setOpen(false);
     }
-  }, [isMobile]);
+  }, [isMobileAndTablet]);
 
   return (
     <header className={s.header}>
       <div className={s.container}>
-        <p className={s.logo}>
-          BON <span className={s.mobiLogoNone}>VINTAGE</span>{" "}
-        </p>
+        <div className={s.wrapLogo}>
+          <Icon id={"icon-BON"} className={s.logo} />
+        <p className={s.desctopLogo}>VINTAGE</p>
+        </div>
         <nav>
           <ul className={s.navigation}>
             {[
@@ -109,21 +109,22 @@ export const Header = () => {
             </li>
             <li className={s.wrapIcon}>
               <Icon id={"icon-heart"} className={`${s.iconNav}`} />
-              {totalFavorite > 0 && <p className={s.totalFavorite}>{totalFavorite}</p>}
+              {totalFavorite > 0 && (
+                <p className={s.totalFavorite}>{totalFavorite}</p>
+              )}
             </li>
             <li>
               <Icon id={"icon-basket"} className={s.iconNav} />
             </li>
           </ul>
           <button className={s.buttonBurger} onClick={toggleMenu}>
-          {isOpen ? (
-            <Icon className={s.burgerIcon} id={'icon-cross'}/>
-          ) : (
-            <Icon className={s.burgerIcon} id={'icon-burgerMenu'}/>
-          )}
-        </button>
+            {isOpen ? (
+              <Icon className={s.burgerIcon} id={"icon-cross"} />
+            ) : (
+              <Icon className={s.burgerIcon} id={"icon-burgerMenu"} />
+            )}
+          </button>
         </div>
-
       </div>
       <BurgerMenu onClose={toggleMenu} isOpen={isOpen} />
     </header>

@@ -37,7 +37,7 @@
 .title {
   text-align: center;
   margin-bottom: 15px;
-  color: #1f2e44;
+  color: $primary-blue;
 }
 .description {
   max-width: 400px;
@@ -63,7 +63,7 @@
 }
 .logoTitle {
   font-size: clamp(20px, 3vw, 25px);
-  color: #1f2e44;
+  color: $primary-blue;
 
   @include tablet-only {
     font-size: clamp(10px, 3vw, 50px);
@@ -88,6 +88,7 @@
       font-family: NunitoSans;
       font-weight: 500;
       font-size: 30px;
+      color: $primary-blue;
     }
   }
 }

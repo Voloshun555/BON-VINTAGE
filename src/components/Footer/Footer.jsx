@@ -1,5 +1,5 @@
-import { FaInstagram } from "react-icons/fa6";
-import { FaRegPaperPlane } from "react-icons/fa";
+
+import { Icon } from "../Icon/Icon";
 import { useMediaQuery } from "react-responsive";
 
 import s from "./Footer.module.scss";
@@ -14,8 +14,8 @@ export const Footer = () => {
       <div className={s.containerFooter}>
         <nav>
           <div className={s.iconWrap}>
-            <FaRegPaperPlane className={s.iconNav} />
-            <FaInstagram className={s.iconNav} />
+          <Icon id={'icon-e_etsy'} className={s.iconNav}/>
+          <Icon id={'icon-insta'} className={s.iconNav}/>
           </div>
           {!isMobile && (
             <ul className={s.navList}>
@@ -24,7 +24,7 @@ export const Footer = () => {
             </ul>
           )}
         </nav>
-        <p className={s.logoFootert}>BON</p>
+        <Icon id={'icon-BON'} className={s.logoFootert}/>
         <nav>
           {isMobile ? (
             <ul className={s.navList}>

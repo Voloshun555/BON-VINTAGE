@@ -4,7 +4,7 @@
 .footer {
   flex-shrink: 0;
   background-color: #1f2e44;
-  color: aliceblue;
+  color: $primary-white;
   .containerFooter {
     display: flex;
     flex-direction: row-reverse;
@@ -19,10 +19,12 @@
     }
   }
   .logoFootert {
-    font-size: 30px;
-
+    width: 90px;
+    height: 90px;
+    fill: $primary-white;
     @include tablet-and-desktop {
-      font-size: 90px;
+      width: 150px;
+      height: 150px;
     }
   }
 
@@ -35,8 +37,9 @@
       margin-bottom: 15px;
     }
     .iconNav {
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
+      fill: $primary-white;
       :not(:last-child) {
         margin-right: 15px;
       }
@@ -50,6 +53,9 @@
 
     .listItem {
       font-size: 10px;
+      @include tablet-and-desktop {
+        font-size: 15px;
+      }
     }
   }
 }
