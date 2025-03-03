@@ -1,10 +1,16 @@
-.iconHeart{
-  fill: white;
-  transition: transform 0.25s ease, color 0.25s ease;
+@import "@/scss/base/variables.scss";
+.iconHeart {
+  fill: transparent; // Прозоре серце в неактивному стані
+  stroke: $primary-white; // Білий контур
+  stroke-width: 2; // Товщина контуру
+  transition: transform 0.25s ease, fill 0.25s ease;
+
   &:hover {
     transform: scale(1.2);
   }
 }
-.buttonHeartActive{
-       fill: aqua;
-      }
+
+.buttonHeartActive {
+  fill: #98b2d1; // Заповнене серце при активному стані
+  stroke: none; // Вимикаємо білий контур
+}

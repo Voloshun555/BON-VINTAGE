@@ -11,7 +11,7 @@ export const FavoriteButton = ({ isFavorite, onClick, buttonHeart, iconHeart }) 
       aria-label={isFavorite ? "Видалити з улюбленого" : "Додати до улюбленого"}
     >
       <Icon
-      id={'icon-heart'}
+      id={'icon-heart-favorite'}
         className={`${iconHeart} ${s.iconHeart} ${
           isFavorite ? s.buttonHeartActive : ""
         }`}
