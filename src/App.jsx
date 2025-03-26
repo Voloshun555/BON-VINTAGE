@@ -7,6 +7,7 @@ import { useProducts } from "./hooks/useProducts";
 const Home = lazy(() => import("./pages/Home"));
 const Catalog = lazy(() => import("./pages/Catalog"));
 const Favorite = lazy(() => import("./pages/Favorite"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
 
 function App() {
   const { data, isLoading, isError } = useProducts(250);
@@ -25,7 +26,13 @@ function App() {
           element={
             <Favorite data={data} isLoading={isLoading} isError={isError} />
           }
-        />
+        /> 
+        <Route
+        path="aboutUs"
+        element={
+          <AboutUs isLoading={isLoading} isError={isError} />
+        }
+      />
       </Route>
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>

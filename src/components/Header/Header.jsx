@@ -11,6 +11,7 @@ import { favoriteList, searchQueryFilter } from "@/redux/selectors";
 import { Icon } from "../Icon/Icon";
 
 import s from "./Header.module.scss";
+import { navigatePages } from "@/navigate";
 
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -55,11 +56,7 @@ export const Header = () => {
         </div>
         <nav>
           <ul className={s.navigation}>
-            {[
-              { to: "/", label: "ГОЛОВНА" },
-              { to: "/catalog", label: "КАТАЛОГ" },
-              { to: "/favorite", label: "ВПОДОБАНІ" },
-            ].map((link) => (
+            {navigatePages.map((link) => (
               <li key={link.to} className={s.listNavigation}>
                 <NavLink
                   to={link.to}
@@ -71,7 +68,6 @@ export const Header = () => {
                 </NavLink>
               </li>
             ))}
-            <li className={s.listNavigation}>ПРО НАС</li>
             <li className={s.listNavigation}>УВІЙ</li>
           </ul>
           <div className={s.searchContainer}>

@@ -9,11 +9,12 @@
   height: 100%;
   border-radius: 5px;
   
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
 
   &:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 1.15);
   }
 
   @include tablet-only {
@@ -34,8 +35,8 @@
       bottom: 8px;
       right: 8px;
       .iconHeart {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         // color: $primary-white;
       }
     }
