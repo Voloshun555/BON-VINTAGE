@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import s from "./Home.module.scss";
 import { favoriteList } from "@/redux/selectors";
 import { Title } from "@/components/Title/Title";
+import { Icon } from "@/components/Icon/Icon";
 
 const Favorite = ({ data, isLoading, isError }) => {
   const favoriteListItems = useSelector(favoriteList);
@@ -16,6 +17,7 @@ const Favorite = ({ data, isLoading, isError }) => {
     <section className={s.containerFavorite}>
       <div className={s.container}>
         <Title />
+        <Icon id={"icon-your-favorites"} className={s.YourFavoIcon} />
         {favoriteItems.length === 0 ? (
           <p className={s.emptyWishlist}>Ваш список бажань порожній </p>
         ) : (

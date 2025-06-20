@@ -98,4 +98,16 @@
   flex-direction: column;
   align-items: center;
   margin-left: 0px !important;
+  
+}
+.YourFavoIcon{
+    width: 700px;
+    height: 80px;
+    fill: $primary-blue;
+    margin-bottom: 90px;
+
+    @include mobile-only {
+      width: 300px;
+      height: 80px;
+     }
 }

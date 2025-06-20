@@ -1,4 +1,3 @@
-import { Icon } from "../Icon/Icon";
 
 import s from "./Title.module.scss";
 
@@ -13,8 +12,6 @@ export const Title = () => {
         Предмети з історією, які наповнюють ваш дім <br /> унікальністю та
         чарівністю
       </p>
-      <Icon id={"icon-your-favorites"} className={s.YourFavoIcon} />
-     
     </div>
   );
 };
