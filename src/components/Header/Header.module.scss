@@ -1,10 +1,11 @@
 @import "@/scss/base/variables.scss";
 @import "@/scss/base/mixins.scss";
 
+
 .header {
   position: relative;
   flex-shrink: 0;
-  background-color: #1f2e44;
+  background-color: $primary-blue;
   height: 100px;
   height: 152px;
   @include desktop-only {
