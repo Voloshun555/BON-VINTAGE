@@ -1,3 +1,4 @@
+import { CardSlide } from "../CardSlide/CardSlide";
 import { Title } from "../Title/Title";
 import s from "./About.module.scss";
 export const About = () => {
@@ -6,7 +7,7 @@ export const About = () => {
       <section>
         <Title />
       </section>
-      <section className={s.ourMission}>
+      <section className={s.container}>
         <div className={s.containerMission}>
           <ul className={s.listMission}>
             <li className={s.elemMission}>
@@ -33,6 +34,41 @@ export const About = () => {
           </ul>
         </div>
       </section>
+      <section className={`${s.container} ${s.possitionHistory}`}>
+        <div className={s.containerHistory}>
+          <div className={s.wrapperHistory}>
+          <h2 className={s.title}>our story</h2>
+          <p className={s.textStory}>
+            Моя історія любові до прекрасних старовинних речей розпочалася у
+            2011 році. Тоді я зовсім випадково опинилася на барахолці у моїй
+            рідній Одесі. Наша барахолка знайшла своє розташування біля відомого
+            Староконного ринку. Одесити з любов’ю називають її «Староконка». Для
+            любителів старих речей і «просто поговорити» Староконка завжди була
+            невід’ємною частиною життя, без неї ніяк). Моєю першою покупкою
+            стала приголомшливої краси чайна трійка від відомої німецької
+            мануфактури Weimar. Порцеляна високої якості, кобальт, позолота...
+            Так визначилася тема для майбутньої колекції. Згодом географія
+            покупок значно розширилася. Багато предметів було куплено на
+            європейських блошиних ринках та в антикварних магазинах, на ярмарках
+            у середньовічних замках та просто з рук. Нині основним джерелом
+            скарбів та натхнення стали барахолки Німеччини.
+          </p>
+          <p className={s.textStoryAllYear}>
+            За всі роки мого захоплення накопичилася величезна кількість дуже
+            цікавих речей, а разом із ними знання та досвід.
+          </p>
+
+          <div className={s.iconHistory}>
+
+          </div>
+          </div>
+        </div>
+      </section>
+<section>
+  
+</section>
+
+       <CardSlide />
     </>
   );
 };

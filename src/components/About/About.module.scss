@@ -1,9 +1,9 @@
 @import "@/scss/base/variables.scss";
 @import "@/scss/base/mixins.scss";
 
-.ourMission {
+.container {
   max-width: 1440px;
-  padding: 20px 34px;
+  padding: 20px 34px 0;
   margin: auto;
 }
 .containerMission {
@@ -13,7 +13,7 @@
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
   width: 100%;
-  height: 1600px;
+  height: 1650px;
 }
 .listMission {
   display: flex;
@@ -21,13 +21,13 @@
   gap: 20px;
   padding: 10px;
   flex-wrap: wrap;
-  .title{
+  .title {
     text-transform: uppercase;
     font-family: MinionPro;
     font-size: 50px;
     margin-bottom: 15px;
   }
-  .textMission{
+  .textMission {
     width: 310px;
     text-align: center;
   }
@@ -45,5 +45,57 @@
   }
   .iconMission {
     color: black;
+  }
+}
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\history\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+.possitionHistory {
+  transform: translate(0, -100px);
+}
+
+.containerHistory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $primary-baig;
+  color: $primary-white;
+  padding: 70px 20px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  width: 100%;
+  height: 1670px;
+  .wrapperHistory {
+    max-width: 1075px;
+  }
+
+  .title {
+    text-transform: uppercase;
+    font-family: MinionPro;
+    font-size: 60px;
+    text-align: center;
+    color: $primary-blue;
+    margin-bottom: 35px;
+  }
+  .textStory {
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: justify;
+
+    color: $primary-blue;
+    margin-bottom: 50px;
+  }
+  .textStoryAllYear {
+    font-weight: 900;
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: center;
+    color: $primary-blue;
+    margin-bottom: 50px;
+  }
+  .iconHistory {
+    height: 900px;
+    border-radius: 25px;
+
+    background-color: $primary-blue;
   }
 }
