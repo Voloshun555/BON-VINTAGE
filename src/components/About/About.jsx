@@ -1,3 +1,4 @@
+
 import { CardSlide } from "../CardSlide/CardSlide";
 import { Title } from "../Title/Title";
 import s from "./About.module.scss";
@@ -63,7 +64,7 @@ export const About = () => {
           </div>
         </div>
       </section>
-      <section className={`${s.container} ${s.possitionDeliveryAndPayment}`}>
+      <section className={`${s.container} ${s.possitionDeliveryAndPayment}`} id='delivery'>
         <div className={s.containerDeliveryAndPayment}>
           <div className={s.wrapperDeliveryAndPayment}>
             <h2 className={s.title}>delivery and payment</h2>
