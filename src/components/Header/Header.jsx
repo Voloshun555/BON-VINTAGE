@@ -15,6 +15,7 @@ import { navigatePages } from "@/navigate";
 
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -48,11 +49,11 @@ export const Header = () => {
   }, [isMobileAndTablet]);
 
   return (
-    <header className={s.header}>
+   <header className={`${s.header} ${isSearchFocused ? s.searchActive : ""}`} >
       <div className={s.container}>
         <div className={s.wrapLogo}>
           <Icon id={"icon-BON"} className={s.logo} />
-        <p className={s.desctopLogo}>VINTAGE</p>
+          <p className={s.desctopLogo}>VINTAGE</p>
         </div>
         <nav>
           <ul className={s.navigation}>
@@ -78,6 +79,8 @@ export const Header = () => {
                 placeholder="Пошук"
                 value={searchQuery}
                 onChange={handleSearch}
+                onFocus={() => setIsSearchFocused(true)}
+                onBlur={() => setIsSearchFocused(false)}
               />
               <button className={s.wrapIconSearch}>
                 <CiSearch className={s.searchIcon} />
@@ -104,7 +107,10 @@ export const Header = () => {
               <Icon id={"icon-user"} className={s.iconNav} />
             </li>
             <li className={s.wrapIcon}>
-              <Icon id={"icon-heart"} className={`${s.iconNav} ${s.iconHeart}`}/>
+              <Icon
+                id={"icon-heart"}
+                className={`${s.iconNav} ${s.iconHeart}`}
+              />
               {totalFavorite > 0 && (
                 <p className={s.totalFavorite}>{totalFavorite}</p>
               )}
