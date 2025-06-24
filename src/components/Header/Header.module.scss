@@ -1,7 +1,6 @@
 @import "@/scss/base/variables.scss";
 @import "@/scss/base/mixins.scss";
 
-
 .header {
   position: relative;
   flex-shrink: 0;
@@ -25,6 +24,7 @@
       padding: 0 25px;
     }
   }
+
   .wrapLogo {
     display: flex;
     align-items: center;
@@ -78,7 +78,6 @@
 
   .searchContainer {
     position: relative;
-
     .search {
       width: 395px;
       height: 25px;
@@ -86,9 +85,11 @@
       margin-top: 5px;
       border-radius: 5px;
       border: 1px solid $primary-white;
+      color: $primary-white;
       background-color: inherit;
       @include mobile-only {
-        width: clamp(100px, 40vw, 400px);
+        width: clamp(100px, 40vw, 800px);
+        padding-right: 55px;
         height: 55px;
         border-radius: 28px;
         margin-right: auto;
@@ -116,6 +117,7 @@
         height: 45px;
         right: 5px;
       }
+
       .searchIcon {
         color: $primary-white;
         @include mobile-only {
@@ -124,6 +126,32 @@
           height: 35px;
         }
       }
+    }
+  }
+
+  nav {
+    &:focus-within {
+      @include mobile-only {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        .searchContainer {
+          flex: 1;
+          transition: all 1s ease;
+
+          .search {
+            width: 100%;
+            transition: width 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+  nav:focus-within ~ .wrapSocialUser,
+  nav:focus-within ~ .buttonBurger,
+  .container:focus-within .wrapLogo {
+    @include mobile-only {
+      display: none;
     }
   }
 
