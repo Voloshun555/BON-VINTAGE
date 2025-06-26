@@ -34,6 +34,7 @@ export const Header = () => {
     if (location.pathname !== "/catalog") {
       navigate("/catalog");
     }
+    setIsSearchFocused(false)
   };
 
   const toggleMenu = () => {
@@ -69,7 +70,7 @@ export const Header = () => {
                 </NavLink>
               </li>
             ))}
-            <li className={s.listNavigation}>УВІЙ</li>
+            <li className={s.listNavigation}>УВІЙТИ</li>
           </ul>
           <div className={s.searchContainer}>
             <form onSubmit={handleSubmit}>
@@ -82,7 +83,7 @@ export const Header = () => {
                 onFocus={() => setIsSearchFocused(true)}
                 onBlur={() => setIsSearchFocused(false)}
               />
-              <button className={s.wrapIconSearch}>
+              <button className={s.wrapIconSearch} type="submit" >
                 <CiSearch className={s.searchIcon} />
               </button>
             </form>
