@@ -9,7 +9,6 @@ import { useFilteredCards } from "@/hooks/useFilteredCards";
 import s from "./CardList.module.scss";
 
 export const CardList = ({ data, isLoading, isError, style }) => {
-
   const [isOpenModal, setOpenModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,15 +21,11 @@ export const CardList = ({ data, isLoading, isError, style }) => {
     setSelectedItem(item);
   };
 
- const filteredData = useFilteredCards(data);
-
+  const filteredData = useFilteredCards(data);
 
   const lastCardIndex = currentPage * cardsPerPage;
   const firstCardIndex = lastCardIndex - cardsPerPage;
-  const currentCards = filteredData.slice(
-    firstCardIndex,
-    lastCardIndex
-  );
+  const currentCards = filteredData.slice(firstCardIndex, lastCardIndex);
 
   return (
     <div className={`${s.container} ${style}`}>
@@ -81,7 +76,7 @@ export const CardList = ({ data, isLoading, isError, style }) => {
                 )
               )}
           </ul>
-          {  currentCards.length > 0 ? (
+          {currentCards.length > 0 ? (
             <Pagination
               totalCards={filteredData.length}
               cardsPerPage={cardsPerPage}
