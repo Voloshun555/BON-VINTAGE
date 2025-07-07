@@ -34,7 +34,7 @@ export const Header = () => {
     if (location.pathname !== "/catalog") {
       navigate("/catalog");
     }
-    setIsSearchFocused(false)
+    setIsSearchFocused(false);
   };
 
   const toggleMenu = () => {
@@ -50,7 +50,7 @@ export const Header = () => {
   }, [isMobileAndTablet]);
 
   return (
-   <header className={`${s.header} ${isSearchFocused ? s.searchActive : ""}`} >
+    <header className={`${s.header} ${isSearchFocused ? s.searchActive : ""}`}>
       <div className={s.container}>
         <div className={s.wrapLogo}>
           <Icon id={"icon-BON"} className={s.logo} />
@@ -83,7 +83,7 @@ export const Header = () => {
                 onFocus={() => setIsSearchFocused(true)}
                 onBlur={() => setIsSearchFocused(false)}
               />
-              <button className={s.wrapIconSearch} type="submit" >
+              <button className={s.wrapIconSearch} type="submit">
                 <CiSearch className={s.searchIcon} />
               </button>
             </form>
