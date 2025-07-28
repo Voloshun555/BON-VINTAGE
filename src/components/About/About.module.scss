@@ -1,5 +1,6 @@
 @import "@/scss/base/variables.scss";
 @import "@/scss/base/mixins.scss";
+@import "@/scss/base/fonts.scss";
 
 .container {
   max-width: 1440px;
@@ -32,6 +33,9 @@
     margin-bottom: 15px;
   }
   .textMission {
+    font-family: "NunitoSans";
+    font-size: 12px;
+    font-weight: 200;
     width: 310px;
     text-align: center;
   }
@@ -81,17 +85,22 @@
     margin-bottom: 90px;
   }
   .textStory {
+    font-family: "NunitoSans";
+    font-size: 12px;
+    font-weight: 400;
     margin: 0 auto;
-    font-size: 30px;
     text-align: justify;
 
     color: $primary-blue;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
   .textStoryAllYear {
-    font-weight: 900;
+    font-family: "NunitoSans";
+    font-size: 12px;
+    font-weight: 600;
+
     margin: 0 auto;
-    font-size: 30px;
+
     text-align: center;
     color: $primary-blue;
     margin-bottom: 50px;
@@ -105,9 +114,9 @@
 }
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Delivery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-.possitionDeliveryAndPayment{
+.possitionDeliveryAndPayment {
   transform: translate(0, -175px);
-  .wrapperDeliveryAndPayment{
+  .wrapperDeliveryAndPayment {
     max-width: 1075px;
   }
 }
@@ -129,45 +138,44 @@
     font-size: 60px;
     text-align: center;
     margin-bottom: 90px;
-    
   }
-  .titleDescription{
-    font-family: MinionPro;
-    font-size: 43px;
+  .titleDescription {
+    font-family: "NunitoSans";
+    font-size: 25px;
     text-align: center;
-    margin-bottom: 90px;
+    margin-bottom: 30px;
   }
-  .text{
-    font-size: 30px;
+  .text {
+    font-family: "NunitoSans";
+    font-weight: 200;
+    font-size: 12px;
     text-align: justify;
     color: $primary-white;
-    margin-bottom: 90px;
+    margin-bottom: 60px;
   }
-  
-.listReviews{
-  display: flex;
-  gap: 20px;
 
-  .itemReviews{
-    width: 100%;
-    height: 400px;
+  .listReviews {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    background-color: $primary-baig;
-    border-radius: 25px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
-    .textReviews{
-      font-size: 50px;
-      text-align: center;
-      color: $primary-blue;
-      font-weight: bold;
+    gap: 20px;
+
+    .itemReviews {
+      width: 100%;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: $primary-baig;
+      border-radius: 25px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      .textReviews {
+        font-size: 50px;
+        text-align: center;
+        color: $primary-blue;
+        font-weight: bold;
+      }
     }
   }
-}
-
-
 }

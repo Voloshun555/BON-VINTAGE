@@ -1,5 +1,7 @@
 @import "@/scss/base/variables.scss";
 @import "@/scss/base/mixins.scss";
+@import "@/scss/base/fonts.scss";
+
 
 .header {
   position: relative;
@@ -64,10 +66,12 @@
     font-size: 15px;
 
     .listNavigation {
+      font-family: NunitoSans;
+      font-weight: 400;
+      font-size: 12px;
       margin-right: 15px;
-
       &:not(:last-child) {
-        margin-right: 15px;
+        margin-right: 22px;
       }
 
       .navLink {
@@ -75,8 +79,8 @@
         color: $primary-white;
 
         &.active {
-          font-weight: bold;
-          color: red;
+          font-weight: 900;
+         
         }
       }
     }
@@ -109,8 +113,12 @@
       }
 
       &::placeholder {
-        font-size: 15px;
+        font-family: "NunitoSans";
+        font-weight: 200;
+        font-size: 11px;
         color: $primary-white;
+        text-transform: uppercase;
+
       }
     }
     .wrapIconSearch {
@@ -122,6 +130,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 25px;
+    
 
       @include mobile-only {
         left: auto;
@@ -180,15 +189,20 @@
         gap: 10px;
       }
     }
+
     .iconNav {
-      width: 35px;
-      height: 35px;
+      width: 21px;
+      height: 21px;
       fill: $primary-white;
       @include mobile-only {
         width: 25px;
         height: 25px;
       }
     }
+    //     .iconHeartWidth{
+    //   width: 26px;
+    //   height: 26px;
+    // }
     .userActions {
       display: flex;
       gap: 10px;

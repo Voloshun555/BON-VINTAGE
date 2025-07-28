@@ -1,5 +1,6 @@
 @import "@/scss/base/variables.scss";
 @import "@/scss/base/mixins.scss";
+@import "@/scss/base/fonts.scss";
 .ContainerForTitle {
   display: flex;
   justify-content: center;
@@ -18,11 +19,14 @@
   color: $primary-blue-categorise;
   .listCategories:not(:last-child) {
     margin-bottom: 10px;
+    font-family: "NunitoSans";
+    font-size: 12px;
   }
 }
 
 .listCategories:hover{
 color: $primary-blue;
+font-weight: 900;
 cursor: pointer;
 }
 

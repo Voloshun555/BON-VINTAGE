@@ -110,7 +110,7 @@ export const Header = () => {
             <li className={s.wrapIcon}>
               <Icon
                 id={"icon-heart"}
-                className={`${s.iconNav} ${s.iconHeart}`}
+                className={`${s.iconNav} ${s.iconHeartWidth} ${s.iconHeart}`}
               />
               {totalFavorite > 0 && (
                 <p className={s.totalFavorite}>{totalFavorite}</p>

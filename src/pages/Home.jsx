@@ -5,7 +5,6 @@ const Home = () => {
   return (
     <section className={s.heroContainer}>
       <div className={s.hero}>
-        <p className={s.logo}>(лого еще в разработке)</p>
         <h1 className={s.title}>BON VINTAGE</h1>
         <p className={s.description}>
           С другой стороны постоянное информационно-пропагандистское обеспечение

@@ -36,7 +36,7 @@ export const Card = ({
       </div>
       <div className={s.item}>
           <h3 className={s.itemTitle}>{description}</h3>
-          <p className={s.itemPrice}>Ціна: {price}</p>
+          <p className={s.itemPrice}>{price} грн</p>
       </div>
       <button className={s.btnBascket} aria-label="Додати до кошика">
         додати до кошику

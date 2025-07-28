@@ -10,9 +10,10 @@
   margin-bottom: 20px;
   .title {
     font-family: MinionPro;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 400;
     text-align: center;
+    text-transform: uppercase;
     color: $primary-blue;
     margin-bottom: 20px;
     @include mobile-only {
@@ -23,6 +24,7 @@
   .historyItems {
     font-family: NunitoSans;
     font-weight: 400;
+    font-size: 12px;
     text-align: center;
     color: $primary-blue;
     @include mobile-only {

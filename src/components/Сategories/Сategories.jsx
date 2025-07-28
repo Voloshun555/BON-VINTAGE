@@ -33,7 +33,7 @@ export const Categories = () => {
   return (
     <div>
       <div className={shared.ContainerForTitle}>
-        <h3>Категорії</h3>
+        <h3 className={s.title}>Категорії</h3>
       </div>
       <ul className={shared.grupCategories}>
         {categories.map((item) => (

@@ -1,8 +1,15 @@
 @import "@/scss/base/variables.scss";
+@import "@/scss/base/fonts.scss";
 
 
 .disabled{
     pointer-events: none; // Вимикає кліки
     opacity: 0.5; // Зменшує видимість
     cursor: not-allowed; // Змінює курсор на "заборонено"
+}
+.title {
+     font-family: "NunitoSans";
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
 }

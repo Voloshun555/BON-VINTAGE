@@ -1,5 +1,6 @@
 @import "@/scss/base/variables.scss";
 @import "@/scss/base/mixins.scss";
+@import "@/scss/base/fonts.scss";
 
 .containerCard {
   display: flex;
@@ -8,7 +9,7 @@
   width: 270px;
   height: 100%;
   border-radius: 5px;
-  
+
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
@@ -49,15 +50,20 @@
 
     display: flex;
     justify-content: space-between;
-    
+
     .itemTitle {
-      font-size: 16px;
-      font-weight: 600;
+      font-family: "NunitoSans";
+      font-size: 12px;
+      font-weight: 300;
+      color: $primary-blue-categorise;
+      width: 175px;
     }
 
     .itemPrice {
-      font-size: 14px;
-      color: $primary-gray;
+      font-family: "NunitoSans";
+      font-weight: 900;
+      font-size: 11px;
+      color: $primary-blue-categorise;
     }
 
     .itemList {
@@ -67,10 +73,14 @@
     }
   }
   .btnBascket {
+    font-family: "NunitoSans";
+    font-size: 12px;
+    font-weight: 300;
+    color: $primary-blue-categorise;
     margin: auto;
     padding: 5px 0;
     margin-bottom: 15px;
-    border: 2px solid #4f5a6c;
+    border: 0.1px solid #4f5a6c;
     border-radius: 5px;
     width: 90%;
   }

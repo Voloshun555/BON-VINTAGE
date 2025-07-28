@@ -1,1 +1,9 @@
 @import "@/scss/base/variables.scss";
+@import "@/scss/base/fonts.scss";
+
+.sort{
+    font-family: "NunitoSans";
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+}

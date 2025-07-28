@@ -36,7 +36,7 @@ export const FilterMaterials = () => {
   return (
     <div>
       <div className={shared.ContainerForTitle}>
-        <h3>Фільтрувати</h3>
+        <h3 className={s.title}>Фільтрувати</h3>
       </div>
 
       <ul className={shared.grupCategories}>

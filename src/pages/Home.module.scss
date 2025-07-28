@@ -40,12 +40,14 @@
   color: $primary-blue;
 }
 .description {
-  max-width: 400px;
+  margin-left:120px;
+  font-family: "NunitoSans";
+  max-width: 441px;
   margin-bottom: 20px;
-
-  font-size: 9px;
+  font-size: 15px;
   font-weight: 400;
-  text-transform: uppercase;
+  // text-transform: uppercase;
+  text-align: justify;
 
   @include mobile-only {
     text-align: center;
@@ -88,7 +90,8 @@
     .emptyWishlist {
       font-family: NunitoSans;
       font-weight: 500;
-      font-size: 30px;
+      font-size: 20px;
+      text-transform: uppercase;
       color: $primary-blue;
     }
   }
@@ -98,15 +101,14 @@
   flex-direction: column;
   align-items: center;
   margin-left: 0px !important;
-  
 }
-.YourFavoIcon{
-    width: 700px;
+.YourFavoIcon {
+  width: 700px;
+  height: 80px;
+  fill: $primary-blue;
+  margin-bottom: 90px;
+  @include mobile-only {
+    width: 300px;
     height: 80px;
-    fill: $primary-blue;
-    margin-bottom: 90px;
-    @include mobile-only {
-      width: 300px;
-      height: 80px;
-     }
+  }
 }
