@@ -14,7 +14,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
+        <Route index element={<Home data={data} isLoading={isLoading} isError={isError}/>} />
         <Route
           path="catalog"
           element={

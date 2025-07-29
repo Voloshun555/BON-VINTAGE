@@ -1,15 +1,12 @@
 @use "./variables" as *;
 html {
-   scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: $default-font;
-  background-color: rgba(234, 237, 202, 0.44);
-  color: rgb(0, 0, 0);
+  background-color: $primary-white;
   overflow-x: hidden;
- 
- 
 }
 img {
   display: block;

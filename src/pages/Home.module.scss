@@ -9,8 +9,8 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding: 20px 36px;
-  
+  padding: 70px 36px;
+
   @include mobile-only {
     flex-direction: column-reverse;
     padding: 10px 20px;
@@ -18,11 +18,16 @@
 }
 
 .hero {
-  flex: 1;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: 720px;
+  height: 650px;
+  border-radius: 15px;
+  background-color: $primary-blue;
+  color: $primary-white;
+  z-index: 100;
   @include mobile-only {
     display: flex;
     flex-direction: column;
@@ -32,12 +37,13 @@
   @include tablet-only {
     margin-right: 15px;
   }
+
 }
 
 .logo {
   fill: $primary-blue;
   width: 300px;
-    height: 40px;
+  height: 40px;
   margin-bottom: 25px;
 }
 .title {
@@ -51,16 +57,18 @@
   font-size: 15px;
   font-weight: 400;
   text-align: justify;
- 
 }
 
 .imageHero {
-  width: 660px;
+  position: absolute;
+  right: 0;
+  width: 720px;
   height: 650px;
   border-radius: 15px;
+  
   @include mobile-and-tablet {
-    width: clamp(260px, 50vw, 660px);
-    height: clamp(260px, 50vw, 650px);
+    width: clamp(260px, 50vw, 720px);
+    height: clamp(260px, 50vw, 720px);
   }
 }
 .logoTitle {
@@ -73,8 +81,9 @@
   @include desktop-only {
     position: absolute;
     font-size: 100px;
-    bottom: 10px;
+    top: 80px;
     left: 5%;
+    color: $primary-white;
   }
 }
 

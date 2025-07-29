@@ -39,25 +39,19 @@
     }
   }
 
-  .wrapLogo {
-    display: flex;
-    align-items: center;
-    gap: 20px;
     .logo {
-      width: 80px;
+      width: 155px;
+      height: 21px;
       fill: $primary-white;
       @include mobile-only {
         width: 50px;
       }
     }
-    .desctopLogo {
-      color: $primary-white;
-      font-size: 50px;
-      @include mobile-and-tablet {
-        display: none;
-      }
+    .logoBon{
+      width: 46px;
+      height: 21px;
+      fill: $primary-white;
     }
-  }
 
   .navigation {
     display: flex;

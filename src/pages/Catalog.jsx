@@ -11,13 +11,13 @@ const Catalog = ({ data, isLoading, isError }) => {
   const isMobile = useMediaQuery({ maxWidth: 1439 });
 
   return (
-    <div>
+    <>
       <CardSlide />
       <div className={s.containerCategorizer}>
         {!isMobile ? <Categorizer className={s.categorizer} /> : <MTSelect />}
         <CardList data={data} isLoading={isLoading} isError={isError} />
       </div>
-    </div>
+    </>
   );
 };
 export default Catalog;

@@ -8,6 +8,11 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+ 
+  .iconWithStar{
+    transform: translate(0, -45px);
+    fill: $primary-blue;
+  }
   .title {
     font-family: MinionPro;
     font-size: 35px;

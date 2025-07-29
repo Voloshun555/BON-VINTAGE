@@ -52,10 +52,7 @@ export const Header = () => {
   return (
     <header className={`${s.header} ${isSearchFocused ? s.searchActive : ""}`}>
       <div className={s.container}>
-        <div className={s.wrapLogo}>
-          <Icon id={"icon-BON"} className={s.logo} />
-          <p className={s.desctopLogo}>VINTAGE</p>
-        </div>
+        {isMobileAndTablet ? <Icon id={"icon-BON"} className={s.logoBon} /> : <Icon id={"icon-logo"} className={s.logo} />}
         <nav>
           <ul className={s.navigation}>
             {navigatePages.map((link) => (
