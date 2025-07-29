@@ -22,7 +22,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 720px;
+  width: 690px;
   height: 650px;
   border-radius: 15px;
   background-color: $primary-blue;
@@ -37,13 +37,12 @@
   @include tablet-only {
     margin-right: 15px;
   }
-
 }
 
 .logo {
   fill: $primary-white;
   width: 441px;
- height: 60px;
+  height: 60px;
   margin-bottom: 25px;
 }
 .title {
@@ -61,15 +60,15 @@
 
 .imageHero {
   position: absolute;
-  right: 0;
-  width: 720px;
+  right: 36px;
+  width: 690px;
   height: 650px;
   border-radius: 15px;
-  
-  @include mobile-and-tablet {
-    width: clamp(260px, 50vw, 720px);
-    height: clamp(260px, 50vw, 720px);
-  }
+
+  // @include mobile-and-tablet {
+  //   width: clamp(260px, 50vw, 720px);
+  //   height: clamp(260px, 50vw, 720px);
+  // }
 }
 .logoTitle {
   font-size: clamp(20px, 3vw, 25px);
