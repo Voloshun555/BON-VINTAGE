@@ -1,11 +1,12 @@
+import { Icon } from "@/components/Icon/Icon";
 import s from "./Home.module.scss";
-import iconSvg from '/assets/images/images.jfif'
+import iconSvg from '/assets/images/главная-картинка.jpg'
 
 const Home = () => {
   return (
     <section className={s.heroContainer}>
       <div className={s.hero}>
-        <h1 className={s.title}>BON VINTAGE</h1>
+        <Icon id={'icon-logo'} className={s.logo}/>
         <p className={s.description}>
           С другой стороны постоянное информационно-пропагандистское обеспечение
           нашей деятельности представляет собой интересный эксперимент проверки
