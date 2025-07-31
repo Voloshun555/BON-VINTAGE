@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import Select from "react-select";
 import { useDispatch } from "react-redux";
 import {
@@ -9,6 +8,7 @@ import {
 import { sortOptions, categories, materials } from "@/fakeApi.js";
 
 import s from "./MTSelect.module.scss";
+import './FilterCastomSelect.scss'
 
 export const MTSelect = () => {
   const dispatch = useDispatch();
@@ -18,39 +18,45 @@ export const MTSelect = () => {
     dispatch(setSelectedCategory(value));
   };
 
-  const handleFilterClick = (selectedOption) => {
-    const value = selectedOption ? selectedOption.value : null;
-    dispatch(setSelectedFilter(value));
+  const handleCombinedChange = (selectedOption) => {
+    if (!selectedOption) return;
+    const { value, type } = selectedOption;
+    if (type === "sort") {
+      dispatch(setSortType(value));
+    } else if (type === "filter") {
+      dispatch(setSelectedFilter(value));
+    }
   };
 
-  const handleSortChange = (selectedOption) => {
-    const value = selectedOption ? selectedOption.value : null;
-    dispatch(setSortType(value));
-  };
+  const combinedOptions = [
+    {
+      label: "Сортування",
+      options: sortOptions.map((item) => ({
+        ...item,
+        type: "sort",
+      })),
+    },
+    {
+      label: "Матеріали",
+      options: materials.map((item) => ({
+        label: item,
+        value: item,
+        type: "filter",
+      })),
+    },
+  ];
+
   return (
     <section className={s.container}>
       <form className={s.form}>
         <div className={s.wrapSelect}>
           <label className={s.label}>
-            <p>Сортувати</p>
-            <Select
-              classNamePrefix="custom-select"
-              options={sortOptions}
-              isClearable={true}
-              isSearchable={true}
-              placeholder="Оберіть тип сортування"
-              onChange={handleSortChange}
-            />
-          </label>
-        </div>
-        <div className={s.wrapSelect}>
-          <label className={s.label}>
-            <p>Катигорії</p>
+            <p>Категорії</p>
             <Select
               classNamePrefix="custom-select"
               options={categories.map((item) => ({ label: item, value: item }))}
-              isClearable={true}
-              isSearchable={true}
+              isClearable
+              isSearchable
               placeholder="Оберіть категорію"
               onChange={handleCategoryClick}
             />
@@ -61,11 +67,11 @@ export const MTSelect = () => {
             <p>Фільтрувати</p>
             <Select
               classNamePrefix="custom-select"
-              options={materials.map((item) => ({ value: item, label: item }))}
-              isClearable={true}
-              isSearchable={true}
-              placeholder="Оберіть матеріал"
-              onChange={handleFilterClick}
+              options={combinedOptions}
+              isClearable
+              isSearchable
+              placeholder="Оберіть параметр"
+              onChange={handleCombinedChange}
             />
           </label>
         </div>
