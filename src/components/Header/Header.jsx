@@ -52,7 +52,7 @@ export const Header = () => {
   return (
     <header className={`${s.header} ${isSearchFocused ? s.searchActive : ""}`}>
       <div className={s.container}>
-        {isMobileAndTablet ? <Icon id={"icon-BON"} className={s.logoBon} /> : <Icon id={"icon-logo"} className={s.logo} />}
+       <Icon id={"icon-BON"} className={s.logoBon} />
         <nav>
           <ul className={s.navigation}>
             {navigatePages.map((link) => (
@@ -67,7 +67,6 @@ export const Header = () => {
                 </NavLink>
               </li>
             ))}
-            <li className={s.listNavigation}>УВІЙТИ</li>
           </ul>
           <div className={s.searchContainer}>
             <form onSubmit={handleSubmit}>
