@@ -2,7 +2,6 @@
 @import "@/scss/base/mixins.scss";
 @import "@/scss/base/fonts.scss";
 
-
 .header {
   position: relative;
   flex-shrink: 0;
@@ -26,7 +25,6 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin: 0 auto;
     padding: 0 36px;
     max-width: 1440px;
@@ -39,31 +37,29 @@
     }
   }
 
-    .logo {
-      width: 155px;
-      height: 21px;
-      fill: $primary-white;
-      @include mobile-only {
-        width: 50px;
-      }
+  .logo {
+    width: 155px;
+    height: 21px;
+    fill: $primary-white;
+    @include mobile-only {
+      width: 50px;
     }
-    .logoBon{
-      width: 46px;
-      height: 21px;
-      fill: $primary-white;
-    }
+  }
+  .logoBon {
+    width: 46px;
+    height: 21px;
+    fill: $primary-white;
+  }
 
   .navigation {
     display: flex;
     align-items: center;
     color: $primary-white;
-    font-size: 15px;
 
     .listNavigation {
       font-family: "NunitoSans";
       font-weight: 200;
       font-size: 12px;
-      margin-right: 15px;
       &:not(:last-child) {
         margin-right: 22px;
       }
@@ -74,7 +70,6 @@
 
         &.active {
           font-weight: 900;
-         
         }
       }
     }
@@ -88,11 +83,11 @@
 
   .searchContainer {
     position: relative;
+    margin-top: 5px;
     .search {
-      width: 408px;
+      width: 400px;
       height: 25px;
       padding-left: 25px;
-      margin-top: 5px;
       border-radius: 5px;
       border: 1px solid $primary-white;
       color: $primary-white;
@@ -108,23 +103,17 @@
 
       &::placeholder {
         font-family: "NunitoSans";
-        font-weight: 200;
-        font-size: 11px;
-        color: $primary-white;
         text-transform: uppercase;
-
+        font-weight: 200;
+        font-size: 10px;
+        color: $primary-white;
       }
     }
     .wrapIconSearch {
       position: absolute;
-      top: 9px;
+      top: 5px;
       left: 5px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       border-radius: 25px;
-    
 
       @include mobile-only {
         left: auto;
@@ -147,6 +136,14 @@
   }
 
   nav {
+    margin: 0 auto;
+    @include tablet-and-desktop {
+      transform: translateX(85px);
+    }
+    @include tablet-only {
+      transform: translateX(65px);
+    }
+
     &:focus-within {
       @include mobile-only {
         display: flex;
@@ -193,10 +190,7 @@
         height: 25px;
       }
     }
-    //     .iconHeartWidth{
-    //   width: 26px;
-    //   height: 26px;
-    // }
+
     .userActions {
       display: flex;
       gap: 10px;

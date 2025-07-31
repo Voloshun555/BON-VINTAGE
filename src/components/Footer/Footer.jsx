@@ -16,6 +16,7 @@ export const Footer = () => {
           <div className={s.iconWrap}>
           <Icon id={'icon-e_etsy'} className={s.iconNav}/>
           <Icon id={'icon-insta'} className={s.iconNav}/>
+          <Icon id={'icon-pinterest'} className={s.iconNav}/>
           </div>
           {!isMobile && (
             <ul className={s.navList}>

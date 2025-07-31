@@ -8,7 +8,7 @@ import { useFilteredCards } from "@/hooks/useFilteredCards";
 
 import s from "./CardList.module.scss";
 
-export const CardList = ({ data, isLoading, isError, style }) => {
+export const CardList = ({ data, isLoading, isError }) => {
   const [isOpenModal, setOpenModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,7 +28,7 @@ export const CardList = ({ data, isLoading, isError, style }) => {
   const currentCards = filteredData.slice(firstCardIndex, lastCardIndex);
 
   return (
-    <div className={`${s.container} ${style}`}>
+    <section>
       {!isOpenModal ? (
         <>
           <ul className={s.containerCards}>
@@ -88,6 +88,6 @@ export const CardList = ({ data, isLoading, isError, style }) => {
       ) : (
         <Modal onClose={toggleModal} data={selectedItem} />
       )}
-    </div>
+    </section>
   );
 };

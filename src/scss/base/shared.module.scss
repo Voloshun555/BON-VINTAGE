@@ -17,17 +17,22 @@
 .grupCategories {
   margin-bottom: 25px;
   color: $primary-blue-categorise;
-  .listCategories:not(:last-child) {
-    margin-bottom: 10px;
+
+  .listCategories {
     font-family: "NunitoSans";
     font-size: 12px;
   }
+  .listCategories:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
-.listCategories:hover{
-color: $primary-blue;
-font-weight: 900;
-cursor: pointer;
+.listCategories:hover {
+  color: $primary-blue;
+    font-size: 12px;
+
+  font-weight: 900;
+  cursor: pointer;
 }
 
 .containerCategorizer {
@@ -45,6 +50,6 @@ cursor: pointer;
     margin: auto;
   }
 }
-.active{
+.active {
   color: $primary-blue;
 }
