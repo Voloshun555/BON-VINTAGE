@@ -55,7 +55,6 @@ export const MTSelect = () => {
               classNamePrefix="custom-select"
               options={categories.map((item) => ({ label: item, value: item }))}
               isClearable
-              menuIsOpen={true}
               isSearchable={false}
               components={{ DropdownIndicator: () => null }}
               placeholder="Категорії"
