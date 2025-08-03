@@ -22,7 +22,7 @@ const Home = ({ data, isLoading, isError }) => {
             богатый опыт рамки и место обучения кадров способствует подготовке и
             реализации направлений прогрессивного развития.
           </p>
-          <h2 className={s.logoTitle}>ANTIQUE & VINTAGE STORE</h2>
+          <h1 className={s.titleStore}>ANTIQUE & VINTAGE STORE</h1>
         </div>
         <img className={s.imageHero} src={iconSvg} alt="lion" />
       </div>

@@ -83,5 +83,10 @@
     border: 0.1px solid #4f5a6c;
     border-radius: 5px;
     width: 90%;
+    &.active {
+      background-color: $primary-blue;
+      color: $primary-white;
+    }
   }
+  
 }

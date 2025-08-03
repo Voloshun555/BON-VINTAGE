@@ -21,20 +21,20 @@
   .listCategories {
     font-family: "NunitoSans";
     font-size: 12px;
-  }
-  .listCategories:not(:last-child) {
-    margin-bottom: 10px;
+    transition: font-weight 0.3s $cubic-brauser, font-size 0.3s $cubic-brauser,
+      color 0.3s $cubic-brauser;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      color: $primary-blue;
+      font-weight: 900;
+      cursor: pointer;
+    }
   }
 }
-
-.listCategories:hover {
-  color: $primary-blue;
-    font-size: 12px;
-
-  font-weight: 900;
-  cursor: pointer;
-}
-
 .containerCategorizer {
   display: flex;
   width: 100%;

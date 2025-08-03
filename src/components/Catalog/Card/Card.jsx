@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import s from "./Card.module.scss";
 import { FavoriteButton } from "@/components/FavoriteBtn/FavoriteButton";
 
@@ -13,10 +14,15 @@ export const Card = ({
   isFavorite,
   onClick,
 }) => {
-   const handleFavoriteClick = () => {
-     isFavorite ? removeFavoriteList(id) : addFavoriteList(id);
-   };
+  const [isBascket, setIsBascket] = useState(false);
+  console.log(isBascket)
 
+  const toggleBascket = () => {
+    setIsBascket(!isBascket);
+  };
+  const handleFavoriteClick = () => {
+    isFavorite ? removeFavoriteList(id) : addFavoriteList(id);
+  };
 
   return (
     <li className={s.containerCard}>
@@ -35,10 +41,14 @@ export const Card = ({
         />
       </div>
       <div className={s.item}>
-          <h3 className={s.itemTitle}>{description}</h3>
-          <p className={s.itemPrice}>{price} грн</p>
+        <h3 className={s.itemTitle}>{description}</h3>
+        <p className={s.itemPrice}>{price} грн</p>
       </div>
-      <button className={s.btnBascket} aria-label="Додати до кошика">
+      <button
+        className={`${s.btnBascket} ${isBascket ? s.active : ''}`}
+        aria-label="Додати до кошика"
+        onClick={toggleBascket}
+      >
         додати до кошику
       </button>
     </li>

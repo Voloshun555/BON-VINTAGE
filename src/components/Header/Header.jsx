@@ -52,7 +52,7 @@ export const Header = () => {
   return (
     <header className={`${s.header} ${isSearchFocused ? s.searchActive : ""}`}>
       <div className={s.container}>
-       <Icon id={"icon-BON"} className={s.logoBon} />
+        <Icon id={"icon-BON"} className={s.logoBon} />
         <nav>
           <ul className={s.navigation}>
             {navigatePages.map((link) => (
@@ -104,10 +104,7 @@ export const Header = () => {
               <Icon id={"icon-user"} className={s.iconNav} />
             </li>
             <li className={s.wrapIcon}>
-              <Icon
-                id={"icon-heart"}
-                className={`${s.iconNav} ${s.iconHeartWidth} ${s.iconHeart}`}
-              />
+              <Icon id={"icon-heart"} className={`${s.iconNav}`} />
               {totalFavorite > 0 && (
                 <p className={s.totalFavorite}>{totalFavorite}</p>
               )}

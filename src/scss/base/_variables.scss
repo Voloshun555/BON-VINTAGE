@@ -17,6 +17,5 @@ $breakpoint-tablet: 834px;
 $breakpoint-desktop: 1440px;
 
 //timing function
-$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-$transition-default: all 0.5s $timing-function;
+$cubic-brauser: cubic-bezier(0.4, 0, 0.2, 1);
 $transform-default: scale(1.1);

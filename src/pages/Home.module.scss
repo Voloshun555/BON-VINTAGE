@@ -70,20 +70,12 @@
   //   height: clamp(260px, 50vw, 720px);
   // }
 }
-.logoTitle {
-  font-size: clamp(20px, 3vw, 25px);
-  color: $primary-blue;
-
-  @include tablet-only {
-    font-size: clamp(10px, 3vw, 50px);
-  }
-  @include desktop-only {
-    position: absolute;
-    font-size: 100px;
-    top: 80px;
-    left: 5%;
-    color: $primary-white;
-  }
+.titleStore {
+  position: absolute;
+  font-size: 100px;
+  top: 80px;
+  left: 5%;
+  color: $primary-white;
 }
 
 .containerFavorite {
