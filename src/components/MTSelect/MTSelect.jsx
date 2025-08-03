@@ -8,7 +8,7 @@ import {
 import { sortOptions, categories, materials } from "@/fakeApi.js";
 
 import s from "./MTSelect.module.scss";
-import './FilterCastomSelect.scss'
+import "./FilterCastomSelect.scss";
 
 export const MTSelect = () => {
   const dispatch = useDispatch();
@@ -51,26 +51,27 @@ export const MTSelect = () => {
       <form className={s.form}>
         <div className={s.wrapSelect}>
           <label className={s.label}>
-            <p>Категорії</p>
             <Select
               classNamePrefix="custom-select"
               options={categories.map((item) => ({ label: item, value: item }))}
               isClearable
-              isSearchable
-              placeholder="Оберіть категорію"
+              menuIsOpen={true}
+              isSearchable={false}
+              components={{ DropdownIndicator: () => null }}
+              placeholder="Категорії"
               onChange={handleCategoryClick}
             />
           </label>
         </div>
         <div className={s.wrapSelect}>
           <label className={s.label}>
-            <p>Фільтрувати</p>
             <Select
               classNamePrefix="custom-select"
               options={combinedOptions}
               isClearable
-              isSearchable
-              placeholder="Оберіть параметр"
+              isSearchable={false}
+              components={{ DropdownIndicator: () => null }}
+              placeholder="Фільтрувати"
               onChange={handleCombinedChange}
             />
           </label>

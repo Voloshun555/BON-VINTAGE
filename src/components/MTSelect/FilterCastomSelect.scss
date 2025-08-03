@@ -1,20 +1,43 @@
+@import "@/scss/base/variables.scss";
+@import "@/scss/base/mixins.scss";
+@import "@/scss/base/fonts.scss";
+
 .custom-select {
   &__control {
-    display: flex ;
+    display: flex;
+    width: 130px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: $primary-blue !important;
+    border: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 10px;
+    @include tablet-only {
+      width: 250px; 
+    }
+  }
+  &__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-white !important;
+    font-family: "NunitoSans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+  }
 
-    padding: 0px 10px 0px 18px ;
-    justify-content: center ;
-    align-items: center ;
-    gap: 32px ;
-    border-radius: 14px ;
-    background: rgb(12, 12, 194) ;
-    border: none ;
-    outline: none ;
-    color: rgb(0, 0, 0) ;
-    font-size: 18px ;
-    font-weight: 500 ;
-    line-height: 20px ;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 10px ;
+  &__single-value {
+    color: $primary-white !important;
+    font-family: "NunitoSans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
   }
 
   &__indicator-separator {
@@ -26,44 +49,41 @@
     flex-direction: column;
     max-height: 250px;
     padding: 10px 10px 10px 10px;
-    border-radius: 14px ;
-    background-color: #fff ;
-    
-    margin-top: 5px ;
+    border-radius: 2px !important;
+    border: 1px solid $primary-blue !important;
+    margin-top: 5px;
   }
 }
 
 .custom-select__option {
-  color: rgba(18, 20, 23, 0.2) ;
-  font-family: Manrope ;
-  font-size: 16px ;
-  font-style: normal ;
-  font-weight: 500 ;
-  line-height: 20px ; /* 125% */
-  background-color: transparent ;
+  font-family: "NunitoSans";
+  font-size: 8px !important;
+  font-weight: 500;
+  background-color: transparent !important;
 
   &:hover,
   &:active,
   &:focus {
-    color: #333 ; // Змініть на потрібний колір тексту при наведенні
+    background-color: $primary-blue !important;
+    color: $primary-white !important;
   }
 
   &--is-selected,
   &--is-selected:hover,
   &--is-selected:active,
   &--is-selected:focus {
-
-  color: #333 ; // Змініть на потрібний колір тексту при наведенні
+    background-color: $primary-blue !important;
+    color: $primary-white !important;
   }
 }
 
 // Стилі для веб-браузерів на основі Webkit (Chrome, Safari)
 .custom-select__menu-list::-webkit-scrollbar {
-  width: 8px; // ширина вертикального скролбара
+  width: 1px !important; // ширина вертикального скролбара
 }
 
 .custom-select__menu-list::-webkit-scrollbar-thumb {
-  background-color: #888; // колір "тумби" скролбара
+  background-color: #121fcc; // колір "тумби" скролбара
   border-radius: 4px; // закруглення кутів
 }
 
