@@ -15,7 +15,7 @@ export const Card = ({
   onClick,
 }) => {
   const [isBascket, setIsBascket] = useState(false);
-  console.log(isBascket)
+  
 
   const toggleBascket = () => {
     setIsBascket(!isBascket);

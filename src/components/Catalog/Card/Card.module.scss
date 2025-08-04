@@ -35,9 +35,11 @@
       position: absolute;
       bottom: 8px;
       right: 8px;
+      width: 35px;
+      height: 35px;
       .iconHeart {
-        width: 30px;
-        height: 30px;
+        width: 100%;
+        height: 100%;
         // color: $primary-white;
       }
     }
@@ -88,5 +90,4 @@
       color: $primary-white;
     }
   }
-  
 }

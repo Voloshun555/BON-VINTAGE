@@ -52,9 +52,10 @@
 }
 .description {
   font-family: "NunitoSans";
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 300;
   max-width: 441px;
-  font-size: 15px;
-  font-weight: 400;
   text-align: justify;
 }
 
@@ -64,12 +65,8 @@
   width: 690px;
   height: 650px;
   border-radius: 15px;
-
-  // @include mobile-and-tablet {
-  //   width: clamp(260px, 50vw, 720px);
-  //   height: clamp(260px, 50vw, 720px);
-  // }
 }
+
 .titleStore {
   position: absolute;
   font-size: 100px;
