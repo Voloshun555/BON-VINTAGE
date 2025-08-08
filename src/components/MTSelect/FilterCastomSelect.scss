@@ -8,7 +8,7 @@
     width: 130px;
     justify-content: center;
     align-items: center;
-    border-radius: 25px;
+    border-radius: 10px !important;
     background-color: $primary-blue !important;
     border: none;
     outline: none;
@@ -47,7 +47,8 @@
   &__menu {
     display: flex;
     flex-direction: column;
-    max-height: 250px;
+    width: 100% !important;
+    max-height: 350px;
     padding: 10px 10px 10px 10px;
     border-radius: 2px !important;
     border: 1px solid $primary-blue !important;
@@ -57,9 +58,11 @@
 
 .custom-select__option {
   font-family: "NunitoSans";
-  font-size: 8px !important;
+  font-size: 12px !important;
   font-weight: 500;
+  line-height: 15px;
   background-color: transparent !important;
+  color: $primary-blue !important;
 
   &:hover,
   &:active,
@@ -83,7 +86,7 @@
 }
 
 .custom-select__menu-list::-webkit-scrollbar-thumb {
-  background-color: #121fcc; // колір "тумби" скролбара
+  background-color: $primary-blue; // колір "тумби" скролбара
   border-radius: 4px; // закруглення кутів
 }
 

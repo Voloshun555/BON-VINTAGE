@@ -107,10 +107,16 @@
         font-weight: 300;
         font-size: 13px;
         color: $primary-white;
+        @include mobile-only {
+          font-size: 11px;
+        }
       }
     }
     .wrapIconSearch {
       position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       top: 3px;
       left: 5px;
       border-radius: 25px;

@@ -6,10 +6,12 @@ import { Categorizer } from "@/components/Categorizer/Categorizer";
 import { MTSelect } from "@/components/MTSelect/MTSelect";
 import style from "@/scss/base/shared.module.scss";
 import s from "./Home.module.scss";
+import { Title } from "@/components/Title/Title";
 
 // eslint-disable-next-line react/prop-types
 const Home = ({ data, isLoading, isError }) => {
-  const isMobile = useMediaQuery({ maxWidth: 1439 });
+  const isMobileAndTablet = useMediaQuery({ maxWidth: 1439 });
+  const isMobile = useMediaQuery({ maxWidth: 833 });
   return (
     <section>
       <div className={s.heroContainer}>
@@ -24,12 +26,18 @@ const Home = ({ data, isLoading, isError }) => {
           </p>
           <h1 className={s.titleStore}>ANTIQUE & VINTAGE STORE</h1>
         </div>
+        {isMobile && <Icon id={"icon-logo"} className={s.logo} />}
         <img className={s.imageHero} src={iconSvg} alt="lion" />
+        {isMobile && <Title icon={false} />}
       </div>
       <div className={style.containerCategorizer}>
-             {!isMobile ? <Categorizer className={s.categorizer} /> : <MTSelect />}
-             <CardList data={data} isLoading={isLoading} isError={isError} />
-           </div>
+        {!isMobileAndTablet ? (
+          <Categorizer className={s.categorizer} />
+        ) : (
+          <MTSelect />
+        )}
+        <CardList data={data} isLoading={isLoading} isError={isError} />
+      </div>
     </section>
   );
 };

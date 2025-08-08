@@ -1,18 +1,35 @@
+/* eslint-disable react/prop-types */
 
+import React from "react";
 import { Icon } from "../Icon/Icon";
 import s from "./Title.module.scss";
 
-
-export const Title = () => {
+export const Title = ({
+  icon = true,
+  title = "Antique & Vintage \nExclusive Collectibles",
+  subtitle = "Предмети з історією, які наповнюють ваш дім \nунікальністю та чарівністю",
+  className = ""
+}) => {
   return (
-    <div className={s.container}>
-      <Icon id={"icon-with-star"} className={s.iconWithStar} />
+    <div className={`${s.container} ${className}`}>
+      {icon && (
+        <Icon id={"icon-with-star"} className={s.iconWithStar} />
+      )}
       <h1 className={s.title}>
-        Antique & Vintage <br /> Exclusive Collectibles
+        {title.split("\n").map((line, i) => (
+          <React.Fragment key={i}>
+            {line}
+            <br />
+          </React.Fragment>
+        ))}
       </h1>
       <p className={s.historyItems}>
-        Предмети з історією, які наповнюють ваш дім <br /> унікальністю та
-        чарівністю
+        {subtitle.split("\n").map((line, i) => (
+          <React.Fragment key={i}>
+            {line}
+            <br />
+          </React.Fragment>
+        ))}
       </p>
     </div>
   );

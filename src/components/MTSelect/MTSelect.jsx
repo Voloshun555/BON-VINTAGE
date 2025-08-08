@@ -56,6 +56,7 @@ export const MTSelect = () => {
               options={categories.map((item) => ({ label: item, value: item }))}
               isClearable
               isSearchable={false}
+              menuIsOpen={true}
               components={{ DropdownIndicator: () => null }}
               placeholder="Категорії"
               onChange={handleCategoryClick}
