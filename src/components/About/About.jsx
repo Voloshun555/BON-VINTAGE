@@ -1,4 +1,3 @@
-
 import { CardSlide } from "../CardSlide/CardSlide";
 import { Title } from "../Title/Title";
 import s from "./About.module.scss";
@@ -64,7 +63,10 @@ export const About = () => {
           </div>
         </div>
       </section>
-      <section className={`${s.container} ${s.possitionDeliveryAndPayment}`} id='delivery'>
+      <section
+        className={`${s.container} ${s.possitionDeliveryAndPayment}`}
+        id="delivery"
+      >
         <div className={s.containerDeliveryAndPayment}>
           <div className={s.wrapperDeliveryAndPayment}>
             <h2 className={s.title}>delivery and payment</h2>
@@ -93,26 +95,21 @@ export const About = () => {
               богатый опыт рамки и место обучения кадров способствует подготовке
               и реализации направлений прогрессивного развития.
             </p>
-            <h3 className={s.titleDescription}>Відгуки</h3>
-
-            <ul className={s.listReviews}>
-              <li className={s.itemReviews}>
-                <p className={s.textReviews}>
-                  Hello
-                </p>
-              </li>
-              <li className={s.itemReviews}>
-                <p className={s.textReviews}>
-                  Hello
-                </p>
-              </li>
-              <li className={s.itemReviews}>
-                <p className={s.textReviews}>
-                  Hello
-                </p>
-              </li>
-            </ul>
           </div>
+        </div>
+        <div className={s.containerReviews}>
+          <h3 className={s.titleDescription}>Reviews</h3>
+          <ul className={s.listReviews}>
+            <li className={s.itemReviews}>
+              <p className={s.textReviews}>Hello</p>
+            </li>
+            <li className={s.itemReviews}>
+              <p className={s.textReviews}>Hello</p>
+            </li>
+            <li className={s.itemReviews}>
+              <p className={s.textReviews}>Hello</p>
+            </li>
+          </ul>
         </div>
       </section>
 

@@ -18,9 +18,9 @@
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
   width: 100%;
-  height: 1650px;
 }
 .listMission {
+  margin-bottom: 150px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -36,6 +36,7 @@
     font-family: "NunitoSans";
     font-size: 12px;
     font-weight: 200;
+    line-height: 18px;
     width: 310px;
     text-align: center;
   }
@@ -71,7 +72,7 @@
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
   width: 100%;
-  height: 1800px;
+ 
   .wrapperHistory {
     max-width: 1075px;
   }
@@ -88,6 +89,7 @@
     font-family: "NunitoSans";
     font-size: 12px;
     font-weight: 400;
+    line-height: 15px;
     margin: 0 auto;
     text-align: justify;
 
@@ -96,8 +98,8 @@
   }
   .textStoryAllYear {
     font-family: "NunitoSans";
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 900;
 
     margin: 0 auto;
 
@@ -115,7 +117,7 @@
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Delivery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 .possitionDeliveryAndPayment {
-  transform: translate(0, -175px);
+  transform: translate(0, -165px);
   .wrapperDeliveryAndPayment {
     max-width: 1075px;
   }
@@ -130,11 +132,11 @@
   padding: 90px 20px;
   border-radius: 60px;
   width: 100%;
-  height: 1870px;
+ 
 
   .title {
     text-transform: uppercase;
-    font-family: MinionPro;
+    font-family: 'MinionPro';
     font-size: 60px;
     text-align: center;
     margin-bottom: 90px;
@@ -154,28 +156,44 @@
     margin-bottom: 60px;
   }
 
+}
+// ///////////////////////////////////////////REviews\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+.containerReviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $primary-baig;
+  color: $primary-white;
+  padding: 90px 20px;
+  border-radius: 60px;
+  width: 100%;
+  transform: translate(0, -100px);
+
+  .titleDescription {
+   text-transform: uppercase;
+    font-family: "MinionPro";
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 90px;
+  }
+
   .listReviews {
     display: flex;
     gap: 20px;
 
     .itemReviews {
-      width: 100%;
+      width: 300px;
       height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      background-color: $primary-baig;
+      background-color: $primary-blue;
       border-radius: 25px;
       padding: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-      .textReviews {
-        font-size: 50px;
-        text-align: center;
-        color: $primary-blue;
-        font-weight: bold;
-      }
+      
     }
   }
 }

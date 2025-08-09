@@ -68,8 +68,8 @@ export const Modal = ({ onClose, data }) => {
           </div>
           <button className={s.addBasket}>ДОДАТИ ДО КОШИКУ</button>
           <ul className={s.priceInfo}>
-            <li>€ 222</li>
-            <li>{data.price}: грн</li>
+            <li className={s.price}>€ 222</li>
+            <li className={s.price}>{data.price}: грн</li>
           </ul>
         </div>
         <div className={s.containerDescription}>
@@ -77,10 +77,10 @@ export const Modal = ({ onClose, data }) => {
             {data.title} <span>{data.country}</span>
           </h1>
           <ul className={s.productDetails}>
-            <li>{data.category}, деколь, метал</li>
-            <li>Висота 8 см (10,5 см з кришкою) </li>
-            <li>Діаметр 6 см</li>
-            <li>У відмінному стані! Оригінальна упаковка</li>
+            <li className={s.productInfoItem}>{data.category}, деколь, метал</li>
+            <li className={s.productInfoItem}>Висота 8 см (10,5 см з кришкою) </li>
+            <li className={s.productInfoItem}>Діаметр 6 см</li>
+            <li className={s.productInfoItem}>У відмінному стані! Оригінальна упаковка</li>
           </ul>
           <ul className={s.productInfo}>
             <li>

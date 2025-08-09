@@ -10,7 +10,7 @@
   .closeButton {
     font-family: "NunitoSans";
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: uppercase;
     padding: 5px;
     border-radius: 5px;
@@ -169,9 +169,11 @@
         flex-direction: column;
         gap: 5px;
         margin-bottom: 30px;
-        font-family: "NunitoSans";
-        font-size: 12px;
-        font-weight: 400;
+        .productInfoItem{
+          font-family: "NunitoSans";
+          font-size: 12px;
+          font-weight: 400;
+        }
       }
 
       .productInfo {
@@ -181,16 +183,17 @@
         font-family: "NunitoSans";
         font-size: 12px;
         font-weight: 400;
+        line-height: 15px;
       }
     }
 
     .addBasket {
       font-family: "NunitoSans";
-      font-size: 12px;
-      font-weight: 200;
+      font-size: 14px;
+      font-weight: 300;
       width: 100%;
       padding: 15px;
-      border-radius: 5px;
+      border-radius: 10px;
       color: $primary-white;
       background-color: $primary-blue;
       margin-bottom: 15px;
@@ -200,6 +203,12 @@
       display: flex;
       justify-content: space-between;
       padding: 5px;
+      .price {
+        font-family: "NunitoSans";
+        font-size: 18px;
+        font-weight: 600;
+        color: $primary-blue;
+      }
     }
   }
 
