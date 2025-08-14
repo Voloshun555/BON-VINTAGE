@@ -6,6 +6,9 @@ import { Modal } from "@/components/Modal/Modal";
 import { Pagination } from "@/components/Pagination/Pagination";
 import { useFilteredCards } from "@/hooks/useFilteredCards";
 
+import { Spiner } from "@/components/Spiner/Spiner";
+
+import shared from "@/scss/base/shared.module.scss";
 import s from "./CardList.module.scss";
 
 export const CardList = ({ data, isLoading, isError }) => {
@@ -21,7 +24,8 @@ export const CardList = ({ data, isLoading, isError }) => {
     setSelectedItem(item);
   };
 
-  const filteredData = useFilteredCards(data);
+   const safeData = Array.isArray(data) ? data : [];
+  const filteredData = useFilteredCards(safeData);
 
   const lastCardIndex = currentPage * cardsPerPage;
   const firstCardIndex = lastCardIndex - cardsPerPage;
@@ -31,8 +35,12 @@ export const CardList = ({ data, isLoading, isError }) => {
     <section>
       {!isOpenModal ? (
         <>
+            {isLoading && (
+              <div className={shared.center}>
+                <Spiner />
+              </div>
+            )}
           <ul className={s.containerCards}>
-            {isLoading && <div>...Loading</div>}
             {isError && <div>...Error</div>}
             {!isLoading &&
               !isError &&

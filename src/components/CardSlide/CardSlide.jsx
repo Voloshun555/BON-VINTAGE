@@ -1,18 +1,20 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useProducts } from "@/hooks/useProducts";
+import { Spiner } from "../Spiner/Spiner";
 
 import "swiper/css";
 import "swiper/css/autoplay";
 
-import s from "./CardSlide.module.scss";
+import shared from "@/scss/base/shared.module.scss";
+import s from "./CardSlide.module.scss"; 
 import "@/scss/base/_cardSlide.scss"
 
 export const CardSlide = () => {
   const { data, isLoading, isError } = useProducts(25);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className={shared.center}> <Spiner/> </div>;
   }
 
   if (isError) {

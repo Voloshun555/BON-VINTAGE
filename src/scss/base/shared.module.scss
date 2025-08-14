@@ -53,3 +53,11 @@
 .active {
   color: $primary-blue;
 }
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}

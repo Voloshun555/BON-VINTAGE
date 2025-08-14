@@ -6,6 +6,6 @@ export const useProducts = (count = 12) => {
     return useQuery({
       queryKey: ["products", count],
         queryFn: () => fetchFakeData(count),
-      staleTime: 1000 * 60 * 5
+      staleTime: 1000 * 60 * 5,
     });
 }
