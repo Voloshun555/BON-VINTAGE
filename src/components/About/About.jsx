@@ -15,14 +15,14 @@ export const About = () => {
             </li>
             <li className={s.elemMission}>
               <h2 className={s.title}>our mission</h2>
-              <p className={s.text}>
+              <p className={`${s.text} ${s.textMission}`}>
                 Наша місія – приносити у ваш дім натхнення наповнити ваш простір
                 історією, зберігати історію та ділитися її красою з вами
               </p>
             </li>
             <li className={s.elemMission}>
               <h2 className={s.title}>our goal</h2>
-              <p className={s.text}>
+              <p className={`${s.text} ${s.textMission}`}>
                 Наша мета – додати вашому простору індивідуальності через
                 історичні речі. Допомогти вам знайти щось особливе, що змінить
                 ваш дім.
@@ -56,7 +56,7 @@ export const About = () => {
                 дуже цікавих речей, а разом із ними знання та досвід.
               </p>
             </div>
-            {/* <div className={s.iconHistory}></div> */}
+            <div className={s.iconHistory}></div>
           </div>
           <div className={s.containerDelivery}>
             <div className={s.wrapperDelivery}>
@@ -64,7 +64,7 @@ export const About = () => {
               <ul className={s.listDelivery}>
                 <li className={s.elemDelivery}>
                   <h3 className={s.subtitle}>доставка</h3>
-                  <p className={s.text}>
+                  <p className={` ${s.text} ${s.textDelivery}`}>
                     Наша мета – додати вашому простору індивідуальності через
                     історичні речі. Допомогти вам знайти щось особливе, що
                     змінить ваш дім.
@@ -72,7 +72,7 @@ export const About = () => {
                 </li>
                 <li className={s.elemDelivery}>
                   <h3 className={s.subtitle}>повернення та обмін</h3>
-                  <p className={s.text}>
+                  <p className={` ${s.text} ${s.textDelivery}`}>
                     Наша мета – додати вашому простору індивідуальності через
                     історичні речі. Допомогти вам знайти щось особливе, що
                     змінить ваш дім.
@@ -80,7 +80,7 @@ export const About = () => {
                 </li>
                 <li className={s.elemDelivery}>
                   <h3 className={s.subtitle}>способи оплати</h3>
-                  <p className={s.text}>
+                  <p className={` ${s.text} ${s.textDelivery}`}>
                     Наша мета – додати вашому простору індивідуальності через
                     історичні речі. Допомогти вам знайти щось особливе, що
                     змінить ваш дім.
@@ -93,20 +93,16 @@ export const About = () => {
             <div className={s.wrapperReviews}>
               <h2 className={s.title}>reviews</h2>
               <ul className={s.listReviews}>
-                <li className={s.elemReview}>
-                  <p className={s.textReviews}>Hello</p>
-                </li>
-                <li className={s.elemReview}>
-                  <p className={s.textReviews}>Hello</p>
-                </li>
-                <li className={s.elemReview}>
-                  <p className={s.textReviews}>Hello</p>
-                </li>
+                <li className={s.elemReview}></li>
+                <li className={s.elemReview}></li>
+                <li className={s.elemReview}></li>
               </ul>
             </div>
           </div>
           <div className={s.containerContacts}>
-            <h2 className={s.title}>contacts</h2>
+            <div className={s.wrapperContacts}>
+              <h2 className={s.title}>contacts</h2>
+            </div>
           </div>
         </div>
       </section>

@@ -12,6 +12,9 @@
   color: $primary-white;
   border-radius: 25px 25px 30px 30px;
   width: 100%;
+  @include tablet-and-desktop {
+    border-radius: 60px;
+  }
   .title {
     text-transform: uppercase;
     font-family: MinionPro;
@@ -28,11 +31,6 @@
     line-height: 18px;
     text-align: start;
     width: 100%;
-    @include desktop-only {
-      width: 310px;
-      font-size: 12px;
-      text-align: center;
-    }
   }
 }
 .listMission {
@@ -40,33 +38,65 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 10px 10px;
+  @include tablet-and-desktop {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 20px;
+    padding: 40px 40px 50px;
+    width: 100%;
+    margin: auto;
+  }
+  // @include desktop-only {
+  //   grid-template-columns: 1fr 1fr;
+  //   grid-template-rows: 1fr 1fr;
+  //   gap: 20px 20px;
+  // }
   .elemMission {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    @include desktop-only {
-      max-width: 640px;
+    @include tablet-and-desktop {
+      height: 650px;
     }
   }
   .elemMission:nth-child(2) {
-    padding: 25px;
+    @include mobile-only {
+      padding: 25px;
+    }
   }
   .elemMission:nth-child(3) {
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    background-color: $primary-baig;
-    color: $primary-blue;
-    padding: 25px;
-    border: transparent;
+    @include mobile-only {
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      background-color: $primary-baig;
+      color: $primary-blue;
+      padding: 25px;
+    }
+
+    @include tablet-and-desktop {
+      background-color: transparent;
+      color: $primary-white;
+    }
   }
 
   .elemMission:nth-child(3n + 1) {
-    border-radius: calc(60px - 20px);
-    background-color: $primary-white;
+    border-radius: 60px;
+    background-color: $primary-baig;
     @include mobile-only {
       display: none;
+    }
+  }
+
+  .textMission {
+    @include tablet-and-desktop {
+      font-size: 12px;
+      line-height: 15px;
+      width: 250px;
+      text-align: center;
+    }
+    @include desktop-only {
+      width: 310px;
     }
   }
 
@@ -80,20 +110,41 @@
   text-align: center;
   background-color: $primary-baig;
   color: $primary-white;
+  @include tablet-and-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    color: $primary-blue;
+    padding: 40px 40px 50px;
+  }
 }
 .wrapperHistory {
   padding: 25px;
-  background-color: $primary-blue;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+  @include mobile-only {
+    background-color: $primary-blue;
+    padding: 25px;
+  }
 }
 .textStoryAllYear {
   font-family: "NunitoSans";
   font-size: 15px;
   font-weight: 900;
-  text-align: start;
-
+  text-align: center;
   margin-top: 15px;
+}
+.iconHistory {
+  display: none;
+  @include tablet-and-desktop {
+    display: block;
+    width: 400px;
+    height: 500px;
+    border-radius: 25px;
+    background-color: $primary-blue;
+  }
 }
 //  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Delivery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -101,9 +152,22 @@
   text-align: center;
   background-color: $primary-baig;
   color: $primary-blue;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  padding: 25px;
+  @include mobile-only {
+    padding: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+
+  .wrapperDelivery {
+    @include tablet-and-desktop {
+      border-top-left-radius: 60px;
+      border-top-right-radius: 60px;
+      background-color: $primary-blue;
+      padding: 40px 40px 50px;
+
+      color: $primary-white;
+    }
+  }
 }
 
 .listDelivery {
@@ -119,10 +183,8 @@
     background-color: $primary-white;
     border-radius: 25px;
     text-align: start;
-
-    @include mobile-only {
-      width: 100%;
-      max-width: none;
+    @include tablet-and-desktop {
+      color: $primary-blue;
     }
   }
 
@@ -133,39 +195,51 @@
     margin-bottom: 10px;
     text-align: center;
   }
+
+  .textDelivery {
+    text-align: center;
+  }
 }
 /////////////////////////////////////////////////////////////////////  Reviews ///////////////////////////////////////////////////
 .containerReviews {
   text-align: center;
   background-color: $primary-baig;
   color: $primary-white;
+  @include tablet-and-desktop {
+    padding: 40px 40px 50px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    color: $primary-blue;
+  }
 }
 .wrapperReviews {
-  padding: 25px;
-  background-color: $primary-blue;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  @include mobile-only {
+    padding: 25px;
+    background-color: $primary-blue;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
 }
 
 .listReviews {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
+  @include mobile-only {
+    flex-direction: column;
+  }
 
   .elemReview {
-    width: 70px;
-    max-width: 640px;
-    height: 155px;
-    padding: 15px;
-    background-color: $primary-white;
-    border-radius: 10px;
-    text-align: start;
-    color: $primary-blue;
-
+    width: 300px;
+    height: 350px;
+    background-color: $primary-blue;
+    color: $primary-white;
+    border-radius: 15px;
     @include mobile-only {
-      width: 100%;
-      max-width: none;
+      background-color: $primary-white;
+      width: 210px;
+      height: 270px;
     }
   }
 }
@@ -174,184 +248,22 @@
 .containerContacts {
   text-align: center;
   background-color: $primary-baig;
-  color: $primary-blue;
-  border-radius: 25px;
-  padding: 25px 25px 150px 25px;
+   border-bottom-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  @include mobile-only {
+    padding: 40px 40px 50px;
+    color: $primary-blue;
+    border-radius: 25px;
+    padding: 25px 25px 150px 25px;
+  }
+  .wrapperContacts {
+    @include tablet-and-desktop {
+     background-color: $primary-blue;
+    padding: 40px 40px 350px;
+    border-radius: 60px;
+    
+    }
+   
+  }
 }
 
-//   .wrapperHistory {
-//     max-width: 1075px;
-//   }
-
-//   .title {
-//     text-transform: uppercase;
-//     font-family: MinionPro;
-//     font-size: 60px;
-//     text-align: center;
-//     color: $primary-blue;
-//     margin-bottom: 90px;
-//   }
-//   .textStory {
-//     font-family: "NunitoSans";
-//     font-size: 12px;
-//     font-weight: 400;
-//     line-height: 15px;
-//     margin: 0 auto;
-//     text-align: justify;
-
-//     color: $primary-blue;
-//     margin-bottom: 20px;
-//   }
-//   .textStoryAllYear {
-//     font-family: "NunitoSans";
-//     font-size: 15px;
-//     font-weight: 900;
-
-//     margin: 0 auto;
-
-//     text-align: center;
-//     color: $primary-blue;
-//     margin-bottom: 50px;
-//   }
-//   .iconHistory {
-//     height: 900px;
-//     border-radius: 25px;
-
-//     background-color: $primary-blue;
-//   }
-
-// .possitionHistory {
-//   transform: translate(0, -100px);
-// }
-
-// .containerHistory {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   background-color: $primary-baig;
-//   color: $primary-white;
-//   padding: 90px 20px;
-//   border-top-left-radius: 60px;
-//   border-top-right-radius: 60px;
-//   width: 100%;
-
-//   .wrapperHistory {
-//     max-width: 1075px;
-//   }
-
-//   .title {
-//     text-transform: uppercase;
-//     font-family: MinionPro;
-//     font-size: 60px;
-//     text-align: center;
-//     color: $primary-blue;
-//     margin-bottom: 90px;
-//   }
-//   .textStory {
-//     font-family: "NunitoSans";
-//     font-size: 12px;
-//     font-weight: 400;
-//     line-height: 15px;
-//     margin: 0 auto;
-//     text-align: justify;
-
-//     color: $primary-blue;
-//     margin-bottom: 20px;
-//   }
-//   .textStoryAllYear {
-//     font-family: "NunitoSans";
-//     font-size: 15px;
-//     font-weight: 900;
-
-//     margin: 0 auto;
-
-//     text-align: center;
-//     color: $primary-blue;
-//     margin-bottom: 50px;
-//   }
-//   .iconHistory {
-//     height: 900px;
-//     border-radius: 25px;
-
-//     background-color: $primary-blue;
-//   }
-// }
-// // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Delivery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-// .possitionDeliveryAndPayment {
-//   transform: translate(0, -165px);
-//   .wrapperDeliveryAndPayment {
-//     max-width: 1075px;
-//   }
-// }
-
-// .containerDeliveryAndPayment {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   background-color: $primary-blue;
-//   color: $primary-white;
-//   padding: 90px 20px;
-//   border-radius: 60px;
-//   width: 100%;
-
-//   .title {
-//     text-transform: uppercase;
-//     font-family: "MinionPro";
-//     font-size: 60px;
-//     text-align: center;
-//     margin-bottom: 90px;
-//   }
-//   .titleDescription {
-//     font-family: "NunitoSans";
-//     font-size: 25px;
-//     text-align: center;
-//     margin-bottom: 30px;
-//   }
-//   .text {
-//     font-family: "NunitoSans";
-//     font-weight: 200;
-//     font-size: 12px;
-//     text-align: justify;
-//     color: $primary-white;
-//     margin-bottom: 60px;
-//   }
-// }
-// // ///////////////////////////////////////////REviews\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// .containerReviews {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   background-color: $primary-baig;
-//   color: $primary-white;
-//   padding: 90px 20px;
-//   border-radius: 60px;
-//   width: 100%;
-//   transform: translate(0, -100px);
-
-//   .titleDescription {
-//     text-transform: uppercase;
-//     font-family: "MinionPro";
-//     font-size: 60px;
-//     text-align: center;
-//     margin-bottom: 90px;
-//   }
-
-//   .listReviews {
-//     display: flex;
-//     gap: 20px;
-
-//     .itemReviews {
-//       width: 300px;
-//       height: 400px;
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-
-//       background-color: $primary-blue;
-//       border-radius: 25px;
-//       padding: 20px;
-//       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-//     }
-//   }
-// }
