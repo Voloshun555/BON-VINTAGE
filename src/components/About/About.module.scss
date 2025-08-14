@@ -4,196 +4,354 @@
 
 .container {
   max-width: 1440px;
-  padding: 20px 34px 0;
+  padding: 20px 34px 34px;
   margin: auto;
 }
-
-// .wraper {
-
-// }
 .containerMission {
   background-color: $primary-blue;
   color: $primary-white;
-  padding: 20px;
-  border-top-left-radius: 60px;
-  border-top-right-radius: 60px;
+  border-radius: 25px 25px 30px 30px;
   width: 100%;
-}
-.listMission {
-  margin-bottom: 150px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 10px;
-  flex-wrap: wrap;
   .title {
     text-transform: uppercase;
     font-family: MinionPro;
-    font-size: 50px;
+    font-size: 30px;
     margin-bottom: 15px;
+    @include desktop-only {
+      font-size: 50px;
+    }
   }
-  .textMission {
+  .text {
     font-family: "NunitoSans";
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 200;
     line-height: 18px;
-    width: 310px;
-    text-align: center;
+    text-align: start;
+    width: 100%;
+    @include desktop-only {
+      width: 310px;
+      font-size: 12px;
+      text-align: center;
+    }
   }
+}
+.listMission {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 10px 10px;
   .elemMission {
-    width: 640px;
-    height: 735px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    @include desktop-only {
+      max-width: 640px;
+    }
   }
+  .elemMission:nth-child(2) {
+    padding: 25px;
+  }
+  .elemMission:nth-child(3) {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: $primary-baig;
+    color: $primary-blue;
+    padding: 25px;
+    border: transparent;
+  }
+
   .elemMission:nth-child(3n + 1) {
-    border-radius: 60px;
+    border-radius: calc(60px - 20px);
     background-color: $primary-white;
+    @include mobile-only {
+      display: none;
+    }
   }
+
   .iconMission {
     color: black;
   }
 }
-// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\history\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-.possitionHistory {
-  transform: translate(0, -100px);
-}
+// // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\history\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 .containerHistory {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   background-color: $primary-baig;
   color: $primary-white;
-  padding: 90px 20px;
-  border-top-left-radius: 60px;
-  border-top-right-radius: 60px;
-  width: 100%;
- 
-  .wrapperHistory {
-    max-width: 1075px;
-  }
-
-  .title {
-    text-transform: uppercase;
-    font-family: MinionPro;
-    font-size: 60px;
-    text-align: center;
-    color: $primary-blue;
-    margin-bottom: 90px;
-  }
-  .textStory {
-    font-family: "NunitoSans";
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 15px;
-    margin: 0 auto;
-    text-align: justify;
-
-    color: $primary-blue;
-    margin-bottom: 20px;
-  }
-  .textStoryAllYear {
-    font-family: "NunitoSans";
-    font-size: 15px;
-    font-weight: 900;
-
-    margin: 0 auto;
-
-    text-align: center;
-    color: $primary-blue;
-    margin-bottom: 50px;
-  }
-  .iconHistory {
-    height: 900px;
-    border-radius: 25px;
-
-    background-color: $primary-blue;
-  }
 }
-// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Delivery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-.possitionDeliveryAndPayment {
-  transform: translate(0, -165px);
-  .wrapperDeliveryAndPayment {
-    max-width: 1075px;
-  }
-}
-
-.containerDeliveryAndPayment {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.wrapperHistory {
+  padding: 25px;
   background-color: $primary-blue;
-  color: $primary-white;
-  padding: 90px 20px;
-  border-radius: 60px;
-  width: 100%;
- 
-
-  .title {
-    text-transform: uppercase;
-    font-family: 'MinionPro';
-    font-size: 60px;
-    text-align: center;
-    margin-bottom: 90px;
-  }
-  .titleDescription {
-    font-family: "NunitoSans";
-    font-size: 25px;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .text {
-    font-family: "NunitoSans";
-    font-weight: 200;
-    font-size: 12px;
-    text-align: justify;
-    color: $primary-white;
-    margin-bottom: 60px;
-  }
-
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
-// ///////////////////////////////////////////REviews\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-.containerReviews {
+.textStoryAllYear {
+  font-family: "NunitoSans";
+  font-size: 15px;
+  font-weight: 900;
+  text-align: start;
+
+  margin-top: 15px;
+}
+//  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Delivery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+.containerDelivery {
+  text-align: center;
+  background-color: $primary-baig;
+  color: $primary-blue;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 25px;
+}
+
+.listDelivery {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $primary-baig;
-  color: $primary-white;
-  padding: 90px 20px;
-  border-radius: 60px;
-  width: 100%;
-  transform: translate(0, -100px);
+  gap: 20px;
 
-  .titleDescription {
-   text-transform: uppercase;
-    font-family: "MinionPro";
-    font-size: 60px;
-    text-align: center;
-    margin-bottom: 90px;
+  .elemDelivery {
+    width: 100%;
+    max-width: 640px;
+    padding: 25px;
+    background-color: $primary-white;
+    border-radius: 25px;
+    text-align: start;
+
+    @include mobile-only {
+      width: 100%;
+      max-width: none;
+    }
   }
 
-  .listReviews {
-    display: flex;
-    gap: 20px;
+  .subtitle {
+    font-family: "NunitoSans";
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+/////////////////////////////////////////////////////////////////////  Reviews ///////////////////////////////////////////////////
+.containerReviews {
+  text-align: center;
+  background-color: $primary-baig;
+  color: $primary-white;
+}
+.wrapperReviews {
+  padding: 25px;
+  background-color: $primary-blue;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
 
-    .itemReviews {
-      width: 300px;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+.listReviews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 
-      background-color: $primary-blue;
-      border-radius: 25px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .elemReview {
+    width: 70px;
+    max-width: 640px;
+    height: 155px;
+    padding: 15px;
+    background-color: $primary-white;
+    border-radius: 10px;
+    text-align: start;
+    color: $primary-blue;
 
-      
+    @include mobile-only {
+      width: 100%;
+      max-width: none;
     }
   }
 }
+////////////////////////////////////////////////////////////////////// contacts //////////////////////////////////////////////////
+
+.containerContacts {
+  text-align: center;
+  background-color: $primary-baig;
+  color: $primary-blue;
+  border-radius: 25px;
+  padding: 25px 25px 150px 25px;
+}
+
+//   .wrapperHistory {
+//     max-width: 1075px;
+//   }
+
+//   .title {
+//     text-transform: uppercase;
+//     font-family: MinionPro;
+//     font-size: 60px;
+//     text-align: center;
+//     color: $primary-blue;
+//     margin-bottom: 90px;
+//   }
+//   .textStory {
+//     font-family: "NunitoSans";
+//     font-size: 12px;
+//     font-weight: 400;
+//     line-height: 15px;
+//     margin: 0 auto;
+//     text-align: justify;
+
+//     color: $primary-blue;
+//     margin-bottom: 20px;
+//   }
+//   .textStoryAllYear {
+//     font-family: "NunitoSans";
+//     font-size: 15px;
+//     font-weight: 900;
+
+//     margin: 0 auto;
+
+//     text-align: center;
+//     color: $primary-blue;
+//     margin-bottom: 50px;
+//   }
+//   .iconHistory {
+//     height: 900px;
+//     border-radius: 25px;
+
+//     background-color: $primary-blue;
+//   }
+
+// .possitionHistory {
+//   transform: translate(0, -100px);
+// }
+
+// .containerHistory {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   background-color: $primary-baig;
+//   color: $primary-white;
+//   padding: 90px 20px;
+//   border-top-left-radius: 60px;
+//   border-top-right-radius: 60px;
+//   width: 100%;
+
+//   .wrapperHistory {
+//     max-width: 1075px;
+//   }
+
+//   .title {
+//     text-transform: uppercase;
+//     font-family: MinionPro;
+//     font-size: 60px;
+//     text-align: center;
+//     color: $primary-blue;
+//     margin-bottom: 90px;
+//   }
+//   .textStory {
+//     font-family: "NunitoSans";
+//     font-size: 12px;
+//     font-weight: 400;
+//     line-height: 15px;
+//     margin: 0 auto;
+//     text-align: justify;
+
+//     color: $primary-blue;
+//     margin-bottom: 20px;
+//   }
+//   .textStoryAllYear {
+//     font-family: "NunitoSans";
+//     font-size: 15px;
+//     font-weight: 900;
+
+//     margin: 0 auto;
+
+//     text-align: center;
+//     color: $primary-blue;
+//     margin-bottom: 50px;
+//   }
+//   .iconHistory {
+//     height: 900px;
+//     border-radius: 25px;
+
+//     background-color: $primary-blue;
+//   }
+// }
+// // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Delivery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// .possitionDeliveryAndPayment {
+//   transform: translate(0, -165px);
+//   .wrapperDeliveryAndPayment {
+//     max-width: 1075px;
+//   }
+// }
+
+// .containerDeliveryAndPayment {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   background-color: $primary-blue;
+//   color: $primary-white;
+//   padding: 90px 20px;
+//   border-radius: 60px;
+//   width: 100%;
+
+//   .title {
+//     text-transform: uppercase;
+//     font-family: "MinionPro";
+//     font-size: 60px;
+//     text-align: center;
+//     margin-bottom: 90px;
+//   }
+//   .titleDescription {
+//     font-family: "NunitoSans";
+//     font-size: 25px;
+//     text-align: center;
+//     margin-bottom: 30px;
+//   }
+//   .text {
+//     font-family: "NunitoSans";
+//     font-weight: 200;
+//     font-size: 12px;
+//     text-align: justify;
+//     color: $primary-white;
+//     margin-bottom: 60px;
+//   }
+// }
+// // ///////////////////////////////////////////REviews\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// .containerReviews {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   background-color: $primary-baig;
+//   color: $primary-white;
+//   padding: 90px 20px;
+//   border-radius: 60px;
+//   width: 100%;
+//   transform: translate(0, -100px);
+
+//   .titleDescription {
+//     text-transform: uppercase;
+//     font-family: "MinionPro";
+//     font-size: 60px;
+//     text-align: center;
+//     margin-bottom: 90px;
+//   }
+
+//   .listReviews {
+//     display: flex;
+//     gap: 20px;
+
+//     .itemReviews {
+//       width: 300px;
+//       height: 400px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+
+//       background-color: $primary-blue;
+//       border-radius: 25px;
+//       padding: 20px;
+//       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     }
+//   }
+// }

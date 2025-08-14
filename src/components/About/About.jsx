@@ -1,4 +1,4 @@
-import { CardSlide } from "../CardSlide/CardSlide";
+// import { CardSlide } from "../CardSlide/CardSlide";
 import { Title } from "../Title/Title";
 import s from "./About.module.scss";
 export const About = () => {
@@ -15,14 +15,14 @@ export const About = () => {
             </li>
             <li className={s.elemMission}>
               <h2 className={s.title}>our mission</h2>
-              <p className={s.textMission}>
+              <p className={s.text}>
                 Наша місія – приносити у ваш дім натхнення наповнити ваш простір
                 історією, зберігати історію та ділитися її красою з вами
               </p>
             </li>
             <li className={s.elemMission}>
               <h2 className={s.title}>our goal</h2>
-              <p className={s.textMission}>
+              <p className={s.text}>
                 Наша мета – додати вашому простору індивідуальності через
                 історичні речі. Допомогти вам знайти щось особливе, що змінить
                 ваш дім.
@@ -32,38 +32,85 @@ export const About = () => {
               <div className={s.iconMission}>Тут буде картинка</div>
             </li>
           </ul>
-        </div>
-      </section>
-      <section className={`${s.container} ${s.possitionHistory}`}>
-        <div className={s.containerHistory}>
-          <div className={s.wrapperHistory}>
-            <h2 className={s.title}>our story</h2>
-            <p className={s.textStory}>
-              Моя історія любові до прекрасних старовинних речей розпочалася у
-              2011 році. Тоді я зовсім випадково опинилася на барахолці у моїй
-              рідній Одесі. Наша барахолка знайшла своє розташування біля
-              відомого Староконного ринку. Одесити з любов’ю називають її
-              «Староконка». Для любителів старих речей і «просто поговорити»
-              Староконка завжди була невід’ємною частиною життя, без неї ніяк).
-              Моєю першою покупкою стала приголомшливої краси чайна трійка від
-              відомої німецької мануфактури Weimar. Порцеляна високої якості,
-              кобальт, позолота... Так визначилася тема для майбутньої колекції.
-              Згодом географія покупок значно розширилася. Багато предметів було
-              куплено на європейських блошиних ринках та в антикварних
-              магазинах, на ярмарках у середньовічних замках та просто з рук.
-              Нині основним джерелом скарбів та натхнення стали барахолки
-              Німеччини.
-            </p>
-            <p className={s.textStoryAllYear}>
-              За всі роки мого захоплення накопичилася величезна кількість дуже
-              цікавих речей, а разом із ними знання та досвід.
-            </p>
-
-            <div className={s.iconHistory}></div>
+          <div className={s.containerHistory}>
+            <div className={s.wrapperHistory}>
+              <h2 className={s.title}>our story</h2>
+              <p className={s.text}>
+                Моя історія любові до прекрасних старовинних речей розпочалася у
+                2011 році. Тоді я зовсім випадково опинилася на барахолці у моїй
+                рідній Одесі. Наша барахолка знайшла своє розташування біля
+                відомого Староконного ринку. Одесити з любов’ю називають її
+                «Староконка». Для любителів старих речей і «просто поговорити»
+                Староконка завжди була невід’ємною частиною життя, без неї
+                ніяк). Моєю першою покупкою стала приголомшливої краси чайна
+                трійка від відомої німецької мануфактури Weimar. Порцеляна
+                високої якості, кобальт, позолота... Так визначилася тема для
+                майбутньої колекції. Згодом географія покупок значно
+                розширилася. Багато предметів було куплено на європейських
+                блошиних ринках та в антикварних магазинах, на ярмарках у
+                середньовічних замках та просто з рук. Нині основним джерелом
+                скарбів та натхнення стали барахолки Німеччини.
+              </p>
+              <p className={s.textStoryAllYear}>
+                За всі роки мого захоплення накопичилася величезна кількість
+                дуже цікавих речей, а разом із ними знання та досвід.
+              </p>
+            </div>
+            {/* <div className={s.iconHistory}></div> */}
+          </div>
+          <div className={s.containerDelivery}>
+            <div className={s.wrapperDelivery}>
+              <h2 className={s.title}>delivery and payment</h2>
+              <ul className={s.listDelivery}>
+                <li className={s.elemDelivery}>
+                  <h3 className={s.subtitle}>доставка</h3>
+                  <p className={s.text}>
+                    Наша мета – додати вашому простору індивідуальності через
+                    історичні речі. Допомогти вам знайти щось особливе, що
+                    змінить ваш дім.
+                  </p>
+                </li>
+                <li className={s.elemDelivery}>
+                  <h3 className={s.subtitle}>повернення та обмін</h3>
+                  <p className={s.text}>
+                    Наша мета – додати вашому простору індивідуальності через
+                    історичні речі. Допомогти вам знайти щось особливе, що
+                    змінить ваш дім.
+                  </p>
+                </li>
+                <li className={s.elemDelivery}>
+                  <h3 className={s.subtitle}>способи оплати</h3>
+                  <p className={s.text}>
+                    Наша мета – додати вашому простору індивідуальності через
+                    історичні речі. Допомогти вам знайти щось особливе, що
+                    змінить ваш дім.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className={s.containerReviews}>
+            <div className={s.wrapperReviews}>
+              <h2 className={s.title}>reviews</h2>
+              <ul className={s.listReviews}>
+                <li className={s.elemReview}>
+                  <p className={s.textReviews}>Hello</p>
+                </li>
+                <li className={s.elemReview}>
+                  <p className={s.textReviews}>Hello</p>
+                </li>
+                <li className={s.elemReview}>
+                  <p className={s.textReviews}>Hello</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className={s.containerContacts}>
+            <h2 className={s.title}>contacts</h2>
           </div>
         </div>
       </section>
-      <section
+      {/* <section
         className={`${s.container} ${s.possitionDeliveryAndPayment}`}
         id="delivery"
       >
@@ -111,9 +158,9 @@ export const About = () => {
             </li>
           </ul>
         </div>
-      </section>
+      </section>  */}
 
-      <CardSlide />
+      {/* <CardSlide /> */}
     </>
   );
 };
