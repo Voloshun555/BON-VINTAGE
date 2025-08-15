@@ -48,10 +48,10 @@ export const CardSlide = () => {
           },
         }}
         loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
       >
         {data?.map((product) => (
           <SwiperSlide key={product.id}>

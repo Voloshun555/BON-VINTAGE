@@ -4,9 +4,9 @@
   width: 100;
   height: auto;
 }
-.swiper-wrapper {
-  // height: 250px;
-}
+.swiper-wrapper{
+    align-items: center;
+  }
 .swiper-slide {
   @include tablet-only {
     img {
