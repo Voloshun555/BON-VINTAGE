@@ -18,6 +18,15 @@
     margin-bottom: 15px;
 
   }
+  .modalContent{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include mobile-and-tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 
   .wrapInfo {
     display: flex;
@@ -42,15 +51,7 @@
         gap: 15px;
       }
 
-      .mainImage {
-        width: 550px;
-        height: 675px;
-        border-radius: 15px;
-        object-fit: cover;
-        @include mobile-only {
-          height: 300px;
-        }
-      }
+      
 
       .buttonHeart {
         position: absolute;
@@ -65,86 +66,6 @@
         .iconHeart {
           width: 50px;
           height: 50px;
-        }
-      }
-
-      .gallery {
-        display: flex;
-        flex-direction: row;
-        width: 550px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        gap: 15px;
-
-        @include tablet-and-desktop {
-          flex-direction: column;
-          overflow-y: scroll;
-          overflow-x: hidden;
-          width: 110px;
-          height: 100%;
-        }
-
-        @include mobile-only {
-          width: 285px;
-          padding: 5px;
-        }
-
-        .galleryItem {
-          flex: 0 0 auto;
-          width: 100px;
-          height: 100px;
-          border-radius: 15px;
-
-          @include mobile-only {
-            width: 80px;
-            height: 80px;
-          
-          }
-
-          .galleryImage {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-            object-fit: cover;
-          }
-
-          .videoContainer {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            width: 100px;
-            height: 100px;
-
-            @include mobile-only {
-              width: 80px;
-              height: 80px;
-            
-            }
-
-            .galleryVideo {
-              width: 100%;
-              height: 100%;
-              border-radius: 15px;
-              object-fit: cover;
-            }
-
-            .playButton {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              background-color: rgba(20, 19, 19, 0.571);
-              color: $primary-white;
-              border: none;
-              border-radius: 50%;
-              width: 40px;
-              height: 40px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              font-size: 18px;
-            }
-          }
         }
       }
     }
@@ -212,66 +133,4 @@
     }
   }
 
-  .videoModal {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    align-items: center;
-    z-index: 1000;
-
-    .videoModalContent {
-      position: relative;
-      display: flex;
-      justify-content: center;
-
-      .modalVideo {
-        width: 750px;
-        height: 90%;
-        border-radius: 10px;
-      }
-
-      .closeVideoButton {
-        position: absolute;
-        top: 5px;
-        right: 20px;
-        background-color: #ffffff14;
-        color: $primary-dark;
-        border: none;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 18px;
-      }
-    }
-  }
-}
-
-.gallery::-webkit-scrollbar {
-  width: 1px;
-  background-color: transparent;
-  @include mobile-only {
-    height: 5px;
-  }
-}
-
-.gallery::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-image: linear-gradient(
-    225deg,
-    rgb(224 242 255) 0%,
-    rgb(86 80 92) 50%,
-    rgb(255 246 251) 100%
-  );
-}
-
-.gallery::-webkit-scrollbar-track {
-  background-color: transparent;
 }

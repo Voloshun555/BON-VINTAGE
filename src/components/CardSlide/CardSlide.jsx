@@ -8,13 +8,23 @@ import "swiper/css/autoplay";
 
 import shared from "@/scss/base/shared.module.scss";
 import s from "./CardSlide.module.scss"; 
-import "@/scss/base/_cardSlide.scss"
+import "@/scss/base/_cardSlide.scss";
+import { useState } from "react";
 
 export const CardSlide = () => {
   const { data, isLoading, isError } = useProducts(25);
+  const [loadedImages, setLoadedImages] = useState({}); // зберігаємо, які фото вже завантажені
+
+  const handleImageLoad = (id) => {
+    setLoadedImages((prev) => ({ ...prev, [id]: true }));
+  };
 
   if (isLoading) {
-    return <div className={shared.center}> <Spiner/> </div>;
+    return (
+      <div className={shared.center}>
+        <Spiner />
+      </div>
+    );
   }
 
   if (isError) {
@@ -45,12 +55,23 @@ export const CardSlide = () => {
       >
         {data?.map((product) => (
           <SwiperSlide key={product.id}>
-            <img
-              className={s.slideImage}
-              loading="lazy"
-              src={product.mainImage}
-              alt={product.title}
-            />
+            <div className={s.slideWrapper}>
+              {!loadedImages[product.id] && (
+                <div className={shared.center}>
+                  <Spiner />
+                </div>
+              )}
+              <img
+                className={s.slideImage}
+                loading="lazy"
+                src={product.mainImage}
+                alt={product.title}
+                onLoad={() => handleImageLoad(product.id)}
+                style={{
+                  display: loadedImages[product.id] ? "block" : "none"
+                }}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
