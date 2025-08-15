@@ -1,37 +1,46 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-
 import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/css/image-gallery.css";
-import './ImageGallery.scss'
 import { useMediaQuery } from "react-responsive";
-
+import noImage from '/assets/images/noImage.png'
+import "react-image-gallery/styles/css/image-gallery.css";
+import './ImageGallery.scss';
 
 export const ImageGallerySlider = ({ data }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
 
-  // Функція рендеру відео
-  const renderVideo = (item) => {
-    return (
-      <div className="video-wrapper">
-        <video
-          controls
-          style={{ width: "100%", borderRadius: "10px" }}
-          src={item.embedUrl}
-        />
-      </div>
-    );
-  };
+  const renderImage = (item) => (
+    <div className="image-wrapper">
+      <img
+        src={item.original || noImage}
+        alt={item.originalAlt || "відсутнє зображення"}
+        style={{ width: "100%", borderRadius: "10px" }}
+        onError={(e) => {
+          e.target.src = noImage; 
+        }}
+      />
+    </div>
+  );
+
+  const renderVideo = (item) => (
+    <div className="video-wrapper">
+      <video
+        controls
+        style={{ width: "100%", borderRadius: "10px" }}
+        src={item.embedUrl}
+      />
+    </div>
+  );
 
   const items = [
     {
       original: data.mainImage,
       thumbnail: data.mainImage,
+      renderItem: renderImage,
     },
     ...data.gallery.map((item) => {
       if (item.type === "video") {
         return {
-          thumbnail: "https://img.icons8.com/ios-filled/50/video.png", 
+          thumbnail: "https://img.icons8.com/ios-filled/50/video.png",
           embedUrl: item.url,
           renderItem: renderVideo,
         };
@@ -39,6 +48,7 @@ export const ImageGallerySlider = ({ data }) => {
         return {
           original: item.url,
           thumbnail: item.url,
+          renderItem: renderImage,
         };
       }
     }),

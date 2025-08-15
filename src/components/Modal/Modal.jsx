@@ -11,7 +11,10 @@ export const Modal = ({ onClose, data }) => {
         Вернутись назад
       </button>
       <div className={s.modalContent}>
+        <div className={s.wrapImage}>
         <ImageGallerySlider data={data} />
+        <button className={s.addBasket}>додати до кошику</button>
+        </div>
         <div className={s.wrapInfo}>
           <div className={s.containerDescription}>
             <h1 className={s.titleDes}>
