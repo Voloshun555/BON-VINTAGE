@@ -1,3 +1,15 @@
-.image-gallery-image {
-   border-radius: 15px !important;
+@import "@/scss/base/variables.scss";
+@import "@/scss/base/mixins.scss";
+@import "@/scss/base/fonts.scss";
+
+.image-gallery {
+  @include mobile-only {
+    width: 300px;
+  }
+}
+
+.image-gallery-using-mouse {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
