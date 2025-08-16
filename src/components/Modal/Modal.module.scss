@@ -118,6 +118,7 @@
   .priceInfo {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .price {
       font-family: "NunitoSans";
       font-size: 18px;
@@ -134,6 +135,16 @@
     @include mobile-and-tablet {
       width: 100%;
       gap: 15px;
+    }
+  }
+  .iconHeart {
+    width: 40px;
+    height: 40px;
+    fill: transparent;
+    color: $primary-blue;
+
+    &:hover {
+      fill: $primary-blue; 
     }
   }
 }

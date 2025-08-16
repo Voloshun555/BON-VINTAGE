@@ -3,10 +3,14 @@
 @import "@/scss/base/fonts.scss";
 
 .image-gallery-container {
-  width: 500px;
+  
   @include mobile-only {
     width: 100%;
   }
+}
+
+.image-wrapper{
+
 }
 
 .image-gallery {

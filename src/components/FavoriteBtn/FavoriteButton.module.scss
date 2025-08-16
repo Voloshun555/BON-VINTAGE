@@ -2,8 +2,8 @@
 
 .iconHeart {
   fill: transparent; // Прозоре серце в неактивному стані
-  stroke: $primary-white; // Білий контур
-  stroke-width: 2; // Товщина контуру
+ color: $primary-white; // Колір контуру серця
+  
   transition: transform 0.25s ease, fill 0.25s ease;
 
   &:hover {
@@ -13,5 +13,6 @@
 
 .buttonHeartActive {
   fill: $primary-blue; // Заповнене серце при активному стані
-  stroke: none; // Вимикаємо білий контур
+   color: $primary-blue;
+
 }

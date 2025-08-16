@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
+import { ImageGallerySlider } from "../ImageGallery/ImageGallery";
+import iconSvg from '/public/assets/svg/heart.svg';
 import s from "./Modal.module.scss";
 
-import { ImageGallerySlider } from "../ImageGallery/ImageGallery";
 
 
 export const Modal = ({ onClose, data }) => {
@@ -13,10 +14,15 @@ export const Modal = ({ onClose, data }) => {
       <div className={s.modalContent}>
         <div className={s.wrapImage}>
         <ImageGallerySlider data={data} />
-        <button className={s.addBasket}>додати до кошику</button>
+        <button type="button" className={s.addBasket}>додати до кошику</button>
         <ul className={s.priceInfo}>
           <li className={s.price}>€ 222</li>
           <li className={s.price}>22 000 грн</li>
+          <li><button>
+             <svg className={s.iconHeart} width="35" height="35">
+                   <use href={`${iconSvg}`}/>
+                </svg>
+            </button></li>
         </ul>
         </div>
         <div className={s.wrapInfo}>

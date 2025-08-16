@@ -51,7 +51,8 @@ export const Card = ({
         aria-label="Додати до кошика"
         onClick={toggleBascket}
       >
-        додати до кошику
+        {isBascket ? "Видалити з кошика" : "Додати до кошику"}
+        
       </button>
     </li>
   );

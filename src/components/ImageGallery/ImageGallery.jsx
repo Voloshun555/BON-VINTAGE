@@ -55,7 +55,7 @@ export const ImageGallerySlider = ({ data }) => {
   ];
 
   return (
-    <div className="image-gallery-container">
+    <div className="image-gallery-container" >
       <ImageGallery
         items={items}
         showPlayButton={false}
