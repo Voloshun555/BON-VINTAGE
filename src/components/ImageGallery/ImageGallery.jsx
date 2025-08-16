@@ -4,16 +4,20 @@ import { useMediaQuery } from "react-responsive";
 import noImage from '/assets/images/noImage.png'
 import "react-image-gallery/styles/css/image-gallery.css";
 import './ImageGallery.scss';
+import { useState } from "react";
 
 export const ImageGallerySlider = ({ data }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
+  const [loaded, setLoaded] = useState(false);
 
   const renderImage = (item) => (
     <div className="image-wrapper">
+      {!loaded && <img src={noImage} alt="завантаження..." style={{ width: "100%", borderRadius: "10px" }} />}
       <img
         src={item.original || noImage}
         alt={item.originalAlt || "відсутнє зображення"}
         style={{ width: "100%", borderRadius: "10px" }}
+        onLoad={() => setLoaded(true)}
         onError={(e) => {
           e.target.src = noImage; 
         }}
