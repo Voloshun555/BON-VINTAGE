@@ -2,9 +2,15 @@
 @import "@/scss/base/mixins.scss";
 @import "@/scss/base/fonts.scss";
 
+.image-gallery-container {
+  width: 500px;
+  @include mobile-only {
+    width: 100%;
+  }
+}
+
 .image-gallery {
   @include mobile-only {
-    width: 300px;
   }
 }
 

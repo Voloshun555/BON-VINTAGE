@@ -32,7 +32,7 @@ export const CardList = ({ data, isLoading, isError }) => {
   const currentCards = filteredData.slice(firstCardIndex, lastCardIndex);
 
   return (
-    <section>
+    <section className={s.container}>
       {!isOpenModal ? (
         <>
             {isLoading && (

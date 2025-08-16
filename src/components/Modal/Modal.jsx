@@ -14,6 +14,10 @@ export const Modal = ({ onClose, data }) => {
         <div className={s.wrapImage}>
         <ImageGallerySlider data={data} />
         <button className={s.addBasket}>додати до кошику</button>
+        <ul className={s.priceInfo}>
+          <li className={s.price}>€ 222</li>
+          <li className={s.price}>22 000 грн</li>
+        </ul>
         </div>
         <div className={s.wrapInfo}>
           <div className={s.containerDescription}>

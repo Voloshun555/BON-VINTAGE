@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import s from "./Card.module.scss";
 import { FavoriteButton } from "@/components/FavoriteBtn/FavoriteButton";
+import noImage from '/assets/images/noImage.png'
+import s from "./Card.module.scss";
 
 export const Card = ({
   image,
@@ -29,9 +30,10 @@ export const Card = ({
       <div className={s.containerImg}>
         <img
           className={s.catalogImg}
-          src={image}
+         src={image || noImage}
           alt={title || "Зображення продукту"}
           onClick={onClick}
+          onError={(e) => { e.currentTarget.src = noImage; }}
         />
         <FavoriteButton
           buttonHeart={`${s.buttonHeart}`}

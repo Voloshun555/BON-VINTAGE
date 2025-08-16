@@ -16,11 +16,9 @@
     border-radius: 5px;
     color: $primary-blue;
     margin-bottom: 15px;
-
   }
-  .modalContent{
+  .modalContent {
     display: flex;
-    align-items: center;
     gap: 20px;
     @include mobile-and-tablet {
       flex-direction: column;
@@ -50,8 +48,6 @@
         height: auto;
         gap: 15px;
       }
-
-      
 
       .buttonHeart {
         position: absolute;
@@ -90,7 +86,7 @@
         flex-direction: column;
         gap: 5px;
         margin-bottom: 30px;
-        .productInfoItem{
+        .productInfoItem {
           font-family: "NunitoSans";
           font-size: 12px;
           font-weight: 400;
@@ -107,7 +103,6 @@
         line-height: 15px;
       }
     }
-
   }
   .addBasket {
     font-family: "NunitoSans";
@@ -118,29 +113,27 @@
     border-radius: 10px;
     color: $primary-white;
     background-color: $primary-blue;
-    margin-bottom: 15px;
   }
 
   .priceInfo {
     display: flex;
     justify-content: space-between;
-    padding: 5px;
     .price {
       font-family: "NunitoSans";
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 900;
       color: $primary-blue;
     }
   }
 
-  .wrapImage{
+  .wrapImage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
     @include mobile-and-tablet {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
       gap: 15px;
     }
   }
-
 }
