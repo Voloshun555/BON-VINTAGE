@@ -15,7 +15,7 @@ export const ImageGallerySlider = ({ data }) => {
       {!loaded && <img src={noImage} alt="завантаження..." style={{ maxWidth: "300px", borderRadius: "10px" }} />}
       <img
         src={item.original || noImage}
-        alt={item.originalAlt || "відсутнє зображення"}
+        alt={item.title || "відсутнє зображення"}
         style={{ maxWidth: "300px", borderRadius: "10px" }}
         onLoad={() => setLoaded(true)}
         onError={(e) => {
@@ -39,7 +39,7 @@ export const ImageGallerySlider = ({ data }) => {
     {
       original: data.mainImage,
       thumbnail: data.mainImage,
-      renderItem: renderImage,
+      
     },
     ...data.gallery.map((item) => {
       if (item.type === "video") {
