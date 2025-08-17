@@ -140,11 +140,6 @@
   .iconHeart {
     width: 40px;
     height: 40px;
-    fill: transparent;
     color: $primary-blue;
-
-    &:hover {
-      fill: $primary-blue; 
-    }
   }
 }

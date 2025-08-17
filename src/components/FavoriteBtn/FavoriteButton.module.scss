@@ -1,8 +1,8 @@
 @import "@/scss/base/variables.scss";
 
 .iconHeart {
-  fill: transparent; // Прозоре серце в неактивному стані
- color: $primary-white; // Колір контуру серця
+  fill: transparent; 
+ color: $primary-white; 
   
   transition: transform 0.25s ease, fill 0.25s ease;
 
@@ -12,7 +12,7 @@
 }
 
 .buttonHeartActive {
-  fill: $primary-blue; // Заповнене серце при активному стані
+  fill: $primary-blue; 
    color: $primary-blue;
 
 }

@@ -1,11 +1,18 @@
 /* eslint-disable react/prop-types */
 import { ImageGallerySlider } from "../ImageGallery/ImageGallery";
-import iconSvg from '/public/assets/svg/heart.svg';
+import { FavoriteButton } from "../FavoriteBtn/FavoriteButton";
+import { useFavorites } from "@/hooks/useFavorites";
 import s from "./Modal.module.scss";
 
-
-
 export const Modal = ({ onClose, data }) => {
+  const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
+
+  const handleFavoriteClick = () => {
+    isFavorite(data.id)
+      ? removeFavoriteList(data.id)
+      : addFavoriteList(data.id);
+  };
+ 
   return (
     <div className={s.modal}>
       <button className={s.closeButton} onClick={onClose}>
@@ -13,17 +20,21 @@ export const Modal = ({ onClose, data }) => {
       </button>
       <div className={s.modalContent}>
         <div className={s.wrapImage}>
-        <ImageGallerySlider data={data} />
-        <button type="button" className={s.addBasket}>додати до кошику</button>
-        <ul className={s.priceInfo}>
-          <li className={s.price}>€ 222</li>
-          <li className={s.price}>22 000 грн</li>
-          <li><button>
-             <svg className={s.iconHeart} width="35" height="35">
-                   <use href={`${iconSvg}`}/>
-                </svg>
-            </button></li>
-        </ul>
+          <ImageGallerySlider data={data} />
+          <button type="button" className={s.addBasket}>
+            додати до кошику
+          </button>
+          <ul className={s.priceInfo}>
+            <li className={s.price}>€ 222</li>
+            <li className={s.price}>22 000 грн</li>
+            <li>
+              <FavoriteButton
+                iconHeart={s.iconHeart}
+                isFavorite={isFavorite(data.id)}
+                onClick={handleFavoriteClick}
+              />
+            </li>
+          </ul>
         </div>
         <div className={s.wrapInfo}>
           <div className={s.containerDescription}>
