@@ -29,12 +29,18 @@
   .containerImg {
     position: relative;
 
-   .catalogImg {
-  width: 100%;
-  aspect-ratio: 3 / 4; 
-  border-radius: 5px;
-  object-fit: cover;
-}
+    .catalogImg {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+    .imgLoader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 3 / 4;
+    }
 
     .buttonHeart {
       position: absolute;
