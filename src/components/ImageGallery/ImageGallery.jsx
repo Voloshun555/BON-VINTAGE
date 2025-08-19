@@ -12,11 +12,11 @@ export const ImageGallerySlider = ({ data }) => {
 
   const renderImage = (item) => (
     <div className="image-wrapper">
-      {!loaded && <img src={noImage} alt="завантаження..." style={{ maxWidth: "300px", borderRadius: "10px" }} />}
+      {!loaded && <img src={noImage} alt="завантаження..." style={{ width: "100%", borderRadius: "10px",  objectFit: "contain" }} />}
       <img
         src={item.original || noImage}
         alt={item.title || "відсутнє зображення"}
-        style={{ maxWidth: "300px", borderRadius: "10px" }}
+       style={{ width: "100%", borderRadius: "10px",  objectFit: "contain" }}
         onLoad={() => setLoaded(true)}
         onError={(e) => {
           e.target.src = noImage; 
