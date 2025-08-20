@@ -6,7 +6,6 @@
   max-width: 1440px;
   padding: 10px 10px 34px;
   @include desktop-only {
-  
     margin: auto;
   }
 }
@@ -48,7 +47,6 @@
     padding: 40px 40px 50px;
     width: 100%;
     margin: auto;
-
   }
   // @include desktop-only {
   //   grid-template-columns: 1fr 1fr;
@@ -65,9 +63,7 @@
       height: 700px;
     }
     @include tablet-only {
-   
-     aspect-ratio: 1 / 1.2;
-
+      aspect-ratio: 1 / 1.2;
     }
   }
   .elemMission:nth-child(2) {
@@ -258,7 +254,7 @@
 .containerContacts {
   text-align: center;
   background-color: $primary-baig;
-   border-bottom-right-radius: 60px;
+  border-bottom-right-radius: 60px;
   border-bottom-left-radius: 60px;
   @include mobile-only {
     padding: 40px 40px 50px;
@@ -268,12 +264,9 @@
   }
   .wrapperContacts {
     @include tablet-and-desktop {
-     background-color: $primary-blue;
-    padding: 40px 40px 350px;
-    border-radius: 60px;
-    
+      background-color: $primary-blue;
+      padding: 40px 40px 350px;
+      border-radius: 60px;
     }
-   
   }
 }
-
