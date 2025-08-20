@@ -1,11 +1,11 @@
 import { categories } from "@/fakeApi.js";
-import shared from "@/scss/base/shared.module.scss";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedCategory, updateVisibleFilterMaterials } from "@/redux/viewOptionsSlice/viewOptionsSlice";
+import { updateCatalogVisibleList } from "@/redux/selectors";
 
 import s from "./Categories.module.scss";
-import { updateCatalogVisibleList } from "@/redux/selectors";
+import shared from "@/scss/base/shared.module.scss";
 
 export const Categories = () => {
   const [activeCategories, setActiveCategories] = useState(null);

@@ -1,33 +1,33 @@
 
-@import "@/scss/base/variables.scss";
+@use "@/scss/base/variables.scss" as var;
 
 
 @mixin mobile-only {
-  @media (max-width: #{ $breakpoint-mobile - 1 }) {
+  @media (max-width: #{ var.$breakpoint-mobile - 1 }) {
     @content;
   }
 }
 
 @mixin mobile-and-tablet {
-  @media (max-width: #{ $breakpoint-tablet - 1 }) {
+  @media (max-width: #{ var.$breakpoint-tablet - 1 }) {
     @content;
   }
 }
 
 @mixin tablet-only {
-  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{ $breakpoint-tablet - 1 }) {
+  @media (min-width: #{var.$breakpoint-mobile}) and (max-width: #{ var.$breakpoint-tablet - 1 }) {
     @content;
   }
 }
 
 @mixin tablet-and-desktop {
-  @media (min-width: #{$breakpoint-mobile}) {
+  @media (min-width: #{var.$breakpoint-mobile}) {
     @content;
   }
 }
 
 @mixin desktop-only {
-  @media (min-width: #{$breakpoint-desktop}) {
+  @media (min-width: #{var.$breakpoint-desktop}) {
     @content;
   }
 }

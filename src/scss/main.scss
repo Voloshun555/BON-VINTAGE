@@ -1,11 +1,11 @@
-@use 'reset-css';
-@use 'modern-normalize';
+@use 'reset-css' as *;
+@use 'modern-normalize' as *;
 
-@use 'base/variables';
-@use 'base/fonts';
-@use 'base/reset';
-@use 'base/mixins';
-@use 'base/cardSlide';
+@use 'base/variables' as *;
+@use 'base/fonts' as *;
+@use 'base/reset' as *;
+@use 'base/mixins' as *;
+@use 'base/cardSlide' as *;
 
 
  

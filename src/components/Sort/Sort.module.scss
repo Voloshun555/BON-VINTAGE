@@ -1,5 +1,5 @@
-@import "@/scss/base/variables.scss";
-@import "@/scss/base/fonts.scss";
+@use "@/scss/base/variables.scss" as *;
+@use "@/scss/base/fonts.scss" as *;
 
 .sort{
     font-family: "NunitoSans";

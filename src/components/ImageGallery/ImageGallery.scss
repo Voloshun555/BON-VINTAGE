@@ -1,6 +1,6 @@
-@import "@/scss/base/variables.scss";
-@import "@/scss/base/mixins.scss";
-@import "@/scss/base/fonts.scss";
+@use "@/scss/base/variables.scss" as *;
+@use "@/scss/base/mixins.scss" as *;
+@use "@/scss/base/fonts.scss" as *;
 
 .image-gallery-container {
   .image-gallery-slide img,

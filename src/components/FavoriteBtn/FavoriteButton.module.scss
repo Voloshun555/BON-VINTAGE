@@ -1,4 +1,4 @@
-@import "@/scss/base/variables.scss";
+@use "@/scss/base/variables.scss" as *;
 
 .iconHeart {
   fill: transparent; 
