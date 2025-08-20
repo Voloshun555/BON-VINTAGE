@@ -54,6 +54,7 @@ export const BurgerMenu = ({ onClose, isOpen }) => {
         </nav>
 
         <div className={s.actions}>
+          <Icon id={"icon-pinterest"} className={s.icon} />
           <Icon id={"icon-e_etsy"} className={s.icon} />
           <Icon id={"icon-insta"} className={s.icon} />
         </div>

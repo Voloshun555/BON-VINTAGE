@@ -5,6 +5,7 @@ import { Spiner } from "@/components/Spiner/Spiner";
 import s from "./Layout.module.scss";
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
+import { ScrollToTop } from "../scrollToTop/ScrollToTop";
 
 const Layout = () => {
   return (
@@ -20,6 +21,7 @@ const Layout = () => {
         >
           <Outlet />
         </Suspense>
+         <ScrollToTop />
       </main>
       <Footer />
     </div>

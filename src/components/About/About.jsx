@@ -58,7 +58,7 @@ export const About = () => {
             </div>
             <div className={s.iconHistory}></div>
           </div>
-          <div className={s.containerDelivery}>
+          <div className={s.containerDelivery} id="delivery">
             <div className={s.wrapperDelivery}>
               <h2 className={s.title}>delivery and payment</h2>
               <ul className={s.listDelivery}>
