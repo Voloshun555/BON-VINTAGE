@@ -4,10 +4,10 @@ import s from "./About.module.scss";
 export const About = () => {
   return (
     <>
-      <section>
+      <section id="aboutUs">
         <Title />
       </section>
-      <section className={s.container}>
+      <section className={s.container} >
         <div className={s.containerMission}>
           <ul className={s.listMission}>
             <li className={s.elemMission}>
@@ -99,7 +99,7 @@ export const About = () => {
               </ul>
             </div>
           </div>
-          <div className={s.containerContacts}>
+          <div className={s.containerContacts} id="contacts">
             <div className={s.wrapperContacts}>
               <h2 className={s.title}>contacts</h2>
             </div>

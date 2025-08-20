@@ -58,7 +58,7 @@ export const BurgerMenu = ({ onClose, isOpen }) => {
           <Icon id={"icon-e_etsy"} className={s.icon} />
           <Icon id={"icon-insta"} className={s.icon} />
         </div>
-        <HashLink  to="/aboutUs#delivery" className={`${s.navLink} ${s.textDeliveryLink}`} href="#delivery" onClick={onClose} >
+        <HashLink  to="/aboutUs#delivery" className={`${s.navLink} ${s.textDeliveryLink}`} onClick={onClose} >
           Про доставку та способи оплати
         </HashLink>
       </div>
