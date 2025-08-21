@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import iconSvg from '/public/assets/svg/sprite.svg'
+import iconSvg from '@/assets/svg/sprite.svg'
 
 export const Icon = ({id, className}) => {
   return (

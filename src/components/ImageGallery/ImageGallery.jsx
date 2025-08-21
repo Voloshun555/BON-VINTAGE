@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import ImageGallery from "react-image-gallery";
 import { useMediaQuery } from "react-responsive";
-import noImage from '/assets/images/noImage.png'
+import noImage from '@/assets/images/noImage.png'
 import "react-image-gallery/styles/css/image-gallery.css";
 import './ImageGallery.scss';
 import { useState } from "react";

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FavoriteButton } from "@/components/FavoriteBtn/FavoriteButton";
 import { Spiner } from "@/components/Spiner/Spiner";
-import noImage from "/assets/images/noImage.png";
+import noImage from "@/assets/images/noImage.png";
 import s from "./Card.module.scss";
 
 export const Card = ({

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MinionPro';
-    src: url('/assets/fonts/Minion/MinionPro-Regular.ttf') format('truetype');
+    src: url('@/assets/fonts/Minion/MinionPro-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -8,20 +8,20 @@
 
 @font-face {
     font-family: 'NunitoSans';
-    src: url('/assets/fonts/NunitoSans/NunitoSans_7pt-Light.ttf') format('truetype');
+    src: url('@/assets/fonts/NunitoSans/NunitoSans_7pt-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'NunitoSans';
-    src: url('/assets/fonts/NunitoSans/NunitoSans_10pt-Regular.ttf') format('truetype');
+    src: url('@/assets/fonts/NunitoSans/NunitoSans_10pt-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'NunitoSans';
-    src: url('/assets/fonts/NunitoSans/NunitoSans_7pt-SemiBold.ttf') format('truetype');
+    src: url('@/assets/fonts/NunitoSans/NunitoSans_7pt-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
@@ -29,7 +29,7 @@
 
 @font-face {
     font-family: 'NunitoSans';
-    src: url('/assets/fonts/NunitoSans/NunitoSans_7pt-ExtraBold.ttf') format('truetype');
+    src: url('@/assets/fonts/NunitoSans/NunitoSans_7pt-ExtraBold.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
 }

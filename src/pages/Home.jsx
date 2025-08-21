@@ -1,5 +1,5 @@
 import { Icon } from "@/components/Icon/Icon";
-import iconSvg from "/assets/images/главная-картинка.jpg";
+import iconSvg from "@/assets/images/главная-картинка.jpg";
 import { CardList } from "@/components/Catalog/CardList/CardList";
 import { useMediaQuery } from "react-responsive";
 import { Categorizer } from "@/components/Categorizer/Categorizer";
