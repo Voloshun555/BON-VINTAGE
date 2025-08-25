@@ -27,7 +27,9 @@ export const Footer = () => {
             </ul>
           )}
         </nav>
-        <Icon id={"icon-BON"} className={s.logoFootert} />
+        <HashLink to={"/"}>
+          <Icon id={"icon-BON"} className={s.logoFootert} />
+        </HashLink>
         <nav>
           {isMobile ? (
             <ul className={s.navList}>

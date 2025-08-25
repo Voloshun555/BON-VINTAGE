@@ -12,6 +12,7 @@ import { Icon } from "../Icon/Icon";
 
 import s from "./Header.module.scss";
 import { navigatePages } from "@/navigate";
+import { HashLink } from "react-router-hash-link";
 
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -52,7 +53,9 @@ export const Header = () => {
   return (
     <header className={`${s.header} ${isSearchFocused ? s.searchActive : ""}`}>
       <div className={s.container}>
-        <Icon id={"icon-BON"} className={s.logoBon} />
+        <HashLink to={"/"}>
+          <Icon id={"icon-BON"} className={s.logoBon} />
+        </HashLink>
         <nav>
           <ul className={s.navigation}>
             {navigatePages.map((link) => (
@@ -104,7 +107,9 @@ export const Header = () => {
               <Icon id={"icon-user"} className={s.iconNav} />
             </li>
             <li className={s.wrapIcon}>
-              <Icon id={"icon-heart"} className={`${s.iconNav}`} />
+              <HashLink to={"/favorite"}>
+                <Icon id={"icon-heart"} className={`${s.iconNav}`} />
+              </HashLink>
               {totalFavorite > 0 && (
                 <p className={s.totalFavorite}>{totalFavorite}</p>
               )}
