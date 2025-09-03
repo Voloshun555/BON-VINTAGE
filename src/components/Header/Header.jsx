@@ -7,7 +7,11 @@ import { setSearchQuery } from "@/redux/searchQuerySlice/searchQuerySlice";
 import { useEffect, useState } from "react";
 import { BurgerMenu } from "./BurgerMenu/BurgerMenu";
 import { useMediaQuery } from "react-responsive";
-import { favoriteList, searchQueryFilter } from "@/redux/selectors";
+import {
+  favoriteList,
+  searchQueryFilter,
+  selectBasketList,
+} from "@/redux/selectors";
 import { Icon } from "../Icon/Icon";
 
 import s from "./Header.module.scss";
@@ -23,6 +27,8 @@ export const Header = () => {
   const dispatch = useDispatch();
 
   const totalFavorite = useSelector(favoriteList).length;
+  const totalBasket = useSelector(selectBasketList).length;
+
   const searchQuery = useSelector(searchQueryFilter);
 
   const handleSearch = (e) => {
@@ -114,8 +120,11 @@ export const Header = () => {
                 <p className={s.totalFavorite}>{totalFavorite}</p>
               )}
             </li>
-            <li>
+            <li className={s.wrapIcon}>
               <Icon id={"icon-basket"} className={s.iconNav} />
+              {totalBasket > 0 && (
+                <p className={s.totalFavorite}>{totalBasket} </p>
+              )}
             </li>
           </ul>
           <button className={s.buttonBurger} onClick={toggleMenu}>

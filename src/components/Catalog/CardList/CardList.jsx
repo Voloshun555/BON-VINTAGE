@@ -24,7 +24,7 @@ export const CardList = ({ data, isLoading, isError }) => {
     setSelectedItem(item);
   };
 
-   const safeData = Array.isArray(data) ? data : [];
+  const safeData = Array.isArray(data) ? data : [];
   const filteredData = useFilteredCards(safeData);
 
   const lastCardIndex = currentPage * cardsPerPage;
@@ -35,11 +35,11 @@ export const CardList = ({ data, isLoading, isError }) => {
     <section className={s.container}>
       {!isOpenModal ? (
         <>
-            {isLoading && (
-              <div className={shared.center}>
-                <Spiner />
-              </div>
-            )}
+          {isLoading && (
+            <div className={shared.center}>
+              <Spiner />
+            </div>
+          )}
           <ul className={s.containerCards}>
             {isError && <div>...Error</div>}
             {!isLoading &&

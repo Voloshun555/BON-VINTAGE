@@ -4,6 +4,7 @@ import { FavoriteButton } from "@/components/FavoriteBtn/FavoriteButton";
 import { Spiner } from "@/components/Spiner/Spiner";
 import noImage from "@/assets/images/noImage.png";
 import s from "./Card.module.scss";
+import { BtnBasket } from "@/components/BtnBasket/BtnBasket";
 
 export const Card = ({
   image,
@@ -16,12 +17,7 @@ export const Card = ({
   isFavorite,
   onClick,
 }) => {
-  const [isBascket, setIsBascket] = useState(false);
   const [isImgLoading, setIsImgLoading] = useState(true);
-
-  const toggleBascket = () => {
-    setIsBascket(!isBascket);
-  };
 
   const handleFavoriteClick = () => {
     isFavorite ? removeFavoriteList(id) : addFavoriteList(id);
@@ -62,13 +58,7 @@ export const Card = ({
         <p className={s.itemPrice}>{price} грн</p>
       </div>
 
-      <button
-        className={`${s.btnBascket} ${isBascket ? s.active : ""}`}
-        aria-label="Додати до кошика"
-        onClick={toggleBascket}
-      >
-        {isBascket ? "Видалити з кошика" : "Додати до кошику"}
-      </button>
+      <BtnBasket id={id} />
     </li>
   );
 };

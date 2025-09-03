@@ -3,6 +3,7 @@ import { ImageGallerySlider } from "../ImageGallery/ImageGallery";
 import { FavoriteButton } from "../FavoriteBtn/FavoriteButton";
 import { useFavorites } from "@/hooks/useFavorites";
 import s from "./Modal.module.scss";
+import { BtnBasket } from "../BtnBasket/BtnBasket";
 
 export const Modal = ({ onClose, data }) => {
   const { isFavorite, addFavoriteList, removeFavoriteList } = useFavorites();
@@ -12,7 +13,7 @@ export const Modal = ({ onClose, data }) => {
       ? removeFavoriteList(data.id)
       : addFavoriteList(data.id);
   };
- 
+
   return (
     <div className={s.modal}>
       <button className={s.closeButton} onClick={onClose}>
@@ -21,9 +22,7 @@ export const Modal = ({ onClose, data }) => {
       <div className={s.modalContent}>
         <div className={s.wrapImage}>
           <ImageGallerySlider data={data} />
-          <button type="button" className={s.addBasket}>
-            додати до кошику
-          </button>
+          <BtnBasket modalClassName={s.addBasket} />
           <ul className={s.priceInfo}>
             <li className={s.price}>€ 222</li>
             <li className={s.price}>22 000 грн</li>
