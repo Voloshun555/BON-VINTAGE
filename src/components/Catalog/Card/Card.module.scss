@@ -21,7 +21,9 @@
   &:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 1.15);
   }
+  @include no-hover-mobile(box-shadow, none);
 
+  
   @include tablet-only {
     width: 240px;
   }

@@ -21,4 +21,5 @@
   &:hover {
     transform: scale(1.05);
   }
+  @include no-hover-mobile(transform, none);
 }

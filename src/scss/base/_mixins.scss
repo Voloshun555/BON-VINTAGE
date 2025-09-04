@@ -31,3 +31,13 @@
     @content;
   }
 }
+
+
+
+@mixin no-hover-mobile($property: transform, $value: none) {
+  @media (hover: none), (pointer: coarse) {
+    &:hover {
+      #{$property}: $value;
+    }
+  }
+}
